@@ -1,5 +1,5 @@
 <template>
-  <div class="agency fixed left-8p">
+  <div class="agency fixed left-8p z-10">
   <div class="purple"></div>
   <div class="blue"></div>
 </div>

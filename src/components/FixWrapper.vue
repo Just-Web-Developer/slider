@@ -1,6 +1,6 @@
 <template>
   <WrapGrads />
-  <div class="slider-wrapper-top fixed flex left-18 right-18 top-11 pt-">
+  <div class="slider-wrapper-top fixed flex left-18 right-18 top-11 z-10">
     <div class="menu cursor-pointer w-12.5">
       <div class="menu-content">
         <p class="uppercase transition-all font-medium text-xs mb-3">menu</p>
