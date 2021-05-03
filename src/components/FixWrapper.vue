@@ -1,5 +1,5 @@
 <template>
-  <WrapGrads />
+  <WrapGrads :agency="agency" />
   <div class="slider-wrapper-top fixed flex left-18 right-18 top-11 z-10">
     <div class="menu cursor-pointer w-12.5">
       <div class="menu-content">
@@ -34,7 +34,7 @@
       <div class="h-8px w-px" style="background: #ff2e53"></div>
     </div>
     <div class="ml-65 agency">
-      <p class="font-medium text-base">
+      <p class="font-medium text-base" @mouseover="agency = true" @mouseleave="agency = false">
         Агентство простых решений сложного <br />
         цифрового мира
       </p>
@@ -115,6 +115,7 @@ export default {
   data() {
     return {
       menuHover: null,
+      agency: false
     };
   },
 };

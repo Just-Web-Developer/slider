@@ -1,5 +1,5 @@
 <template>
-  <div class="agency fixed left-8p z-10">
+  <div class="agency fixed left-8p z-10" :class="agency ? 'active' : ''">
   <div class="purple"></div>
   <div class="blue"></div>
 </div>
@@ -7,7 +7,8 @@
 
 <script>
 export default {
-  name: "WrapGrads"
+  name: "WrapGrads",
+  props: ['agency']
 };
 </script>
 
@@ -43,7 +44,7 @@ export default {
     transition: all .2s linear;
   }
 }
-.agency:hover{
+.agency.active{
   top: -10%;
   .purple{
     width: 655.02px;
