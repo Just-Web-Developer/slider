@@ -87,7 +87,7 @@
       ></div>
       <div
         @click="$emit('prevSlide')"
-        class="absolute flex bottom-0 right-0"
+        class="absolute flex bottom-0 right-0 cursor-pointer"
         style="background: transparent"
       >
         <div class="numbers flex mr-2">
