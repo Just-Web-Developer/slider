@@ -4,7 +4,7 @@
     <div id="slide-1" class="slide ml-83 pt-23.5 h-screen relative">
       <servicesScreen />
       <firstAnimation/>
-      <div class="news flex mt-18.75 ml-66 cursor-pointer">
+      <div class="news flex mt-18.75 ml-66 cursor-pointer w-max">
         <div>
           <p class="font-medium uppercase text-xxs" style="letter-spacing: 0.3em;color: #FF2E53;">HOT NEWS</p>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
