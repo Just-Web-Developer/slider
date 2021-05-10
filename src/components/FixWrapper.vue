@@ -140,7 +140,7 @@ export default {
   }
   .state-1 {
     div{
-      transition: all 0.2s linear;
+      transition: all 1s linear;
     }
     #first-strip {
       height: 1px;
@@ -187,7 +187,7 @@ export default {
   }
   .state-2{
     div{
-      transition: all 0.2s linear;
+      transition: all 1s linear;
     }
     #first-strip {
       height: 1px;
