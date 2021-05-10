@@ -39,7 +39,7 @@
         цифрового мира
       </p>
     </div>
-    <div class="connect ml-auto">
+    <div class="connect ml-auto cursor-pointer">
       <div class="connect-content flex items-center">
         <p class="uppercase font-semibold text-xsm mr-4">СВЯЗАТЬСЯ С НАМИ</p>
         <div class="plus w-12.5 h-12.5 rounded-full relative">
@@ -60,7 +60,7 @@
     </div>
   </div>
   <div class="slider-wrapper-left fixed bottom-18 left-18 top-50">
-    <div class="relative w-22.5 h-full first-state states">
+    <div class="relative w-22.5 h-full states" :class="'state-'+state">
       <div id="first-strip"></div>
       <div id="second-strip"></div>
       <div id="third-strip"></div>
@@ -104,6 +104,13 @@
       </div>
     </div>
   </div>
+  <div class="slider-wrapper-bottom fixed bottom-18 left-47p transform -translate-x-1/2 cursor-pointer" @click="$emit('nextSlide')">
+    <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 6L7 12L13 6" stroke-linejoin="round"/>
+      <path d="M6.99998 0V12" stroke-linejoin="round"/>
+    </svg>
+    <p class="text-xxs font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">SCROLL</p>
+  </div>
 </template>
 
 <script>
@@ -112,6 +119,7 @@ import WrapGrads from "@/components/WrapGrads";
 export default {
   name: "wrappers",
   components: { WrapGrads },
+  props:['state'],
   data() {
     return {
       menuHover: null,
@@ -125,13 +133,15 @@ export default {
 .slider-wrapper-left {
   .states {
     div {
-      transition: all 0.2s linear;
       position: absolute;
       left: 0;
       background: #97a3cb;
     }
   }
-  .first-state {
+  .state-1 {
+    div{
+      transition: all 0.2s linear;
+    }
     #first-strip {
       height: 1px;
       width: 33%;
@@ -173,6 +183,53 @@ export default {
       width: 11.111%;
       opacity: 0.3;
       top: 48.2404692%;
+    }
+  }
+  .state-2{
+    div{
+      transition: all 0.2s linear;
+    }
+    #first-strip {
+      height: 1px;
+      width: 33%;
+      opacity: 0.3;
+      top: 0;
+    }
+    #second-strip {
+      height: 1px;
+      width: 100%;
+      opacity: 0.3;
+      top: 15.78%;
+    }
+    #third-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.6;
+      top: 29.55%;
+    }
+    #fourth-strip {
+      height: 1px;
+      width: 22.222%;
+      opacity: 0.3;
+      top: 42.46%;
+    }
+    #fifth-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.6;
+      top: 46.19%;
+    }
+    #sixth-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 49.49%;
+    }
+    #seventh-strip {
+      height: 1px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 53.75%;
     }
   }
 }
@@ -357,6 +414,31 @@ export default {
         transform: rotate(165deg) scale(1);
       }
     }
+  }
+}
+.slider-wrapper-bottom{
+  z-index: 100;
+  svg{
+    path{
+      transition: all linear .3s;
+      stroke: rgba(151, 163, 203, 0.6);
+    }
+  }
+  p{
+    transition: all linear .3s;
+    color: rgba(151, 163, 203, 0.6);
+  }
+}
+.slider-wrapper-bottom:hover{
+  svg{
+    path{
+      transition: all linear .3s;
+      stroke: white;
+    }
+  }
+  p{
+    transition: all linear .3s;
+    color: white;
   }
 }
 </style>
