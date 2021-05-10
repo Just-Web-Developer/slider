@@ -86,6 +86,7 @@
         style="top: 43.69501466%"
       ></div>
       <div
+        @click="$emit('prevSlide')"
         class="absolute flex bottom-0 right-0"
         style="background: transparent"
       >
