@@ -52,6 +52,9 @@ export default {
       if (this.slide <= this.max){
         this.slide++
       }
+      else{
+        this.slide = 1
+      }
     },
     prevSlide(){
       if (this.slide !== 1){
