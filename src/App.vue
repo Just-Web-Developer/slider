@@ -69,6 +69,7 @@ export default {
   height: 600vh;
   position: relative;
   transition: all linear 1s;
+  top: 0;
 }
 .body.slide-1{
   top: 0;
