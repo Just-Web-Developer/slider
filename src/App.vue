@@ -76,7 +76,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   color: white;
   position: relative;
-  transition: top linear 1s;
+  transition: all linear 1s;
   top: 0;
   bottom: 0;
 }
