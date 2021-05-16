@@ -41,7 +41,7 @@ export default {
 
   }
   #hud_1{
-    animation:linear 7s infinite normal hud_4;
+    animation:linear 7s infinite normal hud_1;
   }
   @keyframes hud_1{
     0%{
@@ -52,7 +52,7 @@ export default {
     }
   }
   #hud_2{
-    animation:linear 7s infinite normal hud_4;
+    animation:linear 7s infinite normal hud_2;
   }
   @keyframes hud_2{
     0%{
@@ -63,7 +63,7 @@ export default {
     }
   }
   #hud_3{
-    animation:linear 7s infinite normal hud_4;
+    animation:linear 7s infinite normal hud_3;
   }
   @keyframes hud_3{
     0%{
