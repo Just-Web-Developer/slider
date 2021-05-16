@@ -81,12 +81,10 @@ export default {
   bottom: 0;
 }
 .body.slide-1{
-  top: 0;
-  height: 100vh;
+  margin-top: 0;
 }
 .body.slide-2{
-  top: -100vh;
-  height: 200vh;
+  margin-top: -100vh;
 }
 .body.slide-3{
   top:-200vh;
