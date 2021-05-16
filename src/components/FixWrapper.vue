@@ -71,7 +71,7 @@
       <div class="absolute left-0 h-px w-1/3 opacity-30 bottom-0"></div>
     </div>
   </div>
-  <div class="slider-wrapper-right fixed bottom-18 right-18 top-50">
+  <div class="slider-wrapper-right fixed bottom-18 right-18 top-50 z-50">
     <div class="relative w-22.5 h-full">
       <div
         class="absolute right-0 transition-all h-px w-1/3 opacity-30"
