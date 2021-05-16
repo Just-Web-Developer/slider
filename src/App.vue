@@ -1,6 +1,6 @@
 <template>
   <div class="body overflow-hidden" :class="'slide-'+slide">
-    <FixWrapper @nextSlide="nextSlide()" @prevSlide="prevSlide()" :state="slide" />
+    <FixWrapper @nextSlide="nextSlide()" @prevSlide="prevSlide()" :state="slide" class="z-50" />
     <div id="slide-1" @scroll.stop="" class="slide ml-83 pt-23.5 h-screen relative">
       <servicesScreen />
       <firstAnimation/>
