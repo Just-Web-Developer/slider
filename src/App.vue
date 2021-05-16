@@ -70,36 +70,38 @@ export default {
 
 <style lang="scss">
 #app{
+  height: 100vh;
 }
 .body{
   font-family: 'Montserrat', sans-serif;
   color: white;
   position: relative;
   transition: all linear 1s;
-  height: 700vh;
   top: 0;
   bottom: 0;
 }
 .body.slide-1{
-  bottom: 600vh;
+  top: 0;
+  height: 100vh;
 }
 .body.slide-2{
-  bottom: 500vh;
+  top: -100vh;
+  height: 200vh;
 }
 .body.slide-3{
-  bottom: 400vh;
+  top:-200vh;
 }
 .body.slide-4{
-  bottom: 300vh;
+  top:-300vh;
 }
 .body.slide-5{
-  bottom: 200vh;
+  top:-400vh;
 }
 .body.slide-6{
-  bottom: 100vh;
+  top:-500vh;
 }
 .body.slide-7{
-  bottom: 0;
+  top:-600vh;
 }
 .news{
   .right{
