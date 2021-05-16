@@ -68,7 +68,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+#app{
+  height: 100vh;
+}
 .body{
   font-family: 'Montserrat', sans-serif;
   color: white;
