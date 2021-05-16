@@ -1,5 +1,5 @@
 <template>
-  <div class="body" @scroll.prevent.self="" :class="'slide-'+slide">
+  <div class="body" @scroll.prevent.self="($event)=>{$event.preventDefault()}" :class="'slide-'+slide">
     <FixWrapper @nextSlide="nextSlide()" @prevSlide="prevSlide()" :state="slide" />
     <div id="slide-1" class="slide ml-83 pt-23.5 h-screen relative">
       <servicesScreen />
@@ -79,31 +79,24 @@ export default {
 }
 .body.slide-1{
   top: 0;
-  bottom: -600vh;
 }
 .body.slide-2{
   top:-100vh;
-  bottom: -500vh;
 }
 .body.slide-3{
   top:-200vh;
-  bottom: -400vh;
 }
 .body.slide-4{
   top:-300vh;
-  bottom: -300vh;
 }
 .body.slide-5{
   top:-400vh;
-  bottom: -200vh;
 }
 .body.slide-6{
   top:-500vh;
-  bottom: -100vh;
 }
 .body.slide-7{
   top:-600vh;
-  bottom: 0;
 }
 .news{
   .right{
