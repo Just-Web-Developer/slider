@@ -1,5 +1,5 @@
 <template>
-  <div class="body" @scroll.prevent="" :class="'slide-'+slide">
+  <div class="body" @scroll.stop="" :class="'slide-'+slide">
     <FixWrapper @nextSlide="nextSlide()" @prevSlide="prevSlide()" :state="slide" />
     <div id="slide-1" class="slide ml-83 pt-23.5 h-screen relative">
       <servicesScreen />
@@ -24,6 +24,9 @@
       <div style="z-index: -10;position: absolute;width: 1122px;height: 1122px;left: -518px;top: 107px;background: radial-gradient(50% 50% at 50% 50%, rgba(0, 133, 255, 0.2) 0%, rgba(0, 133, 255, 0) 100%);"></div>
       <div style="z-index: -10;position: absolute;width: 1122px;height: 1122px;left: -322px;top: 391px;background: radial-gradient(50% 50% at 50% 50%, rgba(242, 41, 89, 0.3) 0%, rgba(242, 41, 89, 0) 100%);"></div>
       <div style="z-index: -10;position: absolute;width: 1122px;height: 1122px;left: 101px;top: 779px;background: radial-gradient(50% 50% at 50% 50%, rgba(0, 133, 255, 0.2) 0%, rgba(0, 128, 247, 0) 100%);"></div>
+    </div>
+    <div id="slide-2" class="slide ml-83 pt-23.5 h-screen relative">
+
     </div>
   </div>
 
