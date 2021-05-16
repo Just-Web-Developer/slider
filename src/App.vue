@@ -70,7 +70,6 @@ export default {
 
 <style lang="scss">
 #app{
-  height: 100vh;
 }
 .body{
   font-family: 'Montserrat', sans-serif;
