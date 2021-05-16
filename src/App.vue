@@ -77,31 +77,30 @@ export default {
   color: white;
   position: relative;
   transition: all linear 1s;
+  height: 700vh;
   top: 0;
   bottom: 0;
 }
 .body.slide-1{
-  top: 0;
-  height: 100vh;
+  bottom: 600vh;
 }
 .body.slide-2{
-  top: -100vh;
-  height: 200vh;
+  bottom: 500vh;
 }
 .body.slide-3{
-  top:-200vh;
+  bottom: 400vh;
 }
 .body.slide-4{
-  top:-300vh;
+  bottom: 300vh;
 }
 .body.slide-5{
-  top:-400vh;
+  bottom: 200vh;
 }
 .body.slide-6{
-  top:-500vh;
+  bottom: 100vh;
 }
 .body.slide-7{
-  top:-600vh;
+  bottom: 0;
 }
 .news{
   .right{
