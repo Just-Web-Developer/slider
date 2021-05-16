@@ -82,9 +82,11 @@ export default {
 }
 .body.slide-1{
   margin-top: 0;
+  height: 100vh;
 }
 .body.slide-2{
   margin-top: -100vh;
+  height: 200vh;
 }
 .body.slide-3{
   top:-200vh;
