@@ -75,6 +75,7 @@ export default {
   position: relative;
   transition: top linear 1s;
   top: 0;
+  bottom: 0;
 }
 .body.slide-1{
   top: 0;
