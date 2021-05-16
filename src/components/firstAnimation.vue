@@ -38,18 +38,17 @@ export default {
       right: 179px;
       top: 190.94px;
     }
-    animation:linear 7s infinite normal hud;
+
   }
-  @keyframes hud{
+  #hud_4{
+    animation:linear 7s infinite normal hud_4;
+  }
+  @keyframes hud_4{
     0%{
-      #hud_4{
         transform: rotate(-118deg);
-      }
     }
     100%{
-      #hud_4{
         transform: rotate(-478deg);
-      }
     }
   }
 
