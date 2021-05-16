@@ -1,5 +1,5 @@
 <template>
-  <div class="body" @scroll.prevent.self="($event)=>{$event.preventDefault()}" :class="'slide-'+slide">
+  <div class="body" @scroll="$event.preventDefault()" :class="'slide-'+slide">
     <FixWrapper @nextSlide="nextSlide()" @prevSlide="prevSlide()" :state="slide" />
     <div id="slide-1" class="slide ml-83 pt-23.5 h-screen relative">
       <servicesScreen />
