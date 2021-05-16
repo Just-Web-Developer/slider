@@ -86,7 +86,7 @@ export default {
 }
 .body.slide-2{
   top: -100vh;
-  height: 100vh;
+  height: 200vh;
 }
 .body.slide-3{
   top:-200vh;
