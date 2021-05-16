@@ -1,15 +1,15 @@
 <template>
   <div  class="first-slide-animation">
-    <div id="hud_1" class="flex justify-end items-center  hud relative" style="transform: rotate(45deg)" >
+    <div id="hud_1" class="flex justify-end items-center  hud relative" style="transform: rotate(-7deg)" >
       <img  src="../assets/images/animation_hud/1.svg" class="absolute" style="transform: rotate(-1.3deg); width: 5.5%;" alt="">
     </div>
-    <div id="hud_2" class="flex justify-end items-center  hud absolute" >
+    <div id="hud_2" class="flex justify-end items-center  hud absolute" style="transform: rotate(56deg)" >
       <img  src="../assets/images/animation_hud/2.svg" style="transform: rotate(-71.8deg);position: relative;right: -29px; " alt="">
     </div>
-    <div id="hud_3" class="flex justify-end items-center  hud absolute" >
+    <div id="hud_3" class="flex justify-end items-center  hud absolute" style="transform: rotate(45deg)" >
       <img src="../assets/images/animation_hud/3.svg" style="position: relative;right: 2px;transform: rotate(-58deg);" alt="">
     </div>
-    <div id="hud_4" class="flex justify-end items-center  hud absolute" >
+    <div id="hud_4" class="flex justify-end items-center  hud absolute" style="transform: rotate(-118deg)">
       <img  src="../assets/images/animation_hud/4.svg" style="transform: rotate(-7deg);" alt="">
     </div>
     <video
@@ -38,51 +38,51 @@ export default {
       right: 179px;
       top: 190.94px;
     }
+  }
 
-  }
-  #hud_1{
-    animation:linear 7s infinite normal hud_1;
-  }
-  @keyframes hud_1{
-    0%{
-      transform: rotate(-7deg);
-    }
-    100%{
-      transform: rotate(-353deg);
-    }
-  }
-  #hud_2{
-    animation:linear 7s infinite normal hud_2;
-  }
-  @keyframes hud_2{
-    0%{
-      transform: rotate(56deg);
-    }
-    100%{
-      transform: rotate(-304deg);
-    }
-  }
-  #hud_3{
-    animation:linear 7s infinite normal hud_3;
-  }
-  @keyframes hud_3{
-    0%{
-      transform: rotate(45deg);
-    }
-    100%{
-      transform: rotate(-315deg);
-    }
-  }
-  #hud_4{
-    animation:linear 7s infinite normal hud_4;
-  }
-  @keyframes hud_4{
-    0%{
-        transform: rotate(-118deg);
-    }
-    100%{
-        transform: rotate(-478deg);
-    }
-  }
+  //#hud_1{
+  //  animation:linear 7s infinite normal hud_1;
+  //}
+  //@keyframes hud_1{
+  //  0%{
+  //    transform: rotate(-7deg);
+  //  }
+  //  100%{
+  //    transform: rotate(-353deg);
+  //  }
+  //}
+  //#hud_2{
+  //  animation:linear 7s infinite normal hud_2;
+  //}
+  //@keyframes hud_2{
+  //  0%{
+  //    transform: rotate(56deg);
+  //  }
+  //  100%{
+  //    transform: rotate(-304deg);
+  //  }
+  //}
+  //#hud_3{
+  //  animation:linear 7s infinite normal hud_3;
+  //}
+  //@keyframes hud_3{
+  //  0%{
+  //    transform: rotate(45deg);
+  //  }
+  //  100%{
+  //    transform: rotate(-315deg);
+  //  }
+  //}
+  //#hud_4{
+  //  animation:linear 7s infinite normal hud_4;
+  //}
+  //@keyframes hud_4{
+  //  0%{
+  //      transform: rotate(-118deg);
+  //  }
+  //  100%{
+  //      transform: rotate(-478deg);
+  //  }
+  //}
 
 </style>
