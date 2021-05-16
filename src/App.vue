@@ -1,7 +1,7 @@
 <template>
-  <div class="body" @scroll="$event.preventDefault()" :class="'slide-'+slide">
+  <div class="body" :class="'slide-'+slide">
     <FixWrapper @nextSlide="nextSlide()" @prevSlide="prevSlide()" :state="slide" />
-    <div id="slide-1" @scroll.prevent="" class="slide ml-83 pt-23.5 h-screen relative">
+    <div id="slide-1" @scroll.stop="" class="slide ml-83 pt-23.5 h-screen relative">
       <servicesScreen />
       <firstAnimation/>
       <div class="news flex mt-18.75 ml-66 cursor-pointer w-max">
