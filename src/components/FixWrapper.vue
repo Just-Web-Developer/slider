@@ -127,6 +127,7 @@ export default {
       agency: false
     };
   },
+  emits:['prevSlide', 'nextSlide']
 };
 </script>
 

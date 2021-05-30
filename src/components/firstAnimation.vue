@@ -1,16 +1,16 @@
 <template>
   <div  class="first-slide-animation">
     <div id="hud_1" class="flex justify-end items-center  hud relative" style="transform: rotate(11deg)" >
-      <img  src="../assets/images/animation_hud/1.svg" class="absolute" style="transform: rotate(-1.3deg); width: 5.5%;" alt="">
+      <img  src="../assets/images/slide_1/animation_hud/1.svg" class="absolute" style="transform: rotate(-1.3deg); width: 5.5%;" alt="">
     </div>
     <div id="hud_2" class="flex justify-end items-center  hud absolute" style="transform: rotate(56deg)" >
-      <img  src="../assets/images/animation_hud/2.svg" style="transform: rotate(-71.8deg);position: relative;right: -29px; " alt="">
+      <img  src="../assets/images/slide_1/animation_hud/2.svg" style="transform: rotate(-71.8deg);position: relative;right: -29px; " alt="">
     </div>
     <div id="hud_3" class="flex justify-end items-center  hud absolute" style="transform: rotate(45deg)" >
-      <img src="../assets/images/animation_hud/3.svg" style="position: relative;right: 2px;transform: rotate(-58deg);" alt="">
+      <img src="../assets/images/slide_1/animation_hud/3.svg" style="position: relative;right: 2px;transform: rotate(-58deg);" alt="">
     </div>
     <div id="hud_4" class="flex justify-end items-center  hud absolute" style="transform: rotate(-118deg)">
-      <img  src="../assets/images/animation_hud/4.svg" style="transform: rotate(-7deg);" alt="">
+      <img  src="../assets/images/slide_1/animation_hud/4.svg" style="transform: rotate(-7deg);" alt="">
     </div>
     <video
       class="absolute w-240 right-0 top-0 first-slide-animation"

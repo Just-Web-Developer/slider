@@ -32,7 +32,7 @@
             <div class="flex justify-between">
               <img
                 v-if="servicesClass === 'first-state'"
-                src="../../src/assets/images/service_icons/loader.svg"
+                src="../../src/assets/images/slide_1/service_icons/loader.svg"
                 class="icon transform -translate-y-9p"
                 alt=""
               />
@@ -43,21 +43,21 @@
             <div class="flex flex-col items-end">
               <p class="text-left service-items">
                 Сайты<img
-                  src="../../src/assets/images/service_icons/cross.svg"
+                  src="../../src/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
                 Приложения<img
-                  src="../../src/assets/images/service_icons/cross.svg"
+                  src="../../src/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
                 Креативы<img
-                  src="../../src/assets/images/service_icons/cross.svg"
+                  src="../../src/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
@@ -99,7 +99,7 @@
             <div class="flex justify-between">
               <img
                 v-if="servicesClass === 'second-state'"
-                src="../../src/assets/images/service_icons/globe.svg"
+                src="../../src/assets/images/slide_1/service_icons/globe.svg"
                 class="icon transform -translate-y-9p"
                 alt=""
               />
@@ -108,21 +108,21 @@
             <div class="flex flex-col items-end">
               <p class="text-left service-items">
                 Бренды<img
-                  src="../../src/assets/images/service_icons/cross.svg"
+                  src="../../src/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
                 Сайты<img
-                  src="../../src/assets/images/service_icons/cross.svg"
+                  src="../../src/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
                 Страницы<img
-                  src="../../src/assets/images/service_icons/cross.svg"
+                  src="../../src/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
@@ -164,7 +164,7 @@
             <div class="flex justify-between">
               <img
                 v-if="servicesClass === 'third-state'"
-                src="../../src/assets/images/service_icons/radio.svg"
+                src="../../src/assets/images/slide_1/service_icons/radio.svg"
                 class="icon transform -translate-y-9p"
                 alt=""
               />
@@ -175,21 +175,21 @@
             <div class="flex flex-col items-end">
               <p class="text-left service-items">
                 Бренды<img
-                  src="../../src/assets/images/service_icons/cross.svg"
+                  src="../../src/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
                 Сайты<img
-                  src="../../src/assets/images/service_icons/cross.svg"
+                  src="../../src/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
                 Страницы<img
-                  src="../../src/assets/images/service_icons/cross.svg"
+                  src="../../src/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
@@ -231,7 +231,7 @@
             <div class="flex justify-between">
               <img
                 v-if="servicesClass === 'fourth-state'"
-                src="../../src/assets/images/service_icons/pen-tool.svg"
+                src="../../src/assets/images/slide_1/service_icons/pen-tool.svg"
                 class="icon transform -translate-y-9p"
                 alt=""
               />
@@ -240,21 +240,21 @@
             <div class="flex flex-col items-end">
               <p class="text-left service-items">
                 Стратегии<img
-                  src="../../src/assets/images/service_icons/cross.svg"
+                  src="../../src/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
                 Сервисы<img
-                  src="../../src/assets/images/service_icons/cross.svg"
+                  src="../../src/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
                 Тексты<img
-                  src="../../src/assets/images/service_icons/cross.svg"
+                  src="../../src/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
@@ -296,7 +296,7 @@
             <div class="flex justify-between">
               <img
                 v-if="servicesClass === 'fifth-state'"
-                src="../../src/assets/images/service_icons/smile.svg"
+                src="../../src/assets/images/slide_1/service_icons/smile.svg"
                 class="icon transform -translate-y-9p"
                 alt=""
               />
