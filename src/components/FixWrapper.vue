@@ -40,7 +40,7 @@
       </p>
     </div>
     <div class="connect ml-auto cursor-pointer">
-      <div class="connect-content flex items-center">
+      <div class="connect-content flex justify-end items-center">
         <p class="uppercase font-semibold text-xsm mr-4">СВЯЗАТЬСЯ С НАМИ</p>
         <div class="plus w-12.5 h-12.5 rounded-full relative">
           <div
@@ -234,7 +234,107 @@ export default {
       top: 53.75%;
     }
   }
+  .state-3{
+    div{
+      transition: all 1s linear;
+    }
+    #first-strip {
+      height: 1px;
+      width: 100%;
+      opacity: 0.3;
+      top: 0;
+    }
+    #second-strip {
+      height: 1px;
+      width: 33%;
+      opacity: 0.3;
+      top: 18.115%;
+    }
+    #third-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.6;
+      top: 48.225%;
+    }
+    #fourth-strip {
+      height: 1px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 57.77%;
+    }
+    #fifth-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.6;
+      top: 59.975%;
+    }
+    #sixth-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 67.93%;
+    }
+    #seventh-strip {
+      height: 1px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 69.52%;
+    }
+  }
+  .state-4{
+    div{
+      transition: all 1s linear;
+    }
+    #first-strip {
+      height: 1px;
+      width: 100%;
+      opacity: 0.3;
+      top: 0;
+    }
+    #second-strip {
+      height: 1px;
+      width: 33%;
+      opacity: 0.3;
+      top: 8.57%;
+    }
+    #third-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.6;
+      top: 63.4%;
+    }
+    #fourth-strip {
+      height: 1px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 64.99%;
+    }
+    #fifth-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.6;
+      top: 66.34%;
+    }
+    #sixth-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 67.93%;
+    }
+    #seventh-strip {
+      height: 1px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 69.52%;
+    }
+  }
 }
+
+
+
+
+
+
 .slider-wrapper-left,
 .slider-wrapper-right {
   .absolute {
