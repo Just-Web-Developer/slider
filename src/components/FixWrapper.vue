@@ -295,37 +295,37 @@ export default {
       height: 1px;
       width: 33%;
       opacity: 0.3;
-      top: 8.57%;
+      top: 10.57%;
     }
     #third-strip {
       height: 3px;
       width: 11.111%;
       opacity: 0.6;
-      top: 63.4%;
+      top: 75.4%;
     }
     #fourth-strip {
       height: 1px;
       width: 11.111%;
       opacity: 0.3;
-      top: 64.99%;
+      top: 76.99%;
     }
     #fifth-strip {
       height: 3px;
       width: 11.111%;
       opacity: 0.6;
-      top: 66.34%;
+      top: 78.34%;
     }
     #sixth-strip {
       height: 3px;
       width: 11.111%;
       opacity: 0.3;
-      top: 67.93%;
+      top: 79.93%;
     }
     #seventh-strip {
       height: 1px;
       width: 11.111%;
       opacity: 0.3;
-      top: 69.52%;
+      top: 81.52%;
     }
   }
 }
@@ -409,6 +409,11 @@ export default {
           #0085ff 60.5%
         );
         filter: blur(60px);
+      }
+    }
+    .menu-content{
+      p{
+        letter-spacing: 0.1rem;
       }
     }
     .menu-content:hover {
