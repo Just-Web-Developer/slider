@@ -1,5 +1,5 @@
 <template>
-  <div id="slide-3" class="slide ml-83 pt-26.25 h-screen relative flex">
+  <div id="slide-3" class="slide ml-83 pt-52 h-screen relative flex">
     <div
       class="clients-left w-68 pr-2 flex flex-col pr-16"
       style="height: fit-content"
@@ -84,7 +84,7 @@
                       class="absolute top-1/2 left-1/2 transform rotate-90 -translate-x-1/2 -translate-y-1/2 w-4 h-2px"
                     ></div>
                   </div>
-                  <p class="uppercase font-semibold text-xsm">стать клиентом</p>
+                  <p class="uppercase font-semibold text-xxsm">стать клиентом</p>
                 </div>
 
                 <div class="connect-grad relative" style="z-index: -1">

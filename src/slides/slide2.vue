@@ -1,5 +1,5 @@
 <template>
-  <div id="slide-2" class="slide ml-83 mt-23.5 pt-27.5 h-screen">
+  <div id="slide-2" class="slide ml-83 pt-52 h-screen">
     <div class="relative flex" style="height: max-content">
       <div class="about w-48p">
         <p
