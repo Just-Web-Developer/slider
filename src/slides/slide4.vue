@@ -135,7 +135,6 @@ export default {
 
 .work-description,
 .company-name,
-.company-description,
 .work .next-slide-enter-active,
 .work .next-slide-leave-active,
 .work .prev-slide-enter-active,
@@ -145,7 +144,7 @@ export default {
 .prev-slide-count-enter-active,
 .prev-slide-count-leave-active,
 .text-enter-active,
-.text-leave-active, {
+.text-leave-active{
   transition: all .6s ease-in;
 }
 
@@ -170,7 +169,7 @@ export default {
 .text-enter-from,
 .text-leave-to{
   opacity: 0;
-  line-height: 0;
+  line-height: 0px;
   transform: translateY(40%);
 }
 .projects{

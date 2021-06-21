@@ -375,6 +375,53 @@ export default {
       top: 86.070%;
     }
   }
+  .state-6{
+    div{
+      transition: all 1s linear;
+    }
+    #first-strip {
+      height: 1px;
+      width: 100%;
+      opacity: 0.3;
+      top: 10.117%;
+    }
+    #second-strip {
+      height: 1px;
+      width: 33%;
+      opacity: 0.3;
+      top: 35.923%;
+    }
+    #third-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.6;
+      top: 60.85%;
+    }
+    #fourth-strip {
+      height: 1px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 81.964%;
+    }
+    #fifth-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.6;
+      top: 83.577%;
+    }
+    #sixth-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 85.483%;
+    }
+    #seventh-strip {
+      height: 1px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 87.39%;
+    }
+  }
 }
 
 

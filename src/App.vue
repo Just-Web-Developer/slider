@@ -88,6 +88,13 @@
           top: calc(400vh + 190px);
           background: radial-gradient(50% 50% at 50% 50%, rgba(0, 133, 255, 0.2) 0%, rgba(0, 133, 255, 0) 100%);">
     </div>
+    <slide6 />
+    <div class="gradient" style="z-index: -10;position: absolute;
+width: 1122px;
+height: 1122px;
+left: 1330px;
+top: calc(500vh + 335px) ;
+background: radial-gradient(50% 50% at 50% 50%, rgba(0, 133, 255, 0.2) 0%, rgba(0, 133, 255, 0) 100%);"></div>
   </div>
 </template>
 
@@ -99,6 +106,7 @@ import slide2 from "./slides/slide2";
 import slide3 from "./slides/slide3";
 import slide4 from "./slides/slide4";
 import slide5 from "./slides/slide5";
+import slide6 from "./slides/slide6";
 
 export default {
   name: "App",
@@ -108,7 +116,8 @@ export default {
     slide2,
     slide3,
     slide4,
-    slide5
+    slide5,
+    slide6
   },
   data() {
     return {
