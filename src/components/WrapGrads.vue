@@ -1,14 +1,14 @@
 <template>
-  <div class="agency fixed left-8p z-10" :class="agency ? 'active' : ''">
-  <div class="purple"></div>
-  <div class="blue"></div>
-</div>
+  <div class="agency fixed left-8p" :class="{'active': agency, 'hover': state !==7 }">
+    <div class="purple"></div>
+    <div class="blue"></div>
+  </div>
 </template>
 
 <script>
 export default {
   name: "WrapGrads",
-  props: ['agency']
+  props: ['agency', 'state']
 };
 </script>
 
@@ -20,6 +20,7 @@ export default {
   div{
     border-radius: 50%;
   }
+
   .purple {
     position: absolute;
     width: 460px;
@@ -30,7 +31,6 @@ export default {
     background: linear-gradient(321.88deg, rgba(7, 25, 61, 0) 12.53%, rgba(242, 41, 89, 0.4) 43.45%, rgba(255, 0, 0, 0.4) 60.5%);
     filter: blur(60px);
     transform: rotate(-22.14deg);
-    transition: all .2s linear;
   }
   .blue {
     position: absolute;
@@ -41,10 +41,14 @@ export default {
     background: linear-gradient(344.88deg, rgba(7, 25, 61, 0) 12.53%, rgba(0, 133, 255, 0.4) 43.45%, rgba(255, 0, 0, 0.4) 60.5%);
     filter: blur(60px);
     transform: rotate(-22.14deg);
-    transition: all .2s linear;
+  }
+  .blue, .purple{
+    transition: all .8s linear;
   }
 }
 .agency.active{
+  transform: scale(.9);
+  left: 15%;
   top: -10%;
   .purple{
     width: 655.02px;
@@ -57,6 +61,12 @@ export default {
     height: 655.02px;
     left: 692.98px;
     top: -209.73px;
+  }
+}
+.agency.hover{
+  .blue, .purple{
+    z-index: -10;
+    transition: all .3s linear;
   }
 }
 </style>

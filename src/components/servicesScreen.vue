@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-44 relative w-200 h-67.5 services" :class="servicesClass">
+  <div class="mt-45 relative w-200 h-67.5 services" :class="servicesClass">
     <div
       id="first-service"
       @mouseover="servicesClass = 'first-state'"
@@ -33,14 +33,16 @@
               <img
                 v-if="servicesClass === 'first-state'"
                 src="../../src/assets/images/slide_1/service_icons/loader.svg"
-                class="icon transform -translate-y-9p"
+                class="icon"
                 alt=""
               />
               <p class="service-name font-medium text-white uppercase">
                 создаём
               </p>
             </div>
-            <div class="flex flex-col items-end">
+            <div
+              class="flex flex-col items-end absolute right-7.5 bottom-7.5 service-list first-text"
+            >
               <p class="text-left service-items">
                 Сайты<img
                   src="../../src/assets/images/slide_1/service_icons/cross.svg"
@@ -100,12 +102,14 @@
               <img
                 v-if="servicesClass === 'second-state'"
                 src="../../src/assets/images/slide_1/service_icons/globe.svg"
-                class="icon transform -translate-y-9p"
+                class="icon"
                 alt=""
               />
               <p class="service-name font-medium text-white uppercase">ведём</p>
             </div>
-            <div class="flex flex-col items-end">
+            <div
+              class="flex flex-col items-end absolute right-7.5 bottom-7.5 service-list second-text"
+            >
               <p class="text-left service-items">
                 Бренды<img
                   src="../../src/assets/images/slide_1/service_icons/cross.svg"
@@ -165,14 +169,16 @@
               <img
                 v-if="servicesClass === 'third-state'"
                 src="../../src/assets/images/slide_1/service_icons/radio.svg"
-                class="icon transform -translate-y-9p"
+                class="icon"
                 alt=""
               />
               <p class="service-name font-medium text-white uppercase">
                 продвигаем
               </p>
             </div>
-            <div class="flex flex-col items-end">
+            <div
+              class="flex flex-col items-end absolute right-7.5 bottom-7.5 service-list third-text"
+            >
               <p class="text-left service-items">
                 Бренды<img
                   src="../../src/assets/images/slide_1/service_icons/cross.svg"
@@ -232,12 +238,14 @@
               <img
                 v-if="servicesClass === 'fourth-state'"
                 src="../../src/assets/images/slide_1/service_icons/pen-tool.svg"
-                class="icon transform -translate-y-9p"
+                class="icon"
                 alt=""
               />
               <p class="service-name font-medium text-white uppercase">пишем</p>
             </div>
-            <div class="flex flex-col items-end">
+            <div
+              class="flex flex-col items-end absolute right-7.5 bottom-7.5 service-list fourth-text"
+            >
               <p class="text-left service-items">
                 Стратегии<img
                   src="../../src/assets/images/slide_1/service_icons/cross.svg"
@@ -297,14 +305,16 @@
               <img
                 v-if="servicesClass === 'fifth-state'"
                 src="../../src/assets/images/slide_1/service_icons/smile.svg"
-                class="icon transform -translate-y-9p"
+                class="icon"
                 alt=""
               />
               <p class="service-name font-medium text-white uppercase">
                 помогаем
               </p>
             </div>
-            <div class="flex flex-col items-end">
+            <div
+              class="flex flex-col items-end absolute right-7.5 bottom-7.5 service-list fifth-text"
+            >
               <p style="line-height: 1.9375rem">Решать задачи</p>
               <p style="line-height: 1.9375rem">любой сложности</p>
             </div>
@@ -320,7 +330,7 @@ export default {
   name: "servicesScreen",
   data() {
     return {
-      servicesClass: "null-state",
+      servicesClass: "first-state",
     };
   },
 };
@@ -328,13 +338,16 @@ export default {
 
 <style lang="scss" scoped>
 .services {
+  .icon {
+    transform: translateY(-9%) rotate(0deg);
+  }
   & > div {
-    transition: all 0.30s linear;
+    transition: all 0.45s linear;
     .label {
       .service-name {
         font-size: 1.25rem;
         line-height: 2.5rem;
-        transition: all 0.30s linear;
+        transition: all 0.45s linear;
       }
       .service-items {
         line-height: 2.5rem;
@@ -351,21 +364,6 @@ export default {
       z-index: -1;
     }
   }
-  //#first-service{
-  //  background: red;
-  //}
-  //#second-service{
-  //  background: blue;
-  //}
-  //#third-service{
-  //  background: green;
-  //}
-  //#fourth-service{
-  //  background: yellow;
-  //}
-  //#fifth-service{
-  //  background: orange;
-  //}
 }
 .services.null-state {
   & > div {
@@ -396,7 +394,7 @@ export default {
 
 .services.first-state {
   & > div {
-    transition: all 0.30s linear;
+    transition: all 0.45s linear;
   }
   #first-service {
     top: 0;
@@ -439,7 +437,7 @@ export default {
 
 .services.second-state {
   & > div {
-    transition: all 0.30s linear;
+    transition: all 0.45s linear;
   }
   #first-service {
     top: 0;
@@ -482,7 +480,7 @@ export default {
 
 .services.third-state {
   & > div {
-    transition: all 0.30s linear;
+    transition: all 0.45s linear;
   }
   #first-service {
     top: 0;
@@ -525,7 +523,7 @@ export default {
 
 .services.fourth-state {
   & > div {
-    transition: all 0.30s linear;
+    transition: all 0.45s linear;
   }
   #first-service {
     top: 0;
@@ -568,7 +566,7 @@ export default {
 
 .services.fifth-state {
   & > div {
-    transition: all 0.30s linear;
+    transition: all 0.45s linear;
   }
   #first-service {
     top: 0;
@@ -613,9 +611,16 @@ export default {
 .service-count-leave-active,
 .service-hover-screen-enter-active,
 .service-hover-screen-leave-active {
-  transition: all 0.30s linear;
+  transition: all 0.45s linear;
   .icon {
-    transition: all 0.30s linear;
+    transition: all 0.45s linear;
+  }
+  .first-text,
+  .second-text,
+  .third-text,
+  .fourth-text,
+  .fifth-text {
+    transition: all 0.45s linear;
   }
 }
 
@@ -630,7 +635,27 @@ export default {
   transform: translateX(-100%);
   opacity: 0;
   .icon {
-    transform: translateY(-9%) rotate(-180deg);
+    transform: translateY(-9%) rotate(360deg);
+  }
+  .first-text {
+    right: -100%;
+    bottom: -150%;
+  }
+  .second-text {
+    right: -100%;
+    bottom: -150%;
+  }
+  .third-text {
+    right: -100%;
+    bottom: -150%;
+  }
+  .fourth-text {
+    right: -100%;
+    bottom: -150%;
+  }
+  .fifth-text {
+    right: -100%;
+    bottom: -150%;
   }
 }
 </style>

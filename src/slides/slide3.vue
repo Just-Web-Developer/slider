@@ -1,5 +1,5 @@
 <template>
-  <div id="slide-3" class="slide ml-83 pt-52 h-screen relative flex">
+  <div id="slide-3" class="slide ml-83 pt-49 h-screen relative flex">
     <div
       class="clients-left w-68 pr-2 flex flex-col pr-16"
       style="height: fit-content"
@@ -27,7 +27,7 @@
         проектов
       </p>
     </div>
-    <div class="clients-right flex flex-col">
+    <div class="clients-right mt-1 flex flex-col">
       <div class="client-slider relative" style="height: fit-content">
         <transition name="client-1">
           <div
@@ -66,15 +66,15 @@
                 />
               </div>
             </div>
-            <div class="w-1/2 flex flex-col items-center">
+            <div class="w-1/2 flex flex-col ">
               <p
-                class="mt-50p font-medium text-base w-45p"
+                class="ml-37.5 mt-50p font-medium text-base w-45p"
                 style="line-height: 1.5rem; color: #c0c5d8"
               >
                 Мы готовы быстро и легко решить все твои сложные цифровые
                 проблемы
               </p>
-              <div class="mt-auto become-client mx-auto cursor-pointer">
+              <div class="mt-auto ml-37.5 become-client  cursor-pointer">
                 <div class="connect-content flex justify-start items-center">
                   <div class="plus w-12.5 h-12.5 rounded-full mr-5 relative">
                     <div
@@ -186,6 +186,7 @@ export default {
 
 <style lang="scss" scoped>
 .client {
+  transition: all linear 0.4s;
   &.first {
     background: rgba(110, 117, 141, 0.1);
   }
@@ -196,5 +197,8 @@ export default {
   img {
     transition: all linear 0.4s;
   }
+}
+.client:hover{
+  background: #FF2E53;
 }
 </style>

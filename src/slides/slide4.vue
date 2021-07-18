@@ -1,6 +1,6 @@
 <template>
-  <div id="slide-4" class="slide ml-83 pt-52 h-screen relative flex h-125">
-    <div class="works-left w-48p flex flex-col">
+  <div id="slide-4" class="slide ml-83 pt-50 h-screen relative flex h-125">
+    <div class="works-left mt-1 w-48p flex flex-col">
       <p
         class="ml-auto text-center mb-15 uppercase text-xxs font-medium"
         style="color: rgba(110, 117, 141, 1); letter-spacing: 2px"
@@ -11,11 +11,11 @@
         <div v-for="(item, index) in works" :key="item+index" class="absolute left-0" >
           <transition :name="slideDirection + '-count'">
             <p
-              v-if="index === currsentSlide"
+              v-if="index === currentSlide"
               class="uppercase text-xxs font-medium"
               style="color: rgba(151, 163, 203, 0.6)"
             >
-              0{{ currsentSlide + 1 }}
+              0{{ currentSlide + 1 }}
             </p>
           </transition>
         </div>
@@ -24,7 +24,7 @@
         <div class="work overflow-hidden relative w-full h-125" @mouseover="hover = true" @mouseleave="hover = false" :class="{'hover': hover}" >
             <div v-for="(work, index) in works" :key="work+index" >
               <transition :name="slideDirection">
-                <div class="absolute w-full h-125 " v-if="index === currsentSlide">
+                <div class="absolute w-full h-125 " v-if="index === currentSlide">
                   <div class="relative w-full h-125">
                     <img  :src="require('../assets/images/slide_4/'+ work.image + '.png')" class="absolute left-0 top-0 right-0 h-125 slide" alt="" />
                     <img src="../assets/images/eye-circle.svg" class="w-12 h-12 absolute left-10 bottom-10 z-20 cursor-pointer" :class="index"  alt="">
@@ -38,12 +38,13 @@
       </div>
     </div>
     <div class="works-right ml-40 mt-18 w-87.5 h-125 flex flex-col">
-      <div class="work-description cursor-pointer relative mb-6" v-for="(item, index) in works" @click="changeSlide(index)"  :class="{'active': index === currsentSlide}" :key="item+index">
-        <h4 class="company-name text-base font-medium uppercase text-right " :class="{
-          'text-3.5xl font-normal mb-5': index === currsentSlide
+      <div class="work-description cursor-pointer relative mb-6" v-for="(item, index) in works" @click="changeSlide(index)"  :class="{'active': index === currentSlide}" :key="item+index">
+        <h4 class="company-name text-base text-right " :class="{
+          'text-3.5xl font-normal mb-5': index === currentSlide,
+          'font-medium': index !== currentSlide
         }">{{item.name}}</h4>
         <transition name="text">
-          <p v-if="index === currsentSlide" class="company-description text-right font-medium text-base">{{item.description}}</p>
+          <p v-if="index === currentSlide" class="company-description text-right font-medium text-base">{{item.description}}</p>
         </transition>
       </div>
       <div class="mt-auto ml-auto flex items-center projects cursor-pointer">
@@ -62,7 +63,7 @@ export default {
     return{
       slideDirection: '',
       hover:false,
-      currsentSlide:0,
+      currentSlide:0,
       works:[
         {
           image:"atlas",
@@ -99,13 +100,13 @@ export default {
   },
   methods:{
     changeSlide(index){
-      if (index > this.currsentSlide){
+      if (index > this.currentSlide){
         this.slideDirection = "next-slide"
       }
-      if (index < this.currsentSlide){
+      if (index < this.currentSlide){
         this.slideDirection = "prev-slide"
       }
-      this.currsentSlide = index
+      this.currentSlide = index
     }
   }
 };
@@ -122,11 +123,11 @@ export default {
 
 .work img.slide{
   transform: translateX(0) scale(1.05);
-  filter: brightness(70%);
+  filter: brightness(75%);
 }
 .work.hover img.slide{
   transform: translateX(0) scale(1);
-  filter: brightness(115%);
+  filter: brightness(100%);
 }
 
 .work img{
@@ -169,7 +170,7 @@ export default {
 .text-enter-from,
 .text-leave-to{
   opacity: 0;
-  line-height: 0px;
+  line-height: 1px;
   transform: translateY(40%);
 }
 .projects{
@@ -195,6 +196,10 @@ export default {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+.company-name.font-medium:hover{
+  color:rgba(255, 46, 83, 1);
 }
 
 

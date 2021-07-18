@@ -1,5 +1,5 @@
 <template>
-  <WrapGrads :agency="agency" />
+  <WrapGrads :agency="agency" :state="state" />
   <div class="slider-wrapper-top fixed flex left-18 right-18 top-11 z-10">
     <div class="menu cursor-pointer w-12.5">
       <div class="menu-content">
@@ -34,7 +34,7 @@
       <div class="h-8px w-px" style="background: #ff2e53"></div>
     </div>
     <div class="ml-65 agency">
-      <p class="font-medium text-base" @mouseover="agency = true" @mouseleave="agency = false">
+      <p class="font-medium text-base" @mouseover="agencyGradsOn" @mouseleave="agencyGradsOff">
         Агентство простых решений сложного <br />
         цифрового мира
       </p>
@@ -74,28 +74,34 @@
   <div class="slider-wrapper-right fixed bottom-18 right-18 top-50 z-50">
     <div class="relative w-22.5 h-full">
       <div
-        class="absolute right-0 transition-all h-px w-1/3 opacity-30"
-        style="top: 0"
+        class="absolute right-0 transition-all h-px w-1/3 opacity-30 top-1.5"
       ></div>
       <div
         class="absolute right-0 transition-all h-3px w-1/6 opacity-60"
-        style="top: 41.34897%"
+        style="top: 41.35%"
       ></div>
       <div
         class="absolute right-0 transition-all h-3px w-1/15 opacity-30"
-        style="top: 43.69501466%"
+        style="top: 43.695%"
       ></div>
       <div
         @click="$emit('prevSlide')"
-        class="absolute flex bottom-0 right-0 cursor-pointer"
+        class="absolute flex bottom-2.5 right-0 cursor-pointer"
         style="background: transparent"
       >
-        <div class="numbers flex mr-2">
-          <p class="text-3xl" style="line-height: 0.78">1</p>
+        <div class="numbers flex mr-2 relative w-5 ">
+          <transition name="numbers" v-for="item in 6" :key="item" >
+            <p v-if="state === item" class="text-3xl absolute" style="line-height: 0.78; background:transparent;">{{item}}</p>
+          </transition>
+            <p class="text-3xl absolute first7 left-0 " :class="state !== 7 ? 'inactive' : '' " style=" background:transparent;">7</p>
+          <transition name="second7">
+            <p v-if="state === 7" class="text-3xl absolute left-0 " style="line-height: 0.78; background:transparent;">7</p>
+          </transition>
+
         </div>
         <div class="flex flex-col">
           <div>
-            <p class="number text-xxs">7</p>
+            <p class="number text-xxs third7" :class="state !== 7 ? 'inactive' : ''">7</p>
           </div>
           <div
             class="h-px w-15px mt-1"
@@ -105,12 +111,12 @@
       </div>
     </div>
   </div>
-  <div class="slider-wrapper-bottom fixed bottom-18 left-47p transform -translate-x-1/2 cursor-pointer" @click="$emit('nextSlide')">
-    <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div class="slider-wrapper-bottom fixed bottom-18 transform transition cursor-pointer" style="left: 44.8%" @click="$emit('nextSlide')">
+    <svg width="14" class="transform transition duration-800" :class="state === 7 ? 'rotate-180' : ''" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M1 6L7 12L13 6" stroke-linejoin="round"/>
       <path d="M6.99998 0V12" stroke-linejoin="round"/>
     </svg>
-    <p class="text-xxs font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">SCROLL</p>
+    <p class="text-xxs font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">{{ state !== 7 ? 'Scroll' : 'back to top' }}</p>
   </div>
 </template>
 
@@ -127,7 +133,28 @@ export default {
       agency: false
     };
   },
-  emits:['prevSlide', 'nextSlide']
+  emits:['prevSlide', 'nextSlide'],
+  methods:{
+    agencyGradsOn(){
+      this.agency = true
+    },
+    agencyGradsOff(){
+      if(this.state === 7 ){
+        return
+      }
+      this.agency = false
+    }
+  },
+  watch:{
+    state(){
+      if (this.state === 7){
+        this.agency = true
+      }
+      else{
+        this.agency = false
+      }
+    }
+  }
 };
 </script>
 
@@ -142,7 +169,7 @@ export default {
   }
   .state-1 {
     div{
-      transition: all 1s linear;
+      transition: all .8s linear;
     }
     #first-strip {
       height: 1px;
@@ -189,7 +216,7 @@ export default {
   }
   .state-2{
     div{
-      transition: all 1s linear;
+      transition: all .8s linear;
     }
     #first-strip {
       height: 1px;
@@ -236,7 +263,7 @@ export default {
   }
   .state-3{
     div{
-      transition: all 1s linear;
+      transition: all .8s linear;
     }
     #first-strip {
       height: 1px;
@@ -283,7 +310,7 @@ export default {
   }
   .state-4{
     div{
-      transition: all 1s linear;
+      transition: all .8s linear;
     }
     #first-strip {
       height: 1px;
@@ -330,7 +357,7 @@ export default {
   }
   .state-5{
     div{
-      transition: all 1s linear;
+      transition: all .8s linear;
     }
     #first-strip {
       height: 1px;
@@ -377,7 +404,7 @@ export default {
   }
   .state-6{
     div{
-      transition: all 1s linear;
+      transition: all .8s linear;
     }
     #first-strip {
       height: 1px;
@@ -422,11 +449,92 @@ export default {
       top: 87.39%;
     }
   }
+  .state-7{
+    div{
+      transition: all .8s linear;
+    }
+    #first-strip {
+      height: 1px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 0%;
+    }
+    #second-strip {
+      height: 1px;
+      width: 27.777%;
+      opacity: 0.3;
+      top: 2.639%;
+    }
+    #third-strip {
+      height: 3px;
+      width: 49.999%;
+      opacity: 0.6;
+      top: 10.41%;
+    }
+    #fourth-strip {
+      height: 1px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 26.686%;
+    }
+    #fifth-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.6;
+      top: 46.627%;
+    }
+    #sixth-strip {
+      height: 3px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 56.451%;
+    }
+    #seventh-strip {
+      height: 1px;
+      width: 11.111%;
+      opacity: 0.3;
+      top: 59.82%;
+    }
+  }
 }
 
 
 
+.slider-wrapper-right{
+  .numbers-enter-active,
+  .numbers-leave-active,
+  .second7-enter-active,
+  .second7-leave-active{
+    transition: all .8s linear;
+  }
 
+  .numbers-enter-from,
+  .numbers-leave-to{
+    opacity: 0;
+  }
+  .first7{
+    line-height: 1.56rem;
+    transition: all linear .8s;
+  }
+  .first7.inactive{
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    left: 1.8rem;
+  }
+  .second7-enter-from,
+  .second7-leave-to{
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    left: 3.6rem;
+  }
+  .third7{
+    transition: all linear .8s;
+    opacity: 1;
+  }
+  .third7.inactive{
+    opacity: 0;
+  }
+}
 
 
 .slider-wrapper-left,
@@ -565,6 +673,7 @@ export default {
           #ff0000 60.5%
         );
         filter: blur(60px);
+        z-index: 1;
       }
       #grad-2 {
         position: absolute;
@@ -575,6 +684,7 @@ export default {
         transform: rotate(165deg) scale(0);
         background: linear-gradient(209.3deg, #7b61ff -2.55%, #7b61ff 64.59%);
         filter: blur(60px);
+        z-index: 2;
       }
       #grad-3 {
         position: absolute;
@@ -590,6 +700,7 @@ export default {
         );
         opacity: 0.7;
         filter: blur(60px);
+        z-index: 1;
       }
     }
     .connect-content:hover {

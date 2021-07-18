@@ -1,15 +1,15 @@
 <template>
   <div  class="first-slide-animation">
-    <div id="hud_1" class="flex justify-end items-center  hud relative" style="transform: rotate(11deg)" >
-      <img  src="../assets/images/slide_1/animation_hud/1.svg" class="absolute" style="transform: rotate(-1.3deg); width: 5.5%;" alt="">
+    <div id="hud_1" class="flex justify-end items-center  hud relative" style="transform: rotate(22deg)" >
+      <img  src="../assets/images/slide_1/animation_hud/1.svg" class="absolute" style="transform: rotate(-1.4deg); width: 6%;" alt="">
     </div>
-    <div id="hud_2" class="flex justify-end items-center  hud absolute" style="transform: rotate(56deg)" >
-      <img  src="../assets/images/slide_1/animation_hud/2.svg" style="transform: rotate(-71.8deg);position: relative;right: -29px; " alt="">
+    <div id="hud_2" class="flex justify-end items-center  hud absolute" style="transform: rotate(71deg)" >
+      <img  src="../assets/images/slide_1/animation_hud/2.svg" style="transform: rotate(-70deg);position: relative;right: -29px; " alt="">
     </div>
-    <div id="hud_3" class="flex justify-end items-center  hud absolute" style="transform: rotate(45deg)" >
+    <div id="hud_3" class="flex justify-end items-center  hud absolute" style="transform: rotate(60deg)" >
       <img src="../assets/images/slide_1/animation_hud/3.svg" style="position: relative;right: 2px;transform: rotate(-58deg);" alt="">
     </div>
-    <div id="hud_4" class="flex justify-end items-center  hud absolute" style="transform: rotate(-118deg)">
+    <div id="hud_4" class="flex justify-end items-center  hud absolute" style="transform: rotate(-115deg)">
       <img  src="../assets/images/slide_1/animation_hud/4.svg" style="transform: rotate(-7deg);" alt="">
     </div>
     <video
@@ -45,34 +45,35 @@ export default {
   }
   @keyframes hud_1{
     0%{
-      transform: rotate(11deg);
+      transform: rotate(22deg);
     }
     15%{
-      transform: rotate(11deg);
+      transform: rotate(22deg);
     }
-    35%{
-      transform: rotate(11deg);
+    //1-2
+    31%{
+      transform: rotate(22deg);
     }
-    40%{
-      transform: rotate(-70deg);
+    42%{
+      transform: rotate(-64deg);
     }
-    55%{
-      transform: rotate(-70deg);
+    47%{
+      transform: rotate(-64deg);
     }
-    60%{
-      transform: rotate(-220deg);
+    58%{
+      transform: rotate(-211deg);
     }
-    75%{
-      transform: rotate(-220deg);
+    73%{
+      transform: rotate(-211deg);
     }
-    80%{
+    84%{
       transform: rotate(-300deg);
     }
-    95%{
+    89%{
       transform: rotate(-300deg);
     }
     100%{
-      transform: rotate(-349deg);
+      transform: rotate(-338deg);
     }
   }
   #hud_2{
@@ -80,32 +81,32 @@ export default {
   }
   @keyframes hud_2{
     0%{
-      transform: rotate(56deg);
+      transform: rotate(71deg);
     }
     15%{
-      transform: rotate(56deg);
+      transform: rotate(71deg);
     }
-    35%{
-      transform: rotate(56deg);
+    31%{
+      transform: rotate(71deg);
     }
-    40%{
-      transform: rotate(-25deg);
+    42%{
+      transform: rotate(-15deg);
     }
     55%{
-      transform: rotate(-25deg);
+      transform: rotate(-15deg);
     }
     75%{
-      transform: rotate(-25deg);
+      transform: rotate(-15deg);
     }
     80%{
-      transform: rotate(-105deg);
+      transform: rotate(-125deg);
     }
     95%{
-      transform: rotate(-105deg);
+      transform: rotate(-125deg);
     }
 
     100%{
-      transform: rotate(-304deg);
+      transform: rotate(-289deg);
     }
   }
   #hud_3{
@@ -113,32 +114,32 @@ export default {
   }
   @keyframes hud_3{
     0%{
-      transform: rotate(45deg);
+      transform: rotate(60deg);
     }
     15%{
-      transform: rotate(45deg);
+      transform: rotate(60deg);
     }
     35%{
-      transform: rotate(45deg);
+      transform: rotate(60deg);
     }
     40%{
-      transform: rotate(-36deg);
+      transform: rotate(-26deg);
     }
     55%{
-      transform: rotate(-36deg);
+      transform: rotate(-26deg);
     }
     75%{
-      transform: rotate(-36deg);
+      transform: rotate(-26deg);
     }
     80%{
-      transform: rotate(-116deg);
+      transform: rotate(-136deg);
     }
     95%{
-      transform: rotate(-116deg);
+      transform: rotate(-136deg);
     }
 
     100%{
-      transform: rotate(-315deg);
+      transform: rotate(-300deg);
     }
   }
   #hud_4{
@@ -146,35 +147,34 @@ export default {
   }
   @keyframes hud_4{
     0%{
-      transform: rotate(-118deg);
+      transform: rotate(-115deg);
     }
     15%{
-      transform: rotate(-118deg);
+      transform: rotate(-115deg);
     }
     20%{
-      transform: rotate(-282deg);
+      transform: rotate(-267deg);
     }
     35%{
-      transform: rotate(-282deg);
+      transform: rotate(-267deg);
     }
     40%{
-      transform: rotate(-363deg);
+      transform: rotate(-353deg);
     }
     55%{
-      transform: rotate(-363deg);
+      transform: rotate(-353deg);
     }
     75%{
-      transform: rotate(-363deg);
+      transform: rotate(-353deg);
     }
     80%{
-      transform: rotate(-443deg);
+      transform: rotate(-463deg);
     }
     95%{
-      transform: rotate(-443deg);
+      transform: rotate(-463deg);
     }
-
     100%{
-        transform: rotate(-478deg);
+        transform: rotate(-475deg);
     }
   }
 

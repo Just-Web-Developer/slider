@@ -1,5 +1,5 @@
 <template>
-  <div class="body overflow-hidden" :class="'slide-' + slide">
+  <div class="body overflow-hidden" :class="'slide-' + slide" @wheel="scrollingWheel($event)">
     <FixWrapper
       @nextSlide="nextSlide()"
       @prevSlide="prevSlide()"
@@ -43,48 +43,36 @@
       ></div>
     </div>
     <slide2 />
-    <div class="gradient"
+    <div class="gradient" :class="'grad-slide-'+slide" id="grad-3-4"
       style="
         z-index: -10;
-        transition: all linear 1s;
+        transition: all linear .8s;
         position: absolute;
         width: 1122px;
         height: 1122px;
         left: 1200px;
-        top: 145.913vh;
+
         background: radial-gradient(50% 50% at 50% 50%,rgba(255, 46, 83, 0.3) 0%,rgba(255, 46, 83, 0) 100%);
       "
     ></div>
     <slide3 :clientSlide="slide3.clientSlide" />
-    <div class="gradient"
-      style="
+    <transition name="gradient">
+      <div v-if="slide === 3" class="gradient blue-grad-3"
+           style="
         z-index: -10;
-        position: absolute;
         width: 1122px;
         height: 1122px;
-        left: -266px;
-        top: calc(200vh + 225px);
         background: radial-gradient(50% 50% at 50% 50%,rgba(0, 133, 255, 0.2) 0%,rgba(0, 133, 255, 0) 100%);
       "
-    ></div>
-    <div class="gradient"
-      style="
-        z-index: -10;
-        position: absolute;
-        width: 1122px;
-        height: 1122px;
-        left: 1200px;
-        top: calc(300vh - 325px);
-        background: radial-gradient(50% 50% at 50% 50%,rgba(255, 46, 83, 0.2) 0%,rgba(255, 46, 83, 0) 100%);
-      "
-    ></div>
+      ></div>
+    </transition>
+
     <slide4 />
     <slide5 />
-    <div class="gradient"
+    <div class="gradient blue-grad-5" :class="slide > 5 ? 'unactive' : ''"
          style="z-index: -10; position: absolute;
           width: 1122px;
           height: 1122px;
-          left: -495px;
           top: calc(400vh + 190px);
           background: radial-gradient(50% 50% at 50% 50%, rgba(0, 133, 255, 0.2) 0%, rgba(0, 133, 255, 0) 100%);">
     </div>
@@ -95,6 +83,7 @@ height: 1122px;
 left: 1330px;
 top: calc(500vh + 335px) ;
 background: radial-gradient(50% 50% at 50% 50%, rgba(0, 133, 255, 0.2) 0%, rgba(0, 133, 255, 0) 100%);"></div>
+    <slide7 />
   </div>
 </template>
 
@@ -107,6 +96,7 @@ import slide3 from "./slides/slide3";
 import slide4 from "./slides/slide4";
 import slide5 from "./slides/slide5";
 import slide6 from "./slides/slide6";
+import slide7 from "./slides/slide7";
 
 export default {
   name: "App",
@@ -117,38 +107,59 @@ export default {
     slide3,
     slide4,
     slide5,
-    slide6
+    slide6,
+    slide7
   },
   data() {
     return {
-      slide: 5,
+      slide: 1,
       max: 7,
       slide3: {
         clientSlide: 1,
       },
+      scrolling:false
     };
   },
   methods: {
     nextSlide() {
-      if (this.slide === 3 && this.slide3.clientSlide === 1) {
-        this.slide3.clientSlide = 2;
+      if (this.scrolling){
         return;
       }
-      if (this.slide <= this.max) {
+      this.scrolling = true
+      if (this.slide === 3 && this.slide3.clientSlide === 1) {
+
+        this.slide3.clientSlide = 2;
+        setTimeout(() => this.scrolling = false, 800)
+        return;
+      }
+      if (this.slide < this.max) {
         this.slide++;
-      } else {
+      }
+      else {
         this.slide = 1;
       }
+      setTimeout(() => this.scrolling = false, 800)
     },
     prevSlide() {
+      if (this.scrolling){
+        return;
+      }
+      this.scrolling = true
       if (this.slide === 3 && this.slide3.clientSlide === 2) {
         this.slide3.clientSlide = 1;
+        setTimeout(() => this.scrolling = false, 800)
         return;
       }
       if (this.slide !== 1) {
+        this.scrolling = true
         this.slide--;
+        setTimeout(() => this.scrolling = false, 800)
       }
     },
+    scrollingWheel(e){
+      if (e.deltaY > 0){this.nextSlide()}
+      if (e.deltaY < 0){this.prevSlide()}
+    }
   },
 };
 </script>
@@ -161,7 +172,7 @@ export default {
   font-family: "Montserrat", sans-serif;
   color: white;
   position: relative;
-  transition: all linear 1s;
+  transition: all linear .8s;
   top: 0;
   bottom: 0;
 }
@@ -194,11 +205,21 @@ export default {
   height: 700vh;
 }
 
-//1 slide
+.grad-slide-2,.grad-slide-3{
+  top: calc(100vh + 504px);
+}
+.grad-slide-4,.grad-slide-5{
+  top: calc(200vh + 504px);
+}
 
-//2 slide
-
-//3 slide
+.blue-grad-5{
+  transition: all linear .8s;
+  left: -495px;
+}
+.blue-grad-5.unactive{
+  transition: all linear .8s;
+  left: -100%;
+}
 
 .client:hover {
   background: rgba(255, 46, 83, 1);
@@ -213,12 +234,31 @@ export default {
   background: rgba(255, 46, 83, 1);
 }
 
+.blue-grad-3{
+  left: -266px;
+  top: calc(200vh + 225px);
+  position: absolute;
+}
+
 .client-1-enter-active,
 .client-1-leave-active,
 .client-2-enter-active,
-.client-2-leave-active {
+.client-2-leave-active{
   transition: all 0.8s linear;
 }
+
+.gradient-enter-active,
+.gradient-leave-active{
+  transition: left linear .8s;
+}
+
+.gradient-enter-from,
+.gradient-leave-to{
+  top: 225px;
+  position: fixed;
+  left: 100vw;
+}
+
 
 .client-1-enter-from,
 .client-1-leave-to {

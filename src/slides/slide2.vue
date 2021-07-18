@@ -1,9 +1,9 @@
 <template>
-  <div id="slide-2" class="slide ml-83 pt-52 h-screen">
+  <div id="slide-2" class="slide ml-83 pt-50 h-screen">
     <div class="relative flex" style="height: max-content">
-      <div class="about w-48p">
+      <div class="about w-48.3p">
         <p
-          class="uppercase text-xxs font-medium mb-30"
+          class="uppercase text-xxs font-medium mb-22"
           style="color: rgba(110, 117, 141, 1); letter-spacing: 2px"
         >
           about
@@ -40,7 +40,7 @@
         >
           READY FOR USE PRODUCTS
         </p>
-        <div class="stack-slider relative overflow-y-hidden h-70p mt-16.5">
+        <div class="stack-slider relative overflow-y-hidden h-70p mt-12.5">
           <div
             class="relative h-full"
             style="transition: all linear 0.5s"
@@ -57,7 +57,7 @@
                     index === stackState + 1 ||
                     index === stackState + 2
                   "
-                  class="flex stack-slide absolute h-1/3 items-center"
+                  class="flex stack-slide absolute h-1/3 py-4 items-center"
                   :style="'top:' + index * 33.3 + '%'"
                 >
                   <img
@@ -66,7 +66,7 @@
                         stackSlide.image +
                         '.svg')
                     "
-                    class="h-19 w-19 p-4 rounded-full"
+                    class="h-19 w-19 p-3.75 rounded-full"
                     style="background: rgba(110, 117, 141, 0.2)"
                     alt=""
                   />
@@ -81,7 +81,7 @@
             </template>
           </div>
         </div>
-        <div class="mt-auto flex">
+        <div class="mt-12 flex">
           <img
             class="stack-arrow cursor-pointer transform rotate-90 p-2.5 rounded-full w-10 h-10"
             @click="stackPrev()"

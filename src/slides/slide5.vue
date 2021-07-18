@@ -1,6 +1,6 @@
 <template>
-  <div id="slide-5" class="slide ml-83 pt-52 h-screen relative flex h-125">
-    <div class="about-left w-48p flex flex-col">
+  <div id="slide-5" class="slide ml-83 pt-50 h-screen relative flex h-125">
+    <div class="about-left w-47.8p flex flex-col">
       <div class="flex justify-between">
         <img src="../assets/images/talk.svg" class="w-9 h-9" alt="">
         <p
@@ -9,13 +9,13 @@
           AGENCY
         </p>
       </div>
-      <p class="text-xxl font-medium text-justify text mt-25">“Я работал со многими агентствами, брендами и направлениями. И понял одно – креативных и классных много, но тех, кто сможет лишить тебя головной боли – единицы. Мое главное правило в работе – не растягивать на года то, что можно сделать быстро и не менее круто. Не грузить техническими моментами, а разговаривать на одном языке и решать проблемы так, чтобы всё максимально автоматизировать. Собрал команду, которая разделяет мои взгляды”</p>
+      <p class="text-xxl font-medium text-justify text mt-17">“Я работал со многими агентствами, брендами и направлениями. И понял одно – креативных и классных много, но тех, кто сможет лишить тебя головной боли – единицы. Мое главное правило в работе – не растягивать на года то, что можно сделать быстро и не менее круто. Не грузить техническими моментами, а разговаривать на одном языке и решать проблемы так, чтобы всё максимально автоматизировать. Собрал команду, которая разделяет мои взгляды”</p>
       <div class="mt-37.5 flex items-center agency cursor-pointer">
         <img src="../assets/images/cross.svg" class="w-14 h-14  p-4 rounded-full border-2 " alt="">
         <p class="text-right font-medium text-sm uppercase ml-4">агентство</p>
       </div>
     </div>
-    <div class="about-right ml-42 pt-34 w-87.5 overflow-hidden flex flex-col">
+    <div class="about-right ml-42 pt-27.5 w-87.5 overflow-hidden flex flex-col">
       <div class="flex items-center links cursor-pointer">
         <img src="../assets/images/wiki.svg" class="w-14 h-14  p-4 rounded-full border-2 " alt="">
         <p class="text-right font-medium text-sm uppercase ml-4">о максе на wikipedia</p>
