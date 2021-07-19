@@ -342,12 +342,12 @@ export default {
     transform: translateY(-9%) rotate(0deg);
   }
   & > div {
-    transition: all 0.45s linear;
+    transition: all 0.35s linear;
     .label {
       .service-name {
         font-size: 1.25rem;
         line-height: 2.5rem;
-        transition: all 0.45s linear;
+        transition: all 0.35s linear;
       }
       .service-items {
         line-height: 2.5rem;
@@ -394,7 +394,7 @@ export default {
 
 .services.first-state {
   & > div {
-    transition: all 0.45s linear;
+    transition: all 0.35s linear;
   }
   #first-service {
     top: 0;
@@ -437,7 +437,7 @@ export default {
 
 .services.second-state {
   & > div {
-    transition: all 0.45s linear;
+    transition: all 0.35s linear;
   }
   #first-service {
     top: 0;
@@ -480,7 +480,7 @@ export default {
 
 .services.third-state {
   & > div {
-    transition: all 0.45s linear;
+    transition: all 0.35s linear;
   }
   #first-service {
     top: 0;
@@ -523,7 +523,7 @@ export default {
 
 .services.fourth-state {
   & > div {
-    transition: all 0.45s linear;
+    transition: all 0.35s linear;
   }
   #first-service {
     top: 0;
@@ -566,7 +566,7 @@ export default {
 
 .services.fifth-state {
   & > div {
-    transition: all 0.45s linear;
+    transition: all 0.35s linear;
   }
   #first-service {
     top: 0;
@@ -611,16 +611,16 @@ export default {
 .service-count-leave-active,
 .service-hover-screen-enter-active,
 .service-hover-screen-leave-active {
-  transition: all 0.45s linear;
+  transition: all 0.35s linear;
   .icon {
-    transition: all 0.45s linear;
+    transition: all 0.35s linear;
   }
   .first-text,
   .second-text,
   .third-text,
   .fourth-text,
   .fifth-text {
-    transition: all 0.45s linear;
+    transition: all 0.35s linear;
   }
 }
 

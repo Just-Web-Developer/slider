@@ -21,10 +21,10 @@
         <div class="purple-s"></div>
       </div>
     </div>
-    <div class="max-frai ml-52.5">
+    <div class="max-frai ml-52.5 relative z-70">
       <img src="@/assets/images/max-frai.svg" class="w-full" alt="" />
       <p
-        class="uppercase inter font-bold mt-4"
+        class="uppercase inter font-bold mt-4 text-xxs"
         style="color: #ff2e53; letter-spacing: 1rem; line-height: 1"
       >
         AGENCY
@@ -33,14 +33,14 @@
     <div class="ml-27 h-full mt-auto">
       <div class="h-8px w-px" style="background: #ff2e53"></div>
     </div>
-    <div class="ml-65 agency">
+    <div class="ml-65 agency  relative z-70">
       <p class="font-medium text-base" @mouseover="agencyGradsOn" @mouseleave="agencyGradsOff">
         Агентство простых решений сложного <br />
         цифрового мира
       </p>
     </div>
-    <div class="connect ml-auto cursor-pointer">
-      <div class="connect-content flex justify-end items-center">
+    <div @click="$emit('contact')" class="connect ml-auto cursor-pointer relative z-70">
+      <div class="connect-content flex justify-end items-center  ">
         <p class="uppercase font-semibold text-xsm mr-4">СВЯЗАТЬСЯ С НАМИ</p>
         <div class="plus w-12.5 h-12.5 rounded-full relative">
           <div
@@ -111,7 +111,7 @@
       </div>
     </div>
   </div>
-  <div class="slider-wrapper-bottom fixed bottom-18 transform transition cursor-pointer" style="left: 44.8%" @click="$emit('nextSlide')">
+  <div class="slider-wrapper-bottom fixed bottom-18 transform transition cursor-pointer z-50" style="left: 44.8%" @click="$emit('nextSlide')">
     <svg width="14" class="transform transition duration-800" :class="state === 7 ? 'rotate-180' : ''" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M1 6L7 12L13 6" stroke-linejoin="round"/>
       <path d="M6.99998 0V12" stroke-linejoin="round"/>
@@ -133,7 +133,7 @@ export default {
       agency: false
     };
   },
-  emits:['prevSlide', 'nextSlide'],
+  emits:['prevSlide', 'nextSlide', 'contact'],
   methods:{
     agencyGradsOn(){
       this.agency = true
@@ -729,7 +729,6 @@ export default {
   }
 }
 .slider-wrapper-bottom{
-  z-index: 100;
   svg{
     path{
       transition: all linear .3s;

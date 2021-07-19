@@ -1,10 +1,16 @@
 <template>
+
   <div class="body overflow-hidden" :class="'slide-' + slide" @wheel="scrollingWheel($event)">
+    <transition name="contacts">
+      <contact @wheel.passive.stop v-if="contactActive" @closeContacts="contactActive = false"/>
+    </transition>
     <FixWrapper
       @nextSlide="nextSlide()"
       @prevSlide="prevSlide()"
+      @contact="contactActive = true"
       :state="slide"
       class="z-50"
+
     />
     <slide1 />
     <div class="gradient">
@@ -66,7 +72,6 @@
       "
       ></div>
     </transition>
-
     <slide4 />
     <slide5 />
     <div class="gradient blue-grad-5" :class="slide > 5 ? 'unactive' : ''"
@@ -97,6 +102,7 @@ import slide4 from "./slides/slide4";
 import slide5 from "./slides/slide5";
 import slide6 from "./slides/slide6";
 import slide7 from "./slides/slide7";
+import contact from "./components/contact";
 
 export default {
   name: "App",
@@ -108,7 +114,8 @@ export default {
     slide4,
     slide5,
     slide6,
-    slide7
+    slide7,
+    contact
   },
   data() {
     return {
@@ -117,7 +124,8 @@ export default {
       slide3: {
         clientSlide: 1,
       },
-      scrolling:false
+      scrolling:false,
+      contactActive:false
     };
   },
   methods: {
@@ -354,5 +362,18 @@ export default {
       transform: rotate(165deg) scale(1);
     }
   }
+}
+
+.contacts-enter-active,
+.contacts-leave-active{
+  transition:all .3s linear ;
+}
+.contacts-enter-to,
+.contacts-leave-from{
+  left: 0;
+}
+.contacts-enter-from,
+.contacts-leave-to{
+  left: 100vw;
 }
 </style>
