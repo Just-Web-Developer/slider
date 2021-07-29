@@ -74,8 +74,8 @@
                 Мы готовы быстро и легко решить все твои сложные цифровые
                 проблемы
               </p>
-              <div class="mt-auto ml-37.5 become-client  cursor-pointer">
-                <div class="connect-content flex justify-start items-center">
+              <div class="mt-auto ml-37.5 become-client  " >
+                <div class="connect-content flex cursor-pointer justify-start items-center" @click="$emit('contact')">
                   <div class="plus w-12.5 h-12.5 rounded-full mr-5 relative">
                     <div
                       class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-2px"
@@ -123,6 +123,7 @@
 export default {
   name: "slide3",
   props: ["clientSlide"],
+  emits:['contact'],
   data() {
     return {
       clientSlider: [

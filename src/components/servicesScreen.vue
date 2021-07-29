@@ -33,7 +33,7 @@
               <img
                 v-if="servicesClass === 'first-state'"
                 src="../../src/assets/images/slide_1/service_icons/loader.svg"
-                class="icon"
+                class="icon h-10"
                 alt=""
               />
               <p class="service-name font-medium text-white uppercase">
@@ -102,7 +102,7 @@
               <img
                 v-if="servicesClass === 'second-state'"
                 src="../../src/assets/images/slide_1/service_icons/globe.svg"
-                class="icon"
+                class="icon h-10"
                 alt=""
               />
               <p class="service-name font-medium text-white uppercase">ведём</p>
@@ -169,7 +169,7 @@
               <img
                 v-if="servicesClass === 'third-state'"
                 src="../../src/assets/images/slide_1/service_icons/radio.svg"
-                class="icon"
+                class="icon h-10"
                 alt=""
               />
               <p class="service-name font-medium text-white uppercase">
@@ -238,7 +238,7 @@
               <img
                 v-if="servicesClass === 'fourth-state'"
                 src="../../src/assets/images/slide_1/service_icons/pen-tool.svg"
-                class="icon"
+                class="icon h-10"
                 alt=""
               />
               <p class="service-name font-medium text-white uppercase">пишем</p>
@@ -305,7 +305,7 @@
               <img
                 v-if="servicesClass === 'fifth-state'"
                 src="../../src/assets/images/slide_1/service_icons/smile.svg"
-                class="icon"
+                class="icon h-10"
                 alt=""
               />
               <p class="service-name font-medium text-white uppercase">
@@ -330,7 +330,7 @@ export default {
   name: "servicesScreen",
   data() {
     return {
-      servicesClass: "first-state",
+      servicesClass: "null-state",
     };
   },
 };

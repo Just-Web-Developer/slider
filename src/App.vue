@@ -1,131 +1,89 @@
 <template>
 
-  <div class="body overflow-hidden" :class="'slide-' + slide" @wheel="scrollingWheel($event)">
+  <div class="body overflow-hidden" :class="'slide-' + windows[content].slide" @wheel="scrollingWheel($event)">
     <transition name="contacts">
-      <contact @wheel.passive.stop v-if="contactActive" @closeContacts="contactActive = false"/>
+      <contact @wheel.passive.stop class="contact" :slide="windows[content].slide" v-if="contactActive" @closeContacts="contactActive = false"/>
+    </transition>
+    <transition name="menu">
+      <Menu
+        @wheel.passive.stop
+        class="menu"
+        :slide="windows[content].slide"
+        :language="lang"
+        v-if="menuActive"
+        @closeContacts="menuActive = false"
+        @setNavRoute="setRoute($event)"
+        @setLang="lang = $event"
+      />
     </transition>
     <FixWrapper
       @nextSlide="nextSlide()"
       @prevSlide="prevSlide()"
       @contact="contactActive = true"
-      :state="slide"
+      @openMenu="menuActive = !menuActive"
+      :state="windows.main.slide"
+      :menu="menuActive"
+      :main="content === 'main'"
       class="z-50"
 
     />
-    <slide1 />
-    <div class="gradient">
-      <div
-        style="
-          z-index: -10;
-          position: absolute;
-          width: 1122px;
-          height: 1122px;
-          left: -518px;
-          top: 107px;
-          background: radial-gradient(50% 50% at 50% 50%,rgba(0, 133, 255, 0.2) 0%,rgba(0, 133, 255, 0) 100%);
-        "
-      ></div>
-      <div
-        style="
-          z-index: -10;
-          position: absolute;
-          width: 1122px;
-          height: 1122px;
-          left: -322px;
-          top: 391px;
-          background: radial-gradient(50% 50% at 50% 50%,rgba(242, 41, 89, 0.3) 0%,rgba(242, 41, 89, 0) 100%);
-        "
-      ></div>
-      <div
-        style="
-          z-index: -10;
-          position: absolute;
-          width: 1122px;
-          height: 1122px;
-          left: 101px;
-          top: 779px;
-          background: radial-gradient(50% 50% at 50% 50%,rgba(0, 133, 255, 0.2) 0%,rgba(0, 128, 247, 0) 100%);
-        "
-      ></div>
-    </div>
-    <slide2 />
-    <div class="gradient" :class="'grad-slide-'+slide" id="grad-3-4"
-      style="
-        z-index: -10;
-        transition: all linear .8s;
-        position: absolute;
-        width: 1122px;
-        height: 1122px;
-        left: 1200px;
 
-        background: radial-gradient(50% 50% at 50% 50%,rgba(255, 46, 83, 0.3) 0%,rgba(255, 46, 83, 0) 100%);
-      "
-    ></div>
-    <slide3 :clientSlide="slide3.clientSlide" />
-    <transition name="gradient">
-      <div v-if="slide === 3" class="gradient blue-grad-3"
-           style="
-        z-index: -10;
-        width: 1122px;
-        height: 1122px;
-        background: radial-gradient(50% 50% at 50% 50%,rgba(0, 133, 255, 0.2) 0%,rgba(0, 133, 255, 0) 100%);
-      "
-      ></div>
-    </transition>
-    <slide4 />
-    <slide5 />
-    <div class="gradient blue-grad-5" :class="slide > 5 ? 'unactive' : ''"
-         style="z-index: -10; position: absolute;
-          width: 1122px;
-          height: 1122px;
-          top: calc(400vh + 190px);
-          background: radial-gradient(50% 50% at 50% 50%, rgba(0, 133, 255, 0.2) 0%, rgba(0, 133, 255, 0) 100%);">
-    </div>
-    <slide6 />
-    <div class="gradient" style="z-index: -10;position: absolute;
-width: 1122px;
-height: 1122px;
-left: 1330px;
-top: calc(500vh + 335px) ;
-background: radial-gradient(50% 50% at 50% 50%, rgba(0, 133, 255, 0.2) 0%, rgba(0, 133, 255, 0) 100%);"></div>
-    <slide7 />
+
+
+    <Main v-if="content === 'main'" @contact="contactActive = true" :windows="windows"/>
+    <Agency v-if="content === 'agency'" @nextSlide="nextSlide()" :slide="windows.agency.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
   </div>
 </template>
 
 <script>
 import FixWrapper from "@/components/FixWrapper";
+import Main from "./components/main";
+import Agency from "./components/agency";
 
-import slide1 from "./slides/slide1";
-import slide2 from "./slides/slide2";
-import slide3 from "./slides/slide3";
-import slide4 from "./slides/slide4";
-import slide5 from "./slides/slide5";
-import slide6 from "./slides/slide6";
-import slide7 from "./slides/slide7";
 import contact from "./components/contact";
+import Menu from "./components/menu"
 
 export default {
   name: "App",
   components: {
     FixWrapper,
-    slide1,
-    slide2,
-    slide3,
-    slide4,
-    slide5,
-    slide6,
-    slide7,
-    contact
+    Main,
+    contact,
+    Menu,
+    Agency
   },
   data() {
     return {
-      slide: 1,
-      max: 7,
-      slide3: {
-        clientSlide: 1,
+      content:'main',
+      lang: 'ru',
+      windows:{
+        main:{
+          slide: 1,
+          max: 7,
+          slide3: {
+            clientSlide: 1,
+          },
+        },
+        agency:{
+          slide: 1,
+          max: 5,
+        },
+        projects:{
+          slide: 1,
+          max: 7,
+        },
+        blog:{
+          slide: 1,
+          max: 7,
+        },
+        contacts:{
+          slide: 1,
+          max: 7,
+        },
       },
       scrolling:false,
-      contactActive:false
+      contactActive:false,
+      menuActive: false
     };
   },
   methods: {
@@ -134,17 +92,17 @@ export default {
         return;
       }
       this.scrolling = true
-      if (this.slide === 3 && this.slide3.clientSlide === 1) {
+      if (this.windows.main.slide === 3 && this.windows.main.slide3.clientSlide === 1) {
 
-        this.slide3.clientSlide = 2;
+        this.windows.main.slide3.clientSlide = 2;
         setTimeout(() => this.scrolling = false, 800)
         return;
       }
-      if (this.slide < this.max) {
-        this.slide++;
+      if (this.windows[this.content].slide < this.windows[this.content].max) {
+        this.windows[this.content].slide++;
       }
       else {
-        this.slide = 1;
+        this.windows[this.content].slide = 1;
       }
       setTimeout(() => this.scrolling = false, 800)
     },
@@ -153,20 +111,27 @@ export default {
         return;
       }
       this.scrolling = true
-      if (this.slide === 3 && this.slide3.clientSlide === 2) {
-        this.slide3.clientSlide = 1;
+      if (this.windows.main.slide === 3 && this.windows.main.slide3.clientSlide === 2) {
+        this.windows.main.slide3.clientSlide = 1;
         setTimeout(() => this.scrolling = false, 800)
         return;
       }
-      if (this.slide !== 1) {
+      if (this.windows[this.content].slide !== 1) {
         this.scrolling = true
-        this.slide--;
+        this.windows[this.content].slide--;
         setTimeout(() => this.scrolling = false, 800)
       }
     },
     scrollingWheel(e){
       if (e.deltaY > 0){this.nextSlide()}
       if (e.deltaY < 0){this.prevSlide()}
+    },
+    setRoute(e){
+      this.content = e
+      if (this.content === 'main'){
+        return
+      }
+      this.menuActive = false
     }
   },
 };
@@ -176,7 +141,7 @@ export default {
 #app {
   height: 100vh;
 }
-.body {
+.body, .main {
   font-family: "Montserrat", sans-serif;
   color: white;
   position: relative;
@@ -184,31 +149,31 @@ export default {
   top: 0;
   bottom: 0;
 }
-.body.slide-1 {
+.body.slide-1{
   margin-top: 0;
   height: 100vh;
 }
-.body.slide-2 {
+.body.slide-2{
   margin-top: -100vh;
   height: 200vh;
 }
-.body.slide-3 {
+.body.slide-3{
   margin-top: -200vh;
   height: 300vh;
 }
-.body.slide-4 {
+.body.slide-4{
   margin-top: -300vh;
   height: 400vh;
 }
-.body.slide-5 {
+.body.slide-5{
   margin-top: -400vh;
   height: 500vh;
 }
-.body.slide-6 {
+.body.slide-6{
   margin-top: -500vh;
   height: 600vh;
 }
-.body.slide-7 {
+.body.slide-7{
   margin-top: -600vh;
   height: 700vh;
 }

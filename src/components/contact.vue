@@ -1,10 +1,10 @@
 <template>
-  <div class="fixed z-80">
+  <div class="fixed z-80" >
     <transition name="contact">
-      <div v-if="!firstStep" class="absolute screen pt-12.5 pl-82.5 pr-17.25  h-screen w-screen">
+      <div v-if="!firstStep" class="absolute screen pt-12.5 pl-82.5 pr-17.25  h-screen w-screen" :style="'top: ' + (slide-1) + '00vh'">
         <contactFirst  @closeContacts="$emit('closeContacts')" @nextStage="nextStep($event)"  />
       </div>
-      <div v-else class="absolute screen pt-12.5 pl-82.5 pr-17.25 h-screen w-screen">
+      <div v-else class="absolute screen pt-12.5 pl-82.5 pr-17.25 h-screen w-screen" :style="'top: ' + (slide-1) + '00vh'">
         <contactSecond :choice="choice" @closeContacts="$emit('closeContacts')"/>
       </div>
     </transition>
@@ -20,6 +20,7 @@ import contactSecond from "./contactSecond";
 export default {
   name: "contact",
   emits:['closeContacts'],
+  props:['slide'],
   components:{contactFirst, contactSecond},
   data(){
     return{

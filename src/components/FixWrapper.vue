@@ -1,16 +1,20 @@
 <template>
   <WrapGrads :agency="agency" :state="state" />
-  <div class="slider-wrapper-top fixed flex left-18 right-18 top-11 z-10">
-    <div class="menu cursor-pointer w-12.5">
+  <div class="slider-wrapper-top fixed flex left-18 right-18 top-11 z-70">
+    <div class="menu cursor-pointer w-12.5" :class="{'unactive': !menu}" @click="$emit('openMenu')">
       <div class="menu-content">
-        <p class="uppercase transition-all font-medium text-xs mb-3">menu</p>
+        <transition name="menu-label" mode="out-in">
+          <p v-if="!menu" class="uppercase font-medium text-xs mb-3">menu</p>
+          <p v-else class="uppercase font-medium text-xs mb-3">close</p>
+        </transition>
+
         <div class="h-5 relative w-full">
           <div
-            class="absolute top-0 h-2px w-full bg-white transition-all"
+            class="absolute  h-2px  bg-white " :class="{'active-menu w-5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45': menu, 'w-full top-0 left-0': !menu}"
           ></div>
           <div
             id="second-menu-strip"
-            class="absolute bottom-0 h-2px w-1/2 bg-white transition-all"
+            class="absolute  h-2px bg-white " :class="{'active-menu w-5 left-1/2 bottom-1/2 transform -translate-x-1/2 translate-y-1/2 -rotate-45': menu, 'w-1/2 bottom-0 left-0': !menu}"
           ></div>
         </div>
       </div>
@@ -21,6 +25,8 @@
         <div class="purple-s"></div>
       </div>
     </div>
+
+
     <div class="max-frai ml-52.5 relative z-70">
       <img src="@/assets/images/max-frai.svg" class="w-full" alt="" />
       <p
@@ -59,7 +65,7 @@
       </div>
     </div>
   </div>
-  <div class="slider-wrapper-left fixed bottom-18 left-18 top-50">
+  <div v-if="main" class="slider-wrapper-left fixed bottom-18 left-18 top-50">
     <div class="relative w-22.5 h-full states" :class="'state-'+state">
       <div id="first-strip"></div>
       <div id="second-strip"></div>
@@ -71,7 +77,7 @@
       <div class="absolute left-0 h-px w-1/3 opacity-30 bottom-0"></div>
     </div>
   </div>
-  <div class="slider-wrapper-right fixed bottom-18 right-18 top-50 z-50">
+  <div v-if="main" class="slider-wrapper-right fixed bottom-18 right-18 top-50 z-50">
     <div class="relative w-22.5 h-full">
       <div
         class="absolute right-0 transition-all h-px w-1/3 opacity-30 top-1.5"
@@ -111,7 +117,7 @@
       </div>
     </div>
   </div>
-  <div class="slider-wrapper-bottom fixed bottom-18 transform transition cursor-pointer z-50" style="left: 44.8%" @click="$emit('nextSlide')">
+  <div v-if="main" class="slider-wrapper-bottom fixed bottom-18 transform transition cursor-pointer z-50" style="left: 44.8%" @click="$emit('nextSlide')">
     <svg width="14" class="transform transition duration-800" :class="state === 7 ? 'rotate-180' : ''" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M1 6L7 12L13 6" stroke-linejoin="round"/>
       <path d="M6.99998 0V12" stroke-linejoin="round"/>
@@ -126,14 +132,14 @@ import WrapGrads from "@/components/WrapGrads";
 export default {
   name: "wrappers",
   components: { WrapGrads },
-  props:['state'],
+  props:['state', 'menu', 'main'],
   data() {
     return {
       menuHover: null,
       agency: false
     };
   },
-  emits:['prevSlide', 'nextSlide', 'contact'],
+  emits:['prevSlide', 'nextSlide', 'contact', 'openMenu'],
   methods:{
     agencyGradsOn(){
       this.agency = true
@@ -544,7 +550,7 @@ export default {
   }
 }
 .slider-wrapper-top {
-  .menu {
+  .menu{
     .menu-grad {
       div {
         border-radius: 50%;
@@ -559,10 +565,10 @@ export default {
         top: 18px;
 
         background: linear-gradient(
-          321.88deg,
-          rgba(7, 25, 61, 0) 12.53%,
-          #f22959 43.45%,
-          #0085ff 60.5%
+            321.88deg,
+            rgba(7, 25, 61, 0) 12.53%,
+            #f22959 43.45%,
+            #0085ff 60.5%
         );
         filter: blur(60px);
       }
@@ -574,9 +580,9 @@ export default {
         top: 22px;
 
         background: linear-gradient(
-          209.3deg,
-          rgba(0, 133, 255, 0) -2.55%,
-          #0085ff 64.59%
+            209.3deg,
+            rgba(0, 133, 255, 0) -2.55%,
+            #0085ff 64.59%
         );
         filter: blur(60px);
         transform: rotate(165deg) scale(0);
@@ -589,9 +595,9 @@ export default {
         top: 86px;
 
         background: linear-gradient(
-          209.3deg,
-          rgba(242, 137, 41, 0) -2.55%,
-          #f22959 64.59%
+            209.3deg,
+            rgba(242, 137, 41, 0) -2.55%,
+            #f22959 64.59%
         );
         opacity: 0.7;
         filter: blur(60px);
@@ -605,10 +611,10 @@ export default {
         top: 47px;
 
         background: linear-gradient(
-          321.88deg,
-          rgba(7, 25, 61, 0) 12.53%,
-          #f22959 43.45%,
-          #0085ff 60.5%
+            321.88deg,
+            rgba(7, 25, 61, 0) 12.53%,
+            #f22959 43.45%,
+            #0085ff 60.5%
         );
         filter: blur(60px);
       }
@@ -617,7 +623,12 @@ export default {
       p{
         letter-spacing: 0.1rem;
       }
+      *{
+        transition: all 0.15s linear;
+      }
     }
+  }
+  .menu.unactive {
     .menu-content:hover {
       p {
         letter-spacing: 0.3rem;
@@ -751,5 +762,13 @@ export default {
     transition: all linear .3s;
     color: white;
   }
+}
+.menu-label-enter-active,
+.menu-label-leave-active{
+  transition: all linear 0.075s;
+}
+.menu-label-enter-from,
+.menu-label-leave-to{
+  opacity: 0;
 }
 </style>

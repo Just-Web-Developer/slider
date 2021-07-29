@@ -26,12 +26,12 @@
       </div>
     </div>
   </div>
-  <div class="mt-22.5">
+  <div class="mt-22.5 w-max flex flex-col">
     <h4 class="uppercase text-xxl font-medium">Решение в пару кликов</h4>
     <p class="mt-6 text-lg" style="color:rgba(110, 117, 141, 1);">Что тебя интересует?</p>
     <div class="services mt-15 w-max grid gap-10 grid-cols-3 grid-rows-2">
 
-      <div @click="$emit('nextStage', 'разработка')" class="service cursor-pointer overflow-hidden relative p-7.5 w-87.5 h-50 flex flex-col justify-between box-border" style="border: 1px solid rgba(110, 117, 141, 0.2);">
+      <div @click="addService('разработка')" :class="{'active': services.indexOf('разработка') !== -1}" class="service cursor-pointer overflow-hidden relative p-7.5 w-87.5 h-50 flex flex-col justify-between box-border" style="border: 1px solid rgba(110, 117, 141, 0.2);">
         <p class="text-base relative z-10">Разработка</p>
         <svg class="w-12 h-12 relative z-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M25 4.16667V12.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <div @click="$emit('nextStage', 'поддержка')" class="service cursor-pointer overflow-hidden relative p-7.5 w-87.5 h-50 flex flex-col justify-between box-border" style="border: 1px solid rgba(110, 117, 141, 0.2);">
+      <div @click="addService('поддержка')" :class="{'active': services.indexOf('поддержка') !== -1}" class="service cursor-pointer overflow-hidden relative p-7.5 w-87.5 h-50 flex flex-col justify-between box-border" style="border: 1px solid rgba(110, 117, 141, 0.2);">
         <p class="text-base relative z-10">Техническая поддержка</p>
         <svg class="w-12 h-12 relative z-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M25 45.8333C36.5059 45.8333 45.8333 36.5059 45.8333 25C45.8333 13.4941 36.5059 4.16667 25 4.16667C13.4941 4.16667 4.16667 13.4941 4.16667 25C4.16667 36.5059 13.4941 45.8333 25 45.8333Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -68,7 +68,7 @@
         </div>
       </div>
 
-      <div @click="$emit('nextStage', 'решения')" class="service cursor-pointer overflow-hidden relative p-7.5 w-87.5 h-50 flex flex-col justify-between box-border" style="border: 1px solid rgba(110, 117, 141, 0.2);">
+      <div @click="addService('решения')" :class="{'active': services.indexOf('решения') !== -1}" class="service cursor-pointer overflow-hidden relative p-7.5 w-87.5 h-50 flex flex-col justify-between box-border" style="border: 1px solid rgba(110, 117, 141, 0.2);">
         <p class="text-base relative z-10">Готовые технические <br> решения</p>
         <svg class="w-12 h-12 relative z-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M20.8333 6.25H6.25V20.8333H20.8333V6.25Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -83,7 +83,7 @@
         </div>
       </div>
 
-      <div @click="$emit('nextStage', 'креатив')" class="service cursor-pointer overflow-hidden relative p-7.5 w-87.5 h-50 flex flex-col justify-between box-border" style="border: 1px solid rgba(110, 117, 141, 0.2);">
+      <div @click="addService('креатив')" :class="{'active': services.indexOf('креатив') !== -1}" class="service cursor-pointer overflow-hidden relative p-7.5 w-87.5 h-50 flex flex-col justify-between box-border" style="border: 1px solid rgba(110, 117, 141, 0.2);">
         <p class="text-base relative z-10">Креатив</p>
         <svg class="w-12.5 h-12.5 relative z-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M37.5 6.25C35.8424 6.25 34.2527 6.90848 33.0806 8.08058C31.9085 9.25269 31.25 10.8424 31.25 12.5V37.5C31.25 39.1576 31.9085 40.7473 33.0806 41.9194C34.2527 43.0915 35.8424 43.75 37.5 43.75C39.1576 43.75 40.7473 43.0915 41.9194 41.9194C43.0915 40.7473 43.75 39.1576 43.75 37.5C43.75 35.8424 43.0915 34.2527 41.9194 33.0806C40.7473 31.9085 39.1576 31.25 37.5 31.25H12.5C10.8424 31.25 9.25269 31.9085 8.08058 33.0806C6.90848 34.2527 6.25 35.8424 6.25 37.5C6.25 39.1576 6.90848 40.7473 8.08058 41.9194C9.25269 43.0915 10.8424 43.75 12.5 43.75C14.1576 43.75 15.7473 43.0915 16.9194 41.9194C18.0915 40.7473 18.75 39.1576 18.75 37.5V12.5C18.75 10.8424 18.0915 9.25269 16.9194 8.08058C15.7473 6.90848 14.1576 6.25 12.5 6.25C10.8424 6.25 9.25269 6.90848 8.08058 8.08058C6.90848 9.25269 6.25 10.8424 6.25 12.5C6.25 14.1576 6.90848 15.7473 8.08058 16.9194C9.25269 18.0915 10.8424 18.75 12.5 18.75H37.5C39.1576 18.75 40.7473 18.0915 41.9194 16.9194C43.0915 15.7473 43.75 14.1576 43.75 12.5C43.75 10.8424 43.0915 9.25269 41.9194 8.08058C40.7473 6.90848 39.1576 6.25 37.5 6.25Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -95,7 +95,7 @@
         </div>
       </div>
 
-      <div @click="$emit('nextStage', 'стратегия')" class="service cursor-pointer overflow-hidden relative p-7.5 w-87.5 h-50 flex flex-col justify-between box-border" style="border: 1px solid rgba(110, 117, 141, 0.2);">
+      <div @click="addService('стратегия')" :class="{'active': services.indexOf('стратегия') !== -1}" class="service cursor-pointer overflow-hidden relative p-7.5 w-87.5 h-50 flex flex-col justify-between box-border" style="border: 1px solid rgba(110, 117, 141, 0.2);">
         <p class="text-base relative z-10">Стратегия</p>
         <svg class="w-12 h-12 relative z-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M25 45.8333C36.5059 45.8333 45.8333 36.5059 45.8333 25C45.8333 13.4941 36.5059 4.16667 25 4.16667C13.4941 4.16667 4.16666 13.4941 4.16666 25C4.16666 36.5059 13.4941 45.8333 25 45.8333Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -108,10 +108,41 @@
         </div>
       </div>
 
-      <div @click="$emit('nextStage', 'другое')" class="flex items-end justify-end ">
-        <p class="font-semibold uppercase another cursor-pointer">Другое</p>
+      <div @click="addService('другое')" :class="{'active': services.indexOf('другое') !== -1}" class="service cursor-pointer overflow-hidden relative p-7.5 w-87.5 h-50 flex flex-col justify-between box-border" style="border: 1px solid rgba(110, 117, 141, 0.2);">
+        <p class="text-base relative z-10">Другое</p>
+        <svg class="w-11.5 h-12 relative z-10" viewBox="0 0 48 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 45.8333C35.0457 45.8333 44 36.5059 44 25C44 13.4941 35.0457 4.16667 24 4.16667C12.9543 4.16667 4 13.4941 4 25C4 36.5059 12.9543 45.8333 24 45.8333Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M35 25C35 28.0629 33.8316 30.9925 31.7639 33.1463C29.6976 35.2987 26.9039 36.5 24 36.5C21.0961 36.5 18.3024 35.2987 16.2361 33.1463C14.1684 30.9925 13 28.0629 13 25" stroke-width="2"/>
+        </svg>
+        <div class="connect-grad absolute" style="z-index: 1">
+          <div class="grad-1"></div>
+          <div class="grad-2"></div>
+          <div class="grad-3"></div>
+        </div>
       </div>
 
+    </div>
+    <div class="next ml-auto mt-6 " @click="nextStage()" :class="{'ready cursor-pointer': services.length>0}">
+      <p
+        class="font-medium uppercase text-xxs"
+        style="letter-spacing: 0.3em;"
+      >
+        Далее
+      </p>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 17L19 10L12 3"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+        <path d="M5 10L19 10" stroke-width="2" stroke-linejoin="round" />
+      </svg>
     </div>
   </div>
 </template>
@@ -119,7 +150,27 @@
 <script>
 export default {
   name: "contactFirst",
-  emits:['closeContacts', 'nextStage']
+  emits:['closeContacts', 'nextStage'],
+  data(){
+    return{
+      services:[]
+    }
+  },
+  methods:{
+    addService(service){
+      if(this.services.indexOf(service) === -1){
+        this.services.push(service)
+      }
+      else{
+        this.services = this.services.filter((item) => item !== service)
+      }
+    },
+    nextStage(){
+      if (this.services.length > 0){
+        this.$emit('nextStage', this.services)
+      }
+    }
+  }
 };
 </script>
 
@@ -187,7 +238,7 @@ export default {
     }
   }
 }
-.service:hover{
+.service:hover, .service.active{
   background: #000;
   p{
     font-size: 1.125rem;
@@ -217,5 +268,40 @@ export default {
 }
 .another:hover{
   color: white;
+}
+
+.next {
+  svg {
+    margin-left: 0;
+    margin-top: 1rem;
+    transition: all linear 0.3s;
+    path {
+      transition: all linear 0.3s;
+      stroke: rgba(151, 163, 203, 0.6);
+    }
+  }
+  p{
+    color:rgba(151, 163, 203, 0.6);
+  }
+}
+.next.ready{
+  p{
+    color:#ff2e53;
+  }
+  svg {
+    path {
+      stroke: white;
+    }
+  }
+}
+.next.ready:hover {
+  svg {
+    margin-left: 1.7rem;
+    transition: all linear 0.3s;
+    path {
+      transition: all linear 0.3s;
+      stroke: #ff2e53;
+    }
+  }
 }
 </style>

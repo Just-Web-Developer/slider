@@ -7,7 +7,7 @@
     <div class="flex flex-col">
       <p class="w-87.5 text-lg mb-25 ml-44p" style="color: rgba(192, 197, 216, 1); line-height: 1.875rem;">Мы готовы быстро и легко решить все твои сложные цифровые проблемы</p>
       <div class="mt-auto become-client ml-44p ">
-        <div class="connect-content flex justify-start items-center cursor-pointer w-max">
+        <div class="connect-content flex justify-start items-center cursor-pointer w-max" @click="$emit('contact')">
           <div class="plus w-12.5 h-12.5 rounded-full mr-5 relative">
             <div
               class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-2px"
@@ -38,7 +38,8 @@
 
 <script>
 export default {
-  name: "slide7"
+  name: "slide7",
+  emits:['contact']
 };
 </script>
 
