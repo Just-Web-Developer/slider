@@ -30,13 +30,16 @@ export default {
   data(){
     return{
       currentSlide:0,
-      max:5
+      max:5,
+      scrolling:false
     }
   },
   methods:{
     nextSlideHandler(){
-      if (this.slide === 2 && this.currentSlide < this.max){
+      if (this.slide === 2 && this.currentSlide < this.max && this.scrolling===false){
         this.currentSlide++
+        this.scrolling = true
+        setTimeout(()=>{this.scrolling = false},500)
       }
       else{
         this.$emit('nextSlide')
