@@ -33,10 +33,10 @@ export default {
   .first-slide-animation{
     div{
       position: absolute;
-      width: 578.11px;
-      height: 578.11px;
-      right: 179px;
-      top: 190.94px;
+      width: 36.131875rem;
+      height: 36.131875rem;
+      right: 11.1875rem;
+      top: 11.93375rem;
     }
   }
 
