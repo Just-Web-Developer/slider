@@ -1,6 +1,6 @@
 <template>
 
-  <div class="body overflow-hidden" :class="'slide-' + windows[content].slide" @wheel="scrollingWheel($event)">
+  <div class="body overflow-hidden" :class="content !== 'blog' && content !== 'project' ? 'slide-' + windows[content].slide : ''" @wheel="scrollingWheel($event)">
     <transition name="contacts">
       <contact @wheel.passive.stop class="contact" :slide="windows[content].slide" v-if="contactActive" @closeContacts="contactActive = false"/>
     </transition>
@@ -19,6 +19,7 @@
     <FixWrapper
       @nextSlide="nextSlide()"
       @prevSlide="prevSlide()"
+      @setNavRoute="setRoute($event)"
       @contact="contactActive = true"
       @openMenu="menuActive = !menuActive"
       :state="windows.main.slide"
@@ -31,17 +32,23 @@
 
 
     <Main v-if="content === 'main'" @contact="contactActive = true" :windows="windows"/>
-    <Agency v-if="content === 'agency'" @nextSlide="nextSlide()" :slide="windows.agency.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
+    <Agency v-if="content === 'agency'" @nextSlide="nextSlide()" @nav="content = 'main'" :slide="windows.agency.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
+    <Projects v-if="content === 'projects'" @prevSlide="prevSlide()" @nav="content = 'main'" @nextSlide="nextSlide()" :slide="windows.projects.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
+    <Blog v-if="content === 'blog'"  :slide="windows.projects.slide" @nav="content = 'main'" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
+    <project v-if="content === 'project'" @projects="content = 'projects';scrolling=false" @nav="menuActive = !menuActive" />
   </div>
 </template>
 
 <script>
-import FixWrapper from "@/components/FixWrapper";
-import Main from "./components/main";
-import Agency from "./components/agency";
+import FixWrapper from "./components/desktop/FixWrapper";
+import Main from "./components/desktop/main";
+import Agency from "./components/desktop/agency";
+import Projects from "./components/desktop/projects";
+import Blog from "./components/desktop/blog"
 
-import contact from "./components/contact";
-import Menu from "./components/menu"
+import contact from "./components/desktop/contact";
+import Menu from "./components/desktop/menu"
+import project from "./components/desktop/projects/project/project";
 
 export default {
   name: "App",
@@ -50,11 +57,14 @@ export default {
     Main,
     contact,
     Menu,
-    Agency
+    Agency,
+    Projects,
+    Blog,
+    project
   },
   data() {
     return {
-      content:'main',
+      content:'project',
       lang: 'ru',
       windows:{
         main:{
@@ -70,9 +80,13 @@ export default {
         },
         projects:{
           slide: 1,
-          max: 7,
+          max: 3,
         },
         blog:{
+          slide: 1,
+          max: 7,
+        },
+        project:{
           slide: 1,
           max: 7,
         },
@@ -88,11 +102,11 @@ export default {
   },
   methods: {
     nextSlide() {
-      if (this.scrolling){
+      if (this.scrolling && this.content !== 'blog'){
         return;
       }
       this.scrolling = true
-      if (this.windows.main.slide === 3 && this.windows.main.slide3.clientSlide === 1) {
+      if (this.windows.main.slide === 3 && this.windows.main.slide3.clientSlide === 1 && this.content === 'main') {
 
         this.windows.main.slide3.clientSlide = 2;
         setTimeout(() => this.scrolling = false, 800)
@@ -107,11 +121,11 @@ export default {
       setTimeout(() => this.scrolling = false, 800)
     },
     prevSlide() {
-      if (this.scrolling){
+      if (this.scrolling && this.content !== 'blog'){
         return;
       }
       this.scrolling = true
-      if (this.windows.main.slide === 3 && this.windows.main.slide3.clientSlide === 2) {
+      if (this.windows.main.slide === 3 && this.windows.main.slide3.clientSlide === 2 && this.content === 'main') {
         this.windows.main.slide3.clientSlide = 1;
         setTimeout(() => this.scrolling = false, 800)
         return;
@@ -128,10 +142,12 @@ export default {
     },
     setRoute(e){
       this.content = e
-      if (this.content === 'main'){
-        return
-      }
       this.menuActive = false
+      if (e === 'blog'){
+        document.querySelector('#app').style.height = "auto";
+      }else {
+        document.querySelector('#app').style.height = "100vh";
+      }
     }
   },
 };
