@@ -1,10 +1,10 @@
 <template>
-  <div class="mt-45 relative w-200 h-67.5 services" :class="servicesClass">
+  <div class="mt-45 relative w-200 h-67.5 services" style="z-index: 100;" :class="servicesClass">
     <div
       id="first-service"
       @mouseover="servicesClass = 'first-state'"
       @mouseleave="servicesClass = 'null-state'"
-      class="absolute"
+      class="absolute service"
     >
       <div class="relative flex pt-7.5 pr-7.5 h-full overflow-hidden label">
         <transition name="service-count">
@@ -73,7 +73,7 @@
       id="second-service"
       @mouseover="servicesClass = 'second-state'"
       @mouseleave="servicesClass = 'null-state'"
-      class="absolute"
+      class="absolute service"
     >
       <div class="relative flex pt-7.5 pr-7.5 h-full overflow-hidden label">
         <transition name="service-count">
@@ -140,7 +140,7 @@
       id="third-service"
       @mouseover="servicesClass = 'third-state'"
       @mouseleave="servicesClass = 'null-state'"
-      class="absolute"
+      class="absolute service"
     >
       <div class="relative flex pt-7.5 pr-7.5 h-full overflow-hidden label">
         <transition name="service-count">
@@ -209,7 +209,7 @@
       id="fourth-service"
       @mouseover="servicesClass = 'fourth-state'"
       @mouseleave="servicesClass = 'null-state'"
-      class="absolute"
+      class="absolute service"
     >
       <div class="relative flex pt-7.5 pr-7.5 h-full overflow-hidden label">
         <transition name="service-count">
@@ -276,7 +276,7 @@
       id="fifth-service"
       @mouseover="servicesClass = 'fifth-state'"
       @mouseleave="servicesClass = 'null-state'"
-      class="absolute"
+      class="absolute service"
     >
       <div class="relative flex pt-7.5 pr-7.5 h-full overflow-hidden label">
         <transition name="service-count">
@@ -337,6 +337,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.service{
+  z-index: 20;
+}
 .services {
   .icon {
     transform: translateY(-0%) rotate(0deg);
