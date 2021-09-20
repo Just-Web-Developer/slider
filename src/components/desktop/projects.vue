@@ -36,10 +36,8 @@ export default {
   },
   methods:{
     nextSlideHandler(){
-      if (this.slide === 2 && this.currentSlide < this.max && this.scrolling===false){
+      if (this.slide === 2 && this.currentSlide < this.max){
         this.currentSlide++
-        this.scrolling = true
-        setTimeout(()=>{this.scrolling = false},500)
       }
       else{
         this.$emit('nextSlide')
@@ -56,8 +54,13 @@ export default {
       }
     },
     slideHandler(e){
-      if (e.deltaY > 0){this.nextSlideHandler()}
-      if (e.deltaY < 0){this.prevSlideHandler()}
+      if (this.scrolling === false){
+        if (e.deltaY > 0){this.nextSlideHandler()}
+        if (e.deltaY < 0){this.prevSlideHandler()}
+        this.scrolling=true
+        setTimeout(()=>{this.scrolling=false},500)
+      }
+
     }
   }
 };
