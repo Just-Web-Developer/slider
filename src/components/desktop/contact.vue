@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed z-80" >
+  <div class="fixed" style="z-index: 202;">
     <transition name="contact">
       <div v-if="!firstStep" class="absolute screen pt-12.5 pl-82.5 pr-17.25  h-screen w-screen" :style="'top: ' + (slide-1) + '00vh'">
         <contactFirst  @closeContacts="$emit('closeContacts')" @nextStage="nextStep($event)"  />

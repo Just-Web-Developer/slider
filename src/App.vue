@@ -9,6 +9,7 @@
         @wheel.passive.stop
         class="menu"
         :slide="windows[content].slide"
+        :content="content"
         :language="lang"
         v-if="menuActive"
         @closeContacts="menuActive = false"
@@ -36,6 +37,7 @@
     <Projects v-if="content === 'projects'" @prevSlide="prevSlide()" @nav="content = 'main'" @nextSlide="nextSlide()" :slide="windows.projects.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
     <Blog v-if="content === 'blog'"  :slide="windows.projects.slide" @nav="content = 'main'" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
     <project v-if="content === 'project'" @projects="content = 'projects';scrolling=false" @nav="menuActive = !menuActive" />
+    <post v-if="content === 'post'" @blog="content = 'blog'" @goHome="content = 'main'" @nav="menuActive = !menuActive" />
   </div>
 </template>
 
@@ -49,6 +51,7 @@ import Blog from "./components/desktop/blog"
 import contact from "./components/desktop/contact";
 import Menu from "./components/desktop/menu"
 import project from "./components/desktop/projects/project/project";
+import post from "./components/desktop/blog/post";
 
 export default {
   name: "App",
@@ -60,7 +63,8 @@ export default {
     Agency,
     Projects,
     Blog,
-    project
+    project,
+    post
   },
   data() {
     return {
@@ -254,6 +258,7 @@ export default {
   opacity: 0;
   transform: translateX(-100%);
 }
+
 .client-2-enter-from,
 .client-2-leave-to {
   opacity: 0;

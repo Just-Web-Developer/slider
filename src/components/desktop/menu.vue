@@ -1,6 +1,6 @@
 <template>
-  <div class="fixed z-60 top-0 left-0" >
-      <div  class="absolute screen pt-55  h-screen w-screen" :style="'top: ' + (slide-1) + '00vh'">
+  <div class="fixed top-0 left-0" style="z-index: 200;" >
+      <div  class=" screen pt-55  h-screen w-screen fixed" :style="'top:0'">
         <div class="langs pl-82.5 flex">
           <div class="lang cursor-pointer mr-20" :class="{'active': language === 'ru'}" @click="chooseLang('ru')">
             <p class="uppercase text-xxsm font-semibold">русский</p>
@@ -56,7 +56,7 @@
 <script>
 export default {
   name: "Menu",
-  props:['slide', 'language'],
+  props:['slide', 'language', 'content'],
   emits:['setNavRoute', 'setLang'],
   methods:{
     chooseNav(choice){
@@ -66,6 +66,11 @@ export default {
       this.$emit('setLang', lang)
     }
   },
+  computed:{
+    absolute(){
+      return this.content !== 'post' && this.content !== 'project' && this.content !== 'blog'
+    }
+  }
 };
 </script>
 
@@ -73,15 +78,15 @@ export default {
 .screen{
   background: #323749;
   left: 0;
+  position: absolute;
 }
 
 .menu-enter-active,
 .menu-leave-active{
   transition: all .3s linear;
+
 }
-.menu-enter-from{
-  left: -100vw;
-}
+.menu-enter-from,
 .menu-leave-to{
   left: -100vw;
 }

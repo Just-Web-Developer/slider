@@ -1,6 +1,6 @@
 <template>
   <WrapGrads :agency="agency" :state="state" />
-  <div class="slider-wrapper-top fixed flex left-18 right-18 top-11 z-70">
+  <div class="slider-wrapper-top fixed flex left-18 right-18 top-11" style="z-index: 201;">
     <div class="menu cursor-pointer w-12.5" :class="{'unactive': !menu}" @click="$emit('openMenu')">
       <div class="menu-content">
         <transition name="menu-label" mode="out-in">
