@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import projectsWrappers from "./projects/projectsWrappers";
+import projectsWrappers from "../projects/projectsWrappers";
 
-import projectsSlide1 from "./projects/projectsSlide1";
-import projectsSlide2 from "./projects/projectsSlide2";
-import projectsSlide3 from "./projects/projectsSlide3";
+import projectsSlide1 from "../projects/projectsSlide1";
+import projectsSlide2 from "../projects/projectsSlide2";
+import projectsSlide3 from "../projects/projectsSlide3";
 
 
 export default {

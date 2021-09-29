@@ -15,14 +15,14 @@
 </template>
 
 <script>
-import agencyWrappers from "./agency/agencyWrappers";
+import agencyWrappers from "../agency/agencyWrappers";
 
 
-import agencySlide1 from "./agency/agencySlide1";
-import agencySlide2 from "./agency/agencySlide2";
-import agencySlide3 from "./agency/agencySlide3";
-import agencySlide4 from "./agency/agencySlide4";
-import agencySlide5 from "./agency/agencySlide5";
+import agencySlide1 from "../agency/agencySlide1";
+import agencySlide2 from "../agency/agencySlide2";
+import agencySlide3 from "../agency/agencySlide3";
+import agencySlide4 from "../agency/agencySlide4";
+import agencySlide5 from "../agency/agencySlide5";
 
 export default {
   name: "Agency",

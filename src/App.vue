@@ -43,12 +43,12 @@
 
 <script>
 import FixWrapper from "./components/desktop/FixWrapper";
-import Main from "./components/desktop/main";
-import Agency from "./components/desktop/agency";
-import Projects from "./components/desktop/projects";
-import Blog from "./components/desktop/blog"
+import Main from "./components/desktop/pages/main";
+import Agency from "./components/desktop/pages/agency";
+import Projects from "./components/desktop/pages/projects";
+import Blog from "./components/desktop/pages/blog"
 
-import contact from "./components/desktop/contact";
+import contact from "./components/desktop/contact/contact";
 import Menu from "./components/desktop/menu"
 import project from "./components/desktop/projects/project/project";
 import post from "./components/desktop/blog/post";

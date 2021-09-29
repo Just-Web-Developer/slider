@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import blogWrappers from "./blog/blogWrappers";
-import blogPosts from "./blog/blogPosts";
+import blogWrappers from "../blog/blogWrappers";
+import blogPosts from "../blog/blogPosts";
 
 
 export default {

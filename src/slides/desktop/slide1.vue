@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import servicesScreen from "@/components/desktop/servicesScreen";
-import firstAnimation from "@/components/desktop/firstAnimation";
+import servicesScreen from "@/components/desktop/slide1/servicesScreen";
+import firstAnimation from "@/components/desktop/slide1/firstAnimation";
 
 export default {
   name: "slide1",
