@@ -2,10 +2,10 @@
   <div class="fixed" style="z-index: 202;">
     <transition name="contact">
       <div v-if="!firstStep" class="absolute screen pt-12.5 pl-82.5 pr-17.25  h-screen w-screen" :style="'top: ' + (slide-1) + '00vh'">
-        <contactFirst  @closeContacts="$emit('closeContacts')" @nextStage="nextStep($event)"  />
+        <contactFirst :text="text.first"  @closeContacts="$emit('closeContacts')" @nextStage="nextStep($event)"  />
       </div>
       <div v-else class="absolute screen pt-12.5 pl-82.5 pr-17.25 h-screen w-screen" :style="'top: ' + (slide-1) + '00vh'">
-        <contactSecond :choice="choice" @closeContacts="$emit('closeContacts')"/>
+        <contactSecond :text="text.second" :choice="choice" @closeContacts="$emit('closeContacts')"/>
       </div>
     </transition>
   </div>
@@ -32,6 +32,11 @@ export default {
     nextStep(e){
       this.choice = e
       this.firstStep = true
+    }
+  },
+  computed:{
+    text(){
+      return require("src/assets/text/contact/ru.json")
     }
   }
 };

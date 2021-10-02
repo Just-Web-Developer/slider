@@ -8,23 +8,23 @@
         class="uppercase text-xxs font-medium"
         style="letter-spacing: 2px; color: rgba(110, 117, 141, 1)"
       >
-        OUR CLIENTS
+        {{text.ourClients}}
       </p>
       <p class="mt-12 text-base" style="line-height: 1.5rem">
-        Нам доверяют решение цифровых задач компании-лидеры в своих сферах
+        {{text.trust}}
       </p>
       <h2
         class="mt-58.5 flex"
-        style=" font-size: 4rem; color: #FF2E53 line-height: 4rem"
+        style=" font-size: 4rem; color: #FF2E53; line-height: 4rem"
       >
-        129
+        {{ text.realizedCount }}
       </h2>
       <p
         class="mt-2.5 font-medium uppercase text-xxs"
         style="line-height: 200%; color: rgba(192, 197, 216, 1)"
       >
-        РЕАЛИЗОВАННЫХ <br />
-        проектов
+        {{ text.realizedText[0] }} <br />
+        {{ text.realizedText[1] }}
       </p>
     </div>
     <div class="clients-right mt-1 flex flex-col">
@@ -36,7 +36,7 @@
           >
             <div
               class="client flex justify-center items-center h-62.5 w-62.5"
-              v-for="client in clientSlider[0]"
+              v-for="client in text.clientSlider[0]"
               :key="client.id"
               :class="client.opacity"
             >
@@ -54,7 +54,7 @@
             <div class="grid grid-cols-2 grid-rows-2 gap-0 w-1/2">
               <div
                 class="client flex justify-center items-center h-62.5 w-62.5"
-                v-for="client in clientSlider[1]"
+                v-for="client in text.clientSlider[1]"
                 :key="client.id"
                 :class="client.opacity"
               >
@@ -71,8 +71,7 @@
                 class="ml-37.5 mt-50p font-medium text-base w-45p"
                 style="line-height: 1.5rem; color: #c0c5d8"
               >
-                Мы готовы быстро и легко решить все твои сложные цифровые
-                проблемы
+                {{ text.ready }}
               </p>
               <div class="mt-auto ml-37.5 become-client  " @click="$emit('contact')" >
                 <div class="connect-content flex cursor-pointer justify-start items-center" >
@@ -84,7 +83,7 @@
                       class="absolute top-1/2 left-1/2 transform rotate-90 -translate-x-1/2 -translate-y-1/2 w-4 h-2px"
                     ></div>
                   </div>
-                  <p class="uppercase font-semibold text-xxsm">стать клиентом</p>
+                  <p class="uppercase font-semibold text-xxsm">{{ text.become }}</p>
                 </div>
 
                 <div class="connect-grad relative" style="z-index: -1">
@@ -124,63 +123,10 @@ export default {
   name: "slide3",
   props: ["clientSlide"],
   emits:['contact'],
-  data() {
-    return {
-      clientSlider: [
-        [
-          {
-            image: "atlas",
-            opacity: "second",
-          },
-          {
-            image: "playboy",
-            opacity: "first",
-          },
-          {
-            image: "digital",
-            opacity: "second",
-          },
-          {
-            image: "sluhay",
-            opacity: "first",
-          },
-          {
-            image: "twn",
-            opacity: "first",
-          },
-          {
-            image: "mgu",
-            opacity: "second",
-          },
-          {
-            image: "m1",
-            opacity: "first",
-          },
-          {
-            image: "parimatch",
-            opacity: "second",
-          },
-        ],
-        [
-          {
-            image: "unn",
-            opacity: "second",
-          },
-          {
-            image: "tk",
-            opacity: "first",
-          },
-          {
-            image: "sw",
-            opacity: "first",
-          },
-          {
-            image: "jn",
-            opacity: "second",
-          },
-        ],
-      ],
-    };
+  computed:{
+    text(){
+      return require("src/assets/text/main/slide3/ru.json")
+    }
   },
 };
 </script>

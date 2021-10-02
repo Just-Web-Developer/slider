@@ -7,15 +7,15 @@
       <p
         class=" uppercase text-xxs font-medium mb-15 ml-21.25"
         style="color: rgba(110, 117, 141, 1); letter-spacing: 2px">
-        blog
+        {{ text.blogName }}
       </p>
       <div class="blog-container w-271.5 h-114 flex" :class="{'pl-21.25': !hover}">
-        <div v-for="(item, index) in news" :key="item" class="news w-55" @mouseover="hoverStart(index)" @mouseleave="hoverEnd" :class="{
-          'ml-0 mr-10': index !== news.length-1 && !hover,
-          'mr-5': index !== news.length-1 && hover && index !== hoverIndex && index + 1 !== hoverIndex ,
+        <div v-for="(item, index) in text.news" :key="item" class="news w-55" @mouseover="hoverStart(index)" @mouseleave="hoverEnd" :class="{
+          'ml-0 mr-10': index !== text.news.length-1 && !hover,
+          'mr-5': index !== text.news.length-1 && hover && index !== hoverIndex && index + 1 !== hoverIndex ,
           'mr-20 w-76.25': index === hoverIndex && index === 0 && hover,
-          'mr-0 ml-20 w-76.25': index === hoverIndex && index === news.length-1 && hover,
-          'mx-12.5 w-76.25': index === hoverIndex && index > 0 && index < news.length-1 && hover
+          'mr-0 ml-20 w-76.25': index === hoverIndex && index === text.news.length-1 && hover,
+          'mx-12.5 w-76.25': index === hoverIndex && index > 0 && index < text.news.length-1 && hover
         }" >
           <div class="relative">
             <transition name="text">
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="mt-10.5 ml-auto flex items-center all-news cursor-pointer">
-        <p class="text-right font-medium text-sm uppercase mr-4">все проекты</p>
+        <p class="text-right font-medium text-sm uppercase mr-4">{{ text.all }}</p>
         <img src="@/assets/images/cross.svg" class="w-14 h-14  p-4 rounded-full border-2 " alt="">
       </div>
     </div>
@@ -52,33 +52,7 @@ export default {
   data(){
     return{
       hover: false,
-      hoverIndex: null,
-      news:[
-        {
-          scale: "1.3,1",
-          pos: 'center',
-          image:"max",
-          text:"Макс Фрай в интервью ресурсу AIN.UA: об агентстве, направлениях работы и планах на будущее"
-        },
-        {
-          scale: "1.3,1",
-          pos: 'center',
-          image:"atlas",
-          text:"Atlas Weekend: комплексное решение больших проблем. Как писалась и совершенствовалась система"
-        },
-        {
-          scale: "1.7,1.3",
-          pos: 'right',
-          image:"sluhay",
-          text:"Слухай – библиотека аудиокниг программы ВНО. От идеи до реализации, – Макс Фрай"
-        },
-        {
-          scale: "1.3,1",
-          pos: 'center',
-          image:"bitcoin",
-          text:"Макс Фрай запустил криптовалютную биржу – зачем, кому и как"
-        }
-      ]
+      hoverIndex: null
     }
   },
   methods:{
@@ -89,6 +63,11 @@ export default {
     hoverEnd(){
       this.hover = false
       this.hoverIndex = null
+    }
+  },
+  computed:{
+    text(){
+      return require("src/assets/text/main/slide6/ru.json")
     }
   }
 };

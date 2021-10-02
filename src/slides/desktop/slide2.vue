@@ -6,16 +6,13 @@
           class="uppercase text-xxs font-medium mb-22"
           style="color: rgba(110, 117, 141, 1); letter-spacing: 2px"
         >
-          about
+          {{ text.miniTitle }}
         </p>
         <p
           class="text-xl font-medium main text-justify"
           style="line-height: 2.25rem"
         >
-          Агентство комплексных решений цифровых задач известного киевского
-          программиста Макса Фрая. Команда разработчиков, дизайнеров,
-          креативщиков и просто ответственных ребят, которые вместе решают все
-          ваши проблемы быстро и круто. Готовы изменить ваш мир к лучшему.
+          {{text.mainText}}
         </p>
         <div class="w-50p flex justify-end mt-38 ml-3p">
           <img
@@ -38,7 +35,7 @@
           class="uppercase text-xxs ml-2"
           style="letter-spacing: 2px; color: rgba(255, 46, 83, 1)"
         >
-          READY FOR USE PRODUCTS
+          {{text.ready}}
         </p>
         <div class="stack-slider relative overflow-y-hidden h-70p mt-12.5">
           <div
@@ -47,7 +44,7 @@
             :style="'top:-' + 33.3 * stackState + '%'"
           >
             <template
-              v-for="(stackSlide, index) in stackSlider"
+              v-for="(stackSlide, index) in text.stackSlider"
               :key="index.id"
             >
               <transition mode="out-in" name="fade">
@@ -106,28 +103,18 @@ export default {
   data() {
     return {
       stackState: 0,
-      stackDirection: "stack-up",
-      stackSlider: [
-        {
-          image: "enter",
-          text: "Cистема входа, учета сотрудников по заданным параметрам",
-        },
-        {
-          image: "layout",
-          text: "Готовые решения для сайтов: магазины, новостные ресурсы",
-        },
-        { image: "send", text: "Телеграм-боты" },
-        {
-          image: "enter",
-          text: "Cистема входа, учета сотрудников по заданным параметрам",
-        },
-      ],
+      stackDirection: "stack-up"
     };
+  },
+  computed:{
+    text(){
+      return require("src/assets/text/main/slide2/ru.json")
+    }
   },
   methods: {
     stackNext() {
-      if (this.stackState < this.stackSlider.length - 3) {
-        console.log(this.stackSlider.length - 3);
+      if (this.stackState < this.text.stackSlider.length - 3) {
+        console.log(this.text.stackSlider.length - 3);
         this.stackState++;
       }
     },

@@ -6,23 +6,23 @@
         <p
           class="text-center uppercase text-xxs font-medium"
           style="color: rgba(110, 117, 141, 1); letter-spacing: 2px">
-          AGENCY
+          {{ text.agencyName }}
         </p>
       </div>
-      <p class="text-xxl font-medium text-justify text mt-17">“Я работал со многими агентствами, брендами и направлениями. И понял одно – креативных и классных много, но тех, кто сможет лишить тебя головной боли – единицы. Мое главное правило в работе – не растягивать на года то, что можно сделать быстро и не менее круто. Не грузить техническими моментами, а разговаривать на одном языке и решать проблемы так, чтобы всё максимально автоматизировать. Собрал команду, которая разделяет мои взгляды”</p>
+      <p class="text-xxl font-medium text-justify text mt-17">{{ text.text }}</p>
       <div class="mt-37.5 flex items-center agency cursor-pointer">
         <img src="@/assets/images/cross.svg" class="w-14 h-14  p-4 rounded-full border-2 " alt="">
-        <p class="text-right font-medium text-sm uppercase ml-4">агентство</p>
+        <p class="text-right font-medium text-sm uppercase ml-4">{{ text.agency }}</p>
       </div>
     </div>
     <div class="about-right ml-42 pt-27.5 w-87.5 overflow-hidden flex flex-col">
       <div class="flex items-center links cursor-pointer">
         <img src="@/assets/images/wiki.svg" class="w-14 h-14  p-4 rounded-full border-2 " alt="">
-        <p class="text-right font-medium text-sm uppercase ml-4">о максе на wikipedia</p>
+        <p class="text-right font-medium text-sm uppercase ml-4">{{ text.wikipedia }}</p>
       </div>
       <div class="flex items-center mb-25 mt-5 links cursor-pointer">
         <img src="@/assets/images/fb.svg" class="w-14 h-14  p-4 rounded-full border-2 " alt="">
-        <p class="text-right font-medium text-sm uppercase ml-4">макс на facebook</p>
+        <p class="text-right font-medium text-sm uppercase ml-4">{{ text.facebook }}</p>
       </div>
       <div class="overflow-hidden mb-8" @mouseover="maxHover = true" @mouseleave="maxHover = false">
         <img src="@/assets/images/slide_5/max_photo.png" class="w-87.5  max" alt="">
@@ -49,7 +49,12 @@ export default {
     return{
       maxHover:false
     }
-  }
+  },
+  computed:{
+    text(){
+      return require("src/assets/text/main/slide5/ru.json")
+    }
+  },
 };
 </script>
 

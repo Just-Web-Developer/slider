@@ -5,10 +5,10 @@
         class="ml-auto text-center mb-15 uppercase text-xxs font-medium"
         style="color: rgba(110, 117, 141, 1); letter-spacing: 2px"
       >
-        projects
+        {{ text.projects }}
       </p>
       <div class="works-content flex pl-15 relative">
-        <div v-for="(item, index) in works" :key="item+index" class="absolute left-0" >
+        <div v-for="(item, index) in text.works" :key="item+index" class="absolute left-0" >
           <transition :name="slideDirection + '-count'">
             <p
               v-if="index === currentSlide"
@@ -22,7 +22,7 @@
 
 
         <div class="work overflow-hidden relative w-full h-125" @mouseover="hover = true" @mouseleave="hover = false" :class="{'hover': hover}" >
-            <div v-for="(work, index) in works" :key="work+index" >
+            <div v-for="(work, index) in text.works" :key="work+index" >
               <transition :name="slideDirection">
                 <div class="absolute w-full h-125 " v-if="index === currentSlide">
                   <div class="relative w-full h-125">
@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="works-right ml-40 mt-18 w-87.5 h-125 flex flex-col">
-      <div class="work-description cursor-pointer relative mb-6" v-for="(item, index) in works" @click="changeSlide(index)"  :class="{'active': index === currentSlide}" :key="item+index">
+      <div class="work-description cursor-pointer relative mb-6" v-for="(item, index) in text.works" @click="changeSlide(index)"  :class="{'active': index === currentSlide}" :key="item+index">
         <h4 class="company-name text-base text-right " :class="{
           'text-3.5xl font-normal mb-5': index === currentSlide,
           'font-medium': index !== currentSlide
@@ -63,39 +63,12 @@ export default {
     return{
       slideDirection: '',
       hover:false,
-      currentSlide:0,
-      works:[
-        {
-          image:"atlas",
-          name:"Atlas Weekend",
-          description:"Разработка и техническая поддержка всех систем управления фестивалем"
-        },
-        {
-          image:"playboy",
-          name:"Playboy Ukraine",
-          description:"Стратегия продвижения и развития бренда: от сайта до социальных сетей"
-        },
-        {
-          image:"the_world_news",
-          name:"The World News",
-          description:"Разработка и запуск уникальной платформы международного информационного агентства на технологии блокчейн"
-        },
-        {
-          image:"music_awards",
-          name:"M1 Music Awards",
-          description:"Разработка и поддержка системы контроля входа при большом потоке гостей"
-        },
-        {
-          image:"unn",
-          name:"UNN",
-          description:"Поддержка, доработка, развитие и SEO-оптимизация новостного портала с уникальными техническими решениями"
-        },
-        {
-          image:"sluhay",
-          name:"Слухай",
-          description:"Разработка идеи и непосредственно самой платформы для аудиокниг на украинском языке"
-        }
-      ]
+      currentSlide:0
+    }
+  },
+  computed:{
+    text(){
+      return require("src/assets/text/main/slide4/ru.json")
     }
   },
   methods:{

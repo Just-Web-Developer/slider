@@ -4,7 +4,7 @@
     @scroll.stop=""
     class="slide ml-83 pt-23.5 h-screen relative"
   >
-    <servicesScreen />
+    <servicesScreen :text="text.services" />
     <firstAnimation />
     <div class="news flex mt-18.75 ml-66 cursor-pointer w-max">
       <div>
@@ -12,7 +12,7 @@
           class="font-medium uppercase text-xxs"
           style="letter-spacing: 0.3em; color: #ff2e53"
         >
-          HOT NEWS
+          {{text.news.hot}}
         </p>
         <svg
           width="20"
@@ -31,10 +31,10 @@
       </div>
       <div class="ml-47 right">
         <p class="font-medium text-xsm relative -top-2">
-          Max Frai Agency & Atlas <br />
-          Weekend: технические решения <br />
-          для масшатбных проектов в <br />
-          условиях пандемии
+          {{text.news.text[0]}} <br />
+          {{text.news.text[1]}} <br />
+          {{text.news.text[2]}} <br />
+          {{text.news.text[3]}}
         </p>
       </div>
     </div>
@@ -48,6 +48,11 @@ import firstAnimation from "@/components/desktop/slide1/firstAnimation";
 export default {
   name: "slide1",
   components: { servicesScreen, firstAnimation },
+  computed:{
+    text(){
+      return require("src/assets/text/main/slide1/ru.json")
+    }
+  }
 };
 </script>
 

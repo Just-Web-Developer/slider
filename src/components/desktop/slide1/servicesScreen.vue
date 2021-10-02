@@ -1,5 +1,6 @@
 <template>
   <div class="mt-45 relative w-200 h-67.5 services" style="z-index: 100;" :class="servicesClass">
+
     <div
       id="first-service"
       @mouseover="servicesClass = 'first-state'"
@@ -22,7 +23,7 @@
               : ''
           "
         >
-          создаём
+          {{ text[0].title }}
         </p>
         <transition name="service-hover-screen">
           <div
@@ -37,28 +38,31 @@
                 alt=""
               />
               <p class="service-name font-medium text-white uppercase">
-                создаём
+                {{ text[0].title }}
               </p>
             </div>
             <div
               class="flex flex-col items-end absolute right-7.5 bottom-7.5 service-list first-text"
             >
               <p class="text-left service-items">
-                Сайты<img
+                {{text[0].points[0]}}
+                <img
                   src="@/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
-                Приложения<img
+                {{text[0].points[1]}}
+                <img
                   src="@/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
-                Креативы<img
+                {{text[0].points[2]}}
+                <img
                   src="@/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
@@ -69,6 +73,7 @@
         </transition>
       </div>
     </div>
+
     <div
       id="second-service"
       @mouseover="servicesClass = 'second-state'"
@@ -91,7 +96,7 @@
               : ''
           "
         >
-          ведём
+          {{ text[1].title }}
         </p>
         <transition name="service-hover-screen">
           <div
@@ -105,27 +110,30 @@
                 class="icon h-10"
                 alt=""
               />
-              <p class="service-name font-medium text-white uppercase">ведём</p>
+              <p class="service-name font-medium text-white uppercase">{{ text[1].title }}</p>
             </div>
             <div
               class="flex flex-col items-end absolute right-7.5 bottom-7.5 service-list second-text"
             >
               <p class="text-left service-items">
-                Бренды<img
+                {{text[1].points[0]}}
+                <img
                   src="@/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
-                Сайты<img
+                {{text[1].points[1]}}
+                <img
                   src="@/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
-                Страницы<img
+                {{text[1].points[2]}}
+                <img
                   src="@/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
@@ -136,6 +144,7 @@
         </transition>
       </div>
     </div>
+
     <div
       id="third-service"
       @mouseover="servicesClass = 'third-state'"
@@ -158,7 +167,7 @@
               : ''
           "
         >
-          продвигаем
+          {{text[2].title}}
         </p>
         <transition name="service-hover-screen">
           <div
@@ -173,28 +182,31 @@
                 alt=""
               />
               <p class="service-name font-medium text-white uppercase">
-                продвигаем
+                {{text[2].title}}
               </p>
             </div>
             <div
               class="flex flex-col items-end absolute right-7.5 bottom-7.5 service-list third-text"
             >
               <p class="text-left service-items">
-                Бренды<img
+                {{text[2].points[0]}}
+                <img
                   src="@/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
-                Сайты<img
+                {{text[2].points[1]}}
+                <img
                   src="@/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
-                Страницы<img
+                {{text[2].points[2]}}
+                <img
                   src="@/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
@@ -205,6 +217,7 @@
         </transition>
       </div>
     </div>
+
     <div
       id="fourth-service"
       @mouseover="servicesClass = 'fourth-state'"
@@ -227,7 +240,7 @@
               : ''
           "
         >
-          пишем
+          {{text[3].title}}
         </p>
         <transition name="service-hover-screen">
           <div
@@ -241,27 +254,30 @@
                 class="icon h-10"
                 alt=""
               />
-              <p class="service-name font-medium text-white uppercase">пишем</p>
+              <p class="service-name font-medium text-white uppercase">{{text[3].title}}</p>
             </div>
             <div
               class="flex flex-col items-end absolute right-7.5 bottom-7.5 service-list fourth-text"
             >
               <p class="text-left service-items">
-                Стратегии<img
+                {{text[3].points[0]}}
+                <img
                   src="@/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
-                Сервисы<img
+                {{text[3].points[1]}}
+                <img
                   src="@/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
                 />
               </p>
               <p class="text-left service-items">
-                Тексты<img
+                {{text[3].points[2]}}
+                <img
                   src="@/assets/images/slide_1/service_icons/cross.svg"
                   class="inline ml-4"
                   alt=""
@@ -272,6 +288,7 @@
         </transition>
       </div>
     </div>
+
     <div
       id="fifth-service"
       @mouseover="servicesClass = 'fifth-state'"
@@ -294,7 +311,7 @@
               : ''
           "
         >
-          помогаем
+          {{text[4].title}}
         </p>
         <transition name="service-hover-screen">
           <div
@@ -309,14 +326,14 @@
                 alt=""
               />
               <p class="service-name font-medium text-white uppercase">
-                помогаем
+                {{text[4].title}}
               </p>
             </div>
             <div
               class="flex flex-col items-end absolute right-7.5 bottom-7.5 service-list fifth-text"
             >
-              <p style="line-height: 1.9375rem">Решать задачи</p>
-              <p style="line-height: 1.9375rem">любой сложности</p>
+              <p style="line-height: 1.9375rem">{{text[4].points[0]}}</p>
+              <p style="line-height: 1.9375rem">{{text[4].points[1]}}</p>
             </div>
           </div>
         </transition>
@@ -333,6 +350,7 @@ export default {
       servicesClass: "first-state",
     };
   },
+  props:['text']
 };
 </script>
 

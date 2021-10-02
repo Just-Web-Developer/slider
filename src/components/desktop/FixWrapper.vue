@@ -4,8 +4,8 @@
     <div class="menu cursor-pointer w-12.5" :class="{'unactive': !menu}" @click="$emit('openMenu')">
       <div class="menu-content">
         <transition name="menu-label" mode="out-in">
-          <p v-if="!menu" class="uppercase font-medium text-xs mb-3">menu</p>
-          <p v-else class="uppercase font-medium text-xs mb-3">close</p>
+          <p v-if="!menu" class="uppercase font-medium text-xs mb-3">{{ text.menu }}</p>
+          <p v-else class="uppercase font-medium text-xs mb-3">{{ text.close }}</p>
         </transition>
 
         <div class="h-5 relative w-full">
@@ -33,7 +33,7 @@
         class="uppercase inter font-bold mt-4 text-xxs"
         style="color: #ff2e53; letter-spacing: 1rem; line-height: 1"
       >
-        AGENCY
+        {{ text.AGENCY }}
       </p>
     </div>
     <div class="ml-27 h-full mt-auto">
@@ -41,13 +41,13 @@
     </div>
     <div class="ml-65 agency  relative z-70">
       <p class="font-medium text-base" @mouseover="agencyGradsOn" @mouseleave="agencyGradsOff">
-        Агентство простых решений сложного <br />
-        цифрового мира
+        {{ text.agency[0] }} <br />
+        {{ text.agency[1] }}
       </p>
     </div>
     <div @click="$emit('contact')" class="connect ml-auto cursor-pointer relative z-70">
       <div class="connect-content flex justify-end items-center  ">
-        <p class="uppercase font-semibold text-xsm mr-4">СВЯЗАТЬСЯ С НАМИ</p>
+        <p class="uppercase font-semibold text-xsm mr-4">{{ text.contact }}</p>
         <div class="plus w-12.5 h-12.5 rounded-full relative">
           <div
             class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-2px"
@@ -159,6 +159,11 @@ export default {
       else{
         this.agency = false
       }
+    }
+  },
+  computed:{
+    text(){
+      return require("src/assets/text/fixWrappers/ru.json")
     }
   }
 };

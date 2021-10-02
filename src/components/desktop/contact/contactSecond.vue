@@ -7,7 +7,7 @@
           class="uppercase inter font-bold mt-4 text-xxs"
           style="color: #ff2e53; letter-spacing: 1rem"
         >
-          AGENCY
+          {{ text.AGENCY }}
         </p>
       </div>
       <div class="ml-27 h-full mt-auto">
@@ -19,15 +19,15 @@
           @mouseover="agencyGradsOn"
           @mouseleave="agencyGradsOff"
         >
-          Агентство простых решений сложного <br />
-          цифрового мира
+          {{ text.agency[0] }} <br />
+          {{ text.agency[1] }}
         </p>
       </div>
       <div
         class="close ml-auto flex flex-col items-center cursor-pointer"
         @click="$emit('closeContacts')"
       >
-        <p class="text-xxs uppercase" style="letter-spacing: 0.3rem">close</p>
+        <p class="text-xxs uppercase" style="letter-spacing: 0.3rem">{{ text.close }}</p>
         <div class="close w-5 h-5 relative mt-4">
           <div
             class="w-5 h-0.5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45"
@@ -44,7 +44,7 @@
       <div class="flex">
         <div class="flex flex-col">
           <h4 class="uppercase mb-6 text-xxl font-medium">
-            Решение в пару кликов
+            {{ text.clicks }}
           </h4>
           <div
             class="chosen-services w-max flex items-center py-4 px-8 rounded-full border mb-3"
@@ -146,7 +146,7 @@
 
 
             <div class="mt-6 relative" style="z-index: 2;">
-              <p class="mb-2 text-xs" style="color: rgba(255, 46, 83, 1)" v-for="error in activeErrors" :key="error.id">{{errors[error]}}</p>
+              <p class="mb-2 text-xs" style="color: rgba(255, 46, 83, 1)" v-for="error in activeErrors" :key="error.id">{{text.errors[error]}}</p>
             </div>
             <button
               @click="sendForm()"
@@ -193,11 +193,6 @@ export default {
       phoneIndexes:['+38 (0__) ___ - __ - __'],
       phoneActive:0,
       email: "",
-      errors: [
-        "Введите, пожалуйста, Ваше имя",
-        "Введите, пожалуйста, контакт для обратной связи",
-        "Выберите удобный формат общения"
-      ],
       activeErrors: [],
     };
   },
