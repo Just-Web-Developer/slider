@@ -122,7 +122,7 @@
       <path d="M1 6L7 12L13 6" stroke-linejoin="round"/>
       <path d="M6.99998 0V12" stroke-linejoin="round"/>
     </svg>
-    <p class="text-xxs font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">{{ state !== 7 ? 'Scroll' : 'back to top' }}</p>
+    <p class="text-xxs font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">{{ state !== 7 ? text.scroll : text.back }}</p>
   </div>
 </template>
 
