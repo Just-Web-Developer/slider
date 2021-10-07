@@ -108,7 +108,7 @@ export default {
   },
   computed:{
     text(){
-      return require("src/assets/text/main/slide2/ru.json")
+      return require("@/assets/text/main/slide2/ru.json")
     }
   },
   methods: {

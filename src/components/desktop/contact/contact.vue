@@ -36,7 +36,7 @@ export default {
   },
   computed:{
     text(){
-      return require("src/assets/text/contact/ru.json")
+      return require("@/assets/text/contact/ru.json")
     }
   }
 };

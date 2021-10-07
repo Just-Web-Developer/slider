@@ -42,7 +42,7 @@ export default {
   emits:['contact'],
   computed:{
     text(){
-      return require("src/assets/text/main/slide7/ru.json")
+      return require("@/assets/text/reuseable/last/ru.json")
     }
   }
 };

@@ -50,7 +50,7 @@ export default {
   components: { servicesScreen, firstAnimation },
   computed:{
     text(){
-      return require("src/assets/text/main/slide1/ru.json")
+      return require("@/assets/text/main/slide1/ru.json")
     }
   }
 };

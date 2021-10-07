@@ -52,7 +52,7 @@ export default {
   },
   computed:{
     text(){
-      return require("src/assets/text/main/slide5/ru.json")
+      return require("@/assets/text/main/slide5/ru.json")
     }
   },
 };

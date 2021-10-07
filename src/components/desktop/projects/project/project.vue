@@ -143,7 +143,7 @@
       <div class="line absolute bottom-0 h-2"></div>
       <!-- Background end -->
       <div class="content absolute z-20 bottom-23 left-10">
-        <p class="next-post-title text-xxsm uppercase font-semibold mb-6">СЛЕДУЮЩая статья</p>
+        <p class="next-post-title text-xxsm uppercase font-semibold mb-6">СЛЕДУЮЩАЯ статья</p>
         <h3 class="w-110 text-3.55xl">Graphic Design Trends 2021 Inspired By What We All Experienced This Year</h3>
       </div>
     </div>

@@ -32,7 +32,7 @@ export default {
   name: "agencySlide1",
   computed:{
     text(){
-      return require("src/assets/text/agency/slide1/ru.json")
+      return require("@/assets/text/agency/slide1/ru.json")
     }
   }
 };

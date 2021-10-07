@@ -125,7 +125,7 @@ export default {
   emits:['contact'],
   computed:{
     text(){
-      return require("src/assets/text/main/slide3/ru.json")
+      return require("@/assets/text/main/slide3/ru.json")
     }
   },
 };

@@ -18,7 +18,7 @@
         <nav class="mt-12.5">
           <div  class="nav-item flex items-center relative pl-82.5 pt-7.5 pb-8.75 bg-red-600">
             <div class="nav-background absolute top-0 right-0 bottom-0 left-0"></div>
-            <h3 @click="chooseNav('agency')" class="relative z-10 font-medium text-xl uppercase cursor-pointer">Агентство</h3>
+            <h3 @click="chooseNav('agency')" class="relative z-10 font-medium text-xl uppercase cursor-pointer">{{ text.agency }}</h3>
             <div class="plus w-5 h-5 relative ml-90">
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90"></div>
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -26,7 +26,7 @@
           </div>
           <div  class="nav-item flex items-center relative pl-82.5 pt-7.5 pb-8.75 bg-red-600">
             <div class="nav-background absolute top-0 right-0 bottom-0 left-0"></div>
-            <h3 @click="chooseNav('projects')" class="relative z-10 font-medium text-xl uppercase cursor-pointer">проекты</h3>
+            <h3 @click="chooseNav('projects')" class="relative z-10 font-medium text-xl uppercase cursor-pointer">{{ text.projects }}</h3>
             <div class="plus w-5 h-5 relative ml-90">
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90"></div>
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -34,7 +34,7 @@
           </div>
           <div  class="nav-item flex items-center relative pl-82.5 pt-7.5 pb-8.75 bg-red-600">
             <div class="nav-background absolute top-0 right-0 bottom-0 left-0"></div>
-            <h3 @click="chooseNav('blog')" class="relative z-10 font-medium text-xl uppercase cursor-pointer">блог</h3>
+            <h3 @click="chooseNav('blog')" class="relative z-10 font-medium text-xl uppercase cursor-pointer">{{ text.blog }}</h3>
             <div class="plus w-5 h-5 relative ml-90">
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90"></div>
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -42,7 +42,7 @@
           </div>
           <div  class="nav-item flex items-center relative pl-82.5 pt-7.5 pb-8.75 bg-red-600">
             <div class="nav-background absolute top-0 right-0 bottom-0 left-0"></div>
-            <h3 @click="chooseNav('contacts')" class="relative z-10 font-medium text-xl uppercase cursor-pointer">контакты</h3>
+            <h3 @click="chooseNav('contacts')" class="relative z-10 font-medium text-xl uppercase cursor-pointer">{{ text.contacts }}</h3>
             <div class="plus w-5 h-5 relative ml-90">
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90"></div>
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -69,6 +69,9 @@ export default {
   computed:{
     absolute(){
       return this.content !== 'post' && this.content !== 'project' && this.content !== 'blog'
+    },
+    text(){
+      return require("@/assets/text/menu/ru.json")
     }
   }
 };
