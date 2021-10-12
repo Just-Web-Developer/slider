@@ -32,11 +32,11 @@
 
 
 
-    <Main v-if="content === 'main'" @contact="contactActive = true" :windows="windows"/>
+    <Main v-if="content === 'main'" @contact="contactActive = true" :windows="windows" @project="setProject($event)"/>
     <Agency v-if="content === 'agency'" @nextSlide="nextSlide()" @nav="content = 'main'" :slide="windows.agency.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
-    <Projects v-if="content === 'projects'" @prevSlide="prevSlide()" @nav="content = 'main'" @nextSlide="nextSlide()" :slide="windows.projects.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
+    <Projects @project="setProject($event)" v-if="content === 'projects'" @prevSlide="prevSlide()" @nav="content = 'main'" @nextSlide="nextSlide()" :slide="windows.projects.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
     <Blog v-if="content === 'blog'"  :slide="windows.projects.slide" @nav="content = 'main'" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
-    <project v-if="content === 'project'" @projects="content = 'projects';scrolling=false" @nav="menuActive = !menuActive" />
+    <project v-if="content === 'project'" :id="projectId" @projects="content = 'projects';scrolling=false" @nav="menuActive = !menuActive" />
     <post v-if="content === 'post'" @blog="content = 'blog'" @goHome="content = 'main'" @nav="menuActive = !menuActive" />
   </div>
 </template>
@@ -101,10 +101,17 @@ export default {
       },
       scrolling:false,
       contactActive:false,
-      menuActive: false
+      menuActive: false,
+      projectId: 0
     };
   },
   methods: {
+    setProject(e){
+      this.content = 'project'
+      console.log('dfgdfg ' + e);
+      this.projectId = e
+      document.querySelector('#app').style.height = "auto";
+    },
     nextSlide() {
       if (this.scrolling && this.content !== 'blog'){
         return;

@@ -3,7 +3,7 @@
     <projectsWrappers :slide="slide" @nextSlide="nextSlideHandler()" @nav="$emit('nav')" @goHome="$emit('goHome')"/>
 
     <projectsSlide1 />
-    <projectsSlide2 :currentSlide="currentSlide" />
+    <projectsSlide2 @project="$emit('project', $event)" :currentSlide="currentSlide" />
     <projectsSlide3 @contact="$emit('contact')"/>
   </div>
 
@@ -26,7 +26,7 @@ export default {
     projectsSlide2,
     projectsSlide3
   },
-  emits:['goHome', 'nav', 'contact', 'nextSlide'],
+  emits:['goHome', 'nav', 'contact', 'nextSlide', 'project'],
   data(){
     return{
       currentSlide:0,

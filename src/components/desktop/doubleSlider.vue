@@ -3,7 +3,7 @@
     <div class="left mr-10 flex flex-col">
       <div class="mini-slide relative w-120 h-83 overflow-hidden">
         <transition :name="sliderDirection" v-for="(item, index) in text.images" :key="item + index">
-          <img v-if="additionalSlide === index" class="unselectable absolute left-0 w-120 h-83" :src="require('@/assets/images/' + src + '/01/slider/' + item + '.png')" alt="">
+          <img v-if="additionalSlide === index" class="unselectable absolute left-0 w-120 h-83" :src="require('@/assets/images/' + src + '/'+ id +'/slider/' + item + '.png')" alt="">
         </transition>
       </div>
       <div class="arrows flex justify-end mt-10 mb-25">
@@ -30,7 +30,7 @@
     </div>
     <div class="right main-slider relative w-217.5 h-150  overflow-hidden">
       <transition :name="sliderDirection" v-for="(item, index) in text.images" :key="item + index">
-        <img v-if="mainSlide === index" class="unselectable absolute left-0 w-217.5 h-150" :src="require('@/assets/images/' + src + '/01/slider/' + item + '.png')" alt="">
+        <img v-if="mainSlide === index" class="unselectable absolute left-0 w-217.5 h-150" :src="require('@/assets/images/' + src + '/' + id + '/slider/' + item + '.png')" alt="">
       </transition>
     </div>
   </div>
@@ -39,7 +39,7 @@
 <script>
 export default {
   name: "doubleSlider",
-  props:['text', 'src'],
+  props:['text', 'src', 'id'],
   computed:{
     max(){
       return this.text.images.length

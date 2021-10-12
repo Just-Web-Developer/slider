@@ -27,7 +27,7 @@
                 <div class="absolute w-full h-125 " v-if="index === currentSlide">
                   <div class="relative w-full h-125">
                     <img  :src="require('@/assets/images/slide_4/'+ work.image + '.png')" class="absolute left-0 top-0 right-0 h-125 slide" alt="" />
-                    <img src="@/assets/images/eye-circle.svg" class="w-12 h-12 absolute left-10 bottom-10 z-20 cursor-pointer" :class="index"  alt="">
+                    <img src="@/assets/images/eye-circle.svg" @click="$emit('project', work.id )" class="w-12 h-12 absolute left-10 bottom-10 z-20 cursor-pointer" :class="index"  alt="">
                     <img @click="changeSlide(currentSlide + 1)" src="@/assets/images/arrow-down-circle.svg" class="w-12 h-12 absolute  bottom-10 cursor-pointer" :class="hover ? 'left-24' : 'left-10'" alt="">
                   </div>
                 </div>
@@ -68,7 +68,7 @@ export default {
   },
   computed:{
     text(){
-      return require("@/assets/text/main/slide4/ru.json")
+      return require("@/assets/text/projects/slide2/ru.json")
     }
   },
   methods:{
@@ -85,7 +85,8 @@ export default {
       }
       this.currentSlide = index
     }
-  }
+  },
+  emits:['project']
 };
 </script>
 

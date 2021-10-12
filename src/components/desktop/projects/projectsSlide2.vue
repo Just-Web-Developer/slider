@@ -26,7 +26,7 @@
               </p>
             </div>
           </transition-group>
-          <img src="@/assets/images/eye-circle.svg" class="w-12 h-12 links absolute left-0 bottom-0 z-20 cursor-pointer"  alt="">
+          <img src="@/assets/images/eye-circle.svg" @click="$emit('project', text.works[currentSlide].id)" class="w-12 h-12 links absolute left-0 bottom-0 z-20 cursor-pointer"  alt="">
           <img src="@/assets/images/arrow-down-circle.svg" class="w-12 h-12 links absolute  bottom-0 cursor-pointer" :class="hover ? 'left-16' : 'left-0'" alt="">
         </div>
 
@@ -58,6 +58,7 @@ export default {
       }
     }
   },
+  emits:['project'],
   computed:{
     text(){
       return require("@/assets/text/projects/slide2/ru.json")

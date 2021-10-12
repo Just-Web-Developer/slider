@@ -59,7 +59,7 @@
       "
     ></div>
   </transition>
-  <slide4 />
+  <slide4 @project="$emit('project', $event)" />
   <slide5 />
   <div class="gradient blue-grad-5" :class="windows.main.slide > 5 ? 'unactive' : ''"
        style="z-index: -10; position: absolute;
@@ -90,7 +90,7 @@ import slide7 from "@/slides/desktop/slide7";
 export default {
   name: "Main",
   props:['windows'],
-  emits:['contact'],
+  emits:['contact', 'project'],
   components:{
     slide1,
     slide2,
