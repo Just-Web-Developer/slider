@@ -1,6 +1,6 @@
 <template>
 
-  <div class="body overflow-hidden" :class="content !== 'blog' && content !== 'project' ? 'slide-' + windows[content].slide : ''" @wheel="scrollingWheel($event)">
+  <div class="body overflow-hidden" :class="content !== 'blog' && content !== 'project' && content !== 'post' ? 'slide-' + windows[content].slide : ''" @wheel="scrollingWheel($event)">
     <transition name="contacts">
       <contact @wheel.passive.stop class="contact" :slide="windows[content].slide" v-if="contactActive" @closeContacts="contactActive = false"/>
     </transition>
@@ -37,7 +37,7 @@
     <Projects @project="setProject($event)" v-if="content === 'projects'" @prevSlide="prevSlide()" @nav="content = 'main'" @nextSlide="nextSlide()" :slide="windows.projects.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
     <Blog v-if="content === 'blog'"  :slide="windows.projects.slide" @nav="content = 'main'" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
     <project v-if="content === 'project'" :id="projectId" @projects="content = 'projects';scrolling=false" @nav="menuActive = !menuActive" />
-    <post v-if="content === 'post'" @blog="content = 'blog'" @goHome="content = 'main'" @nav="menuActive = !menuActive" />
+    <post v-if="content === 'post'" :id="postId" @blog="content = 'blog'" @goHome="content = 'main'" @nav="menuActive = !menuActive" />
   </div>
 </template>
 
@@ -68,7 +68,7 @@ export default {
   },
   data() {
     return {
-      content:'project',
+      content:'post',
       lang: 'ru',
       windows:{
         main:{
@@ -102,14 +102,19 @@ export default {
       scrolling:false,
       contactActive:false,
       menuActive: false,
-      projectId: 0
+      projectId: 0,
+      postId:0
     };
   },
   methods: {
     setProject(e){
       this.content = 'project'
-      console.log('dfgdfg ' + e);
       this.projectId = e
+      document.querySelector('#app').style.height = "auto";
+    },
+    setPost(e){
+      this.content = 'post'
+      this.postId = e
       document.querySelector('#app').style.height = "auto";
     },
     nextSlide() {

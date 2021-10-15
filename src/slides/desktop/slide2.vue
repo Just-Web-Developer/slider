@@ -114,7 +114,6 @@ export default {
   methods: {
     stackNext() {
       if (this.stackState < this.text.stackSlider.length - 3) {
-        console.log(this.text.stackSlider.length - 3);
         this.stackState++;
       }
     },

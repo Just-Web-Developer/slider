@@ -1,0 +1,61 @@
+{
+  "back": "back to top",
+  "next": "СЛЕДУЮЩая статья",
+  "posts": [
+    {
+      "images": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ],
+      "tags": ["новости"],
+      "title": "My trip to Japan, an epiphany to accessibility and socially inclusive design",
+      "text": [
+        "One of the biggest challenges today — from a global and business point of view — is to design for a more sustainable and socially inclusive world. While we have new products and services raining everyday into our world, only some notable ones excel in providing delightful experiences.",
+        "Catching a train during peak hours at Tokyo station is highly challenging, with a 200% increase in congestion ratio in most of the commuter lines; waves of people rushing for work moving in all directions is a common sight. To commute by trains, one needs either a JR pass, or IC prepaid cards that can be recharged for a short change in any train/bus station eg. ICOCA, SUICA , etc.",
+        "A noticeable effort has been made in major Japanese cities to ensure that every train, metro, tram or bus is quickly accessible for all types of users — visually impaired, wheel-chair users, mothers with young infants and colour blind users, to name some. The train system is very complex, but they have been colour coded everywhere. No matter which station you are in, you just need to find the right colour code and the platform in order to go to the next station. There are also sign boards indicating which side of the platform you need to stand on, earmarking the direction of the arriving train.",
+        "Below is an image of a colour coded wall paneling that helps passengers inside the Tokyo Metro Fukutoshin Line’s Shibuya Station to navigate passages to connecting rail lines. Shibuya is the fourth busiest station on the Tokyo Metro network.",
+        {
+          "title": "As per my understanding, to get a ticket at any fare gate at any station, the mechanism is as follows:",
+          "points": [
+            "Tap the prepaid IC card;",
+            "Balance will be displayed and checked;",
+            "Wait for the gates to open."
+          ]
+        },
+        {
+          "title": "But in Japan, this task is slightly modified for efficiency. In order to keep the crowd moving faster the steps are interchanged:",
+          "points": [
+            "Tap the prepaid IC card — using multiple tap access;",
+            "Gates will open;",
+            "The balance will be displayed."
+          ]
+        },
+        [
+          "By a simple reordering of the same task, people are able to move much more freely and without breaking a step.",
+          "Fare gates accommodate a wide variety of users. Note that the gate assembly is long enough so that exiting passengers do not have to slow or stop walking in order for the gate to open. The gate has multiple smart card targets to speed fare collection."
+        ],
+        [
+          "In Japan, everybody is a user! There is no average / normal / typical user as per our design process - this only made me question the idea of personas in design, which tends to unconsciously leave out certain user segments who can use the product.",
+          "Inclusive design means making your product accessible to as many users as possible. This can be done by just listening to people, observing the struggles they face during commute, and identifying the barriers to performing seemingly simple tasks.",
+          "Designing with accessibility at the forefront is a cross functional team effort. I am certain that accessibility was considered as a key principle at the early stages of planning and implementation, as opposed to being an after thought in the process!",
+          "When a designed product has made considerations for user behavior and encompasses smaller details into it, the changes can result in brilliant experiences.",
+          "It’s the concept of Kaizen — to strive for continuous improvement which reflects in almost every designed environment in Japan."
+        ]
+      ],
+      "subtitles": [
+        "Information designed for ease of access and social inclusivity",
+        "Highly efficient public transports & systems for all types of users",
+        "Key take-aways are"
+      ],
+      "date": "01.04.2021",
+      "imgSource": [
+        "Image source: Wikipedia |",
+        "CC BY-SA 3.0"
+      ],
+      "nextTitle": "Graphic Design Trends 2021 Inspired By What We All Experienced This Year"
+    }
+
+  ]
+}

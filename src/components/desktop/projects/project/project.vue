@@ -136,7 +136,7 @@
       </svg>
       <p class="text-xxs font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">back to top</p>
     </div>
-    <div class="next w-315 cursor-pointer relative">
+    <div class="next w-315 cursor-pointer relative" v-if="text.nextTitle && text.nextImage">
       <!-- Background start -->
       <div class="absolute w-full h-full shadow z-10"></div>
       <img class="w-full" :src="require('@/assets/images/projects/' + text.id + '/next.png')" alt="">
@@ -164,9 +164,6 @@ export default {
     text(){
       return require('@/assets/text/project/ru.json').projects[this.id]
     }
-  },
-  mounted() {
-    console.log(this.text);
   },
   props:['id'],
   emits:['projects', 'nav']
