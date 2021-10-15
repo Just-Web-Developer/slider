@@ -94,6 +94,10 @@ export default {
           slide: 1,
           max: 7,
         },
+        post:{
+          slide: 1,
+          max: 7,
+        },
         contacts:{
           slide: 1,
           max: 7,
