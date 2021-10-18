@@ -37,7 +37,7 @@
     <Projects @project="setProject($event)" v-if="content === 'projects'" @prevSlide="prevSlide()" @nav="content = 'main'" @nextSlide="nextSlide()" :slide="windows.projects.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
     <Blog v-if="content === 'blog'"  :slide="windows.projects.slide" @nav="content = 'main'" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
     <project v-if="content === 'project'" :id="projectId" @projects="content = 'projects';scrolling=false" @nav="menuActive = !menuActive" />
-    <post v-if="content === 'post'" :id="postId" @blog="content = 'blog'" @goHome="content = 'main'" @nav="menuActive = !menuActive" />
+    <post v-if="content === 'post'" :id="postId" @goBlog="content = 'blog'" @goHome="content = 'main'" @nav="menuActive = !menuActive" />
   </div>
 </template>
 
