@@ -2,7 +2,7 @@
 
   <div class="body overflow-hidden" :class="content !== 'blog' && content !== 'project' && content !== 'post' ? 'slide-' + windows[content].slide : ''" @wheel="scrollingWheel($event)">
     <transition name="contacts">
-      <contact @wheel.passive.stop class="contact" :slide="windows[content].slide" v-if="contactActive" @closeContacts="contactActive = false"/>
+      <contact @wheel.passive.stop class="contact" :lang="lang" :slide="windows[content].slide" v-if="contactActive" @closeContacts="contactActive = false"/>
     </transition>
     <transition name="menu">
       <Menu
@@ -10,7 +10,7 @@
         class="menu"
         :slide="windows[content].slide"
         :content="content"
-        :language="lang"
+        :lang="lang"
         v-if="menuActive"
         @closeContacts="menuActive = false"
         @setNavRoute="setRoute($event)"
@@ -18,6 +18,7 @@
       />
     </transition>
     <FixWrapper
+      :lang="lang"
       @nextSlide="nextSlide()"
       @prevSlide="prevSlide()"
       @setNavRoute="setRoute($event)"
@@ -32,12 +33,12 @@
 
 
 
-    <Main v-if="content === 'main'" @contact="contactActive = true" :windows="windows" @project="setProject($event)"/>
-    <Agency v-if="content === 'agency'" @nextSlide="nextSlide()" @nav="content = 'main'" :slide="windows.agency.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
-    <Projects @project="setProject($event)" v-if="content === 'projects'" @prevSlide="prevSlide()" @nav="content = 'main'" @nextSlide="nextSlide()" :slide="windows.projects.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
-    <Blog v-if="content === 'blog'"  :slide="windows.projects.slide" @nav="content = 'main'" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
-    <project v-if="content === 'project'" :id="projectId" @projects="content = 'projects';scrolling=false" @nav="menuActive = !menuActive" />
-    <post v-if="content === 'post'" :id="postId" @goBlog="content = 'blog'" @goHome="content = 'main'" @nav="menuActive = !menuActive" />
+    <Main v-if="content === 'main'" :lang="lang" @contact="contactActive = true" :windows="windows" @project="setProject($event)"/>
+    <Agency v-if="content === 'agency'" :lang="lang" @nextSlide="nextSlide()" @nav="content = 'main'" :slide="windows.agency.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
+    <Projects @project="setProject($event)" :lang="lang" v-if="content === 'projects'" @prevSlide="prevSlide()" @nav="content = 'main'" @nextSlide="nextSlide()" :slide="windows.projects.slide" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
+    <Blog v-if="content === 'blog'" :lang="lang" :slide="windows.projects.slide" @nav="content = 'main'" @contact="contactActive = true" @goHome="menuActive = !menuActive" />
+    <project v-if="content === 'project'" :lang="lang" :id="projectId" @projects="content = 'projects';scrolling=false" @nav="menuActive = !menuActive" />
+    <post v-if="content === 'post'" :lang="lang" :id="postId" @goBlog="content = 'blog'" @goHome="content = 'main'" @nav="menuActive = !menuActive" />
   </div>
 </template>
 

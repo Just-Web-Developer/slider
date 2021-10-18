@@ -123,6 +123,7 @@ export default {
       }
     },
   },
+  props:['lang']
 };
 </script>
 

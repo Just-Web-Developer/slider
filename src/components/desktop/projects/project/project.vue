@@ -165,7 +165,7 @@ export default {
       return require('@/assets/text/project/ru.json').projects[this.id]
     }
   },
-  props:['id'],
+  props:['id', "lang"],
   emits:['projects', 'nav']
 };
 </script>

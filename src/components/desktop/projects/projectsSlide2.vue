@@ -56,6 +56,9 @@ export default {
       default(){
         return 0
       }
+    },
+    lang:{
+      type:String
     }
   },
   emits:['project'],

@@ -1,7 +1,7 @@
 <template>
   <div class="blog relative overflow-scroll" id="blog" @wheel.stop>
-    <blogWrappers :post="false" @goHome="$emit('goHome')" @nav="$emit('nav')"/>
-    <blogPosts/>
+    <blogWrappers :lang="lang" :post="false" @goHome="$emit('goHome')" @nav="$emit('nav')"/>
+    <blogPosts :lang="lang"/>
   </div>
 
 </template>
@@ -13,7 +13,7 @@ import blogPosts from "../blog/blogPosts";
 
 export default {
   name: "Blog",
-  props:['slide'],
+  props:['slide', 'lang'],
   components:{
     blogWrappers,
     blogPosts,

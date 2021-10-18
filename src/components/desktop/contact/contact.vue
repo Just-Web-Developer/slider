@@ -20,7 +20,7 @@ import contactSecond from "./contactSecond";
 export default {
   name: "contact",
   emits:['closeContacts'],
-  props:['slide'],
+  props:['slide', "lang"],
   components:{contactFirst, contactSecond},
   data(){
     return{

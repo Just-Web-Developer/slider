@@ -16,6 +16,7 @@
 <script>
 export default {
   name: "agencySlide3",
+  props:['lang'],
   computed:{
     text(){
       return require("@/assets/text/agency/slide3/ru.json")

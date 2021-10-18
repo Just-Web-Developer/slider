@@ -86,7 +86,8 @@ export default {
       this.currentSlide = index
     }
   },
-  emits:['project']
+  emits:['project'],
+  props:['lang']
 };
 </script>
 

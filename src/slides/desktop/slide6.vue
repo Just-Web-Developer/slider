@@ -55,6 +55,7 @@ export default {
       hoverIndex: null
     }
   },
+  props:['lang'],
   methods:{
     hoverStart(index){
       this.hover = true

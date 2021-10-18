@@ -56,6 +56,7 @@ import postPreview from "./postPreview";
 
 export default {
   name: "agencySlide1",
+  props:['lang'],
   data(){
     return{
       activeTopic:"all"

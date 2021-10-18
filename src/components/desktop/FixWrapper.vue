@@ -132,7 +132,7 @@ import WrapGrads from "./WrapGrads";
 export default {
   name: "wrappers",
   components: { WrapGrads },
-  props:['state', 'menu', 'main'],
+  props:['state', 'menu', 'main', 'lang'],
   data() {
     return {
       menuHover: null,

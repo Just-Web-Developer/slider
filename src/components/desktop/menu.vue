@@ -2,15 +2,15 @@
   <div class="fixed top-0 left-0" style="z-index: 200;" >
       <div  class=" screen pt-55  h-screen w-screen fixed" :style="'top:0'">
         <div class="langs pl-82.5 flex">
-          <div class="lang cursor-pointer mr-20" :class="{'active': language === 'ru'}" @click="chooseLang('ru')">
+          <div class="lang cursor-pointer mr-20" :class="{'active': lang === 'ru'}" @click="chooseLang('ru')">
             <p class="uppercase text-xxsm font-semibold">русский</p>
             <div class="decorator mt-4.5 h-2px"></div>
           </div>
-          <div class="lang cursor-pointer mr-20" :class="{'active': language === 'ua'}" @click="chooseLang('ua')">
+          <div class="lang cursor-pointer mr-20" :class="{'active': lang === 'ua'}" @click="chooseLang('ua')">
             <p class="uppercase text-xxsm font-semibold">українська</p>
             <div class="decorator mt-4.5 h-2px"></div>
           </div>
-          <div class="lang cursor-pointer" :class="{'active': language === 'en'}" @click="chooseLang('en')">
+          <div class="lang cursor-pointer" :class="{'active': lang === 'en'}" @click="chooseLang('en')">
             <p class="uppercase text-xxsm font-semibold">english</p>
             <div class="decorator mt-4.5 h-2px"></div>
           </div>
@@ -56,7 +56,7 @@
 <script>
 export default {
   name: "Menu",
-  props:['slide', 'language', 'content'],
+  props:['slide', 'lang', 'content'],
   emits:['setNavRoute', 'setLang'],
   methods:{
     chooseNav(choice){

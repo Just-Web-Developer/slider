@@ -19,6 +19,7 @@
 <script>
 export default {
   name: "projectsSlide1",
+  props:['lang'],
   computed:{
     text(){
       return require("@/assets/text/projects/slide1/ru.json")

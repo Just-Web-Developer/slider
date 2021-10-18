@@ -30,6 +30,7 @@
 <script>
 export default {
   name: "agencySlide1",
+  props:['lang'],
   computed:{
     text(){
       return require("@/assets/text/agency/slide1/ru.json")

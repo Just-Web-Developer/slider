@@ -1,6 +1,6 @@
 <template>
   <div class="post relative overflow-scroll" id="post" @wheel.stop>
-    <blogWrappers @blog="$emit('goBlog')" :post="true" @goHome="$emit('goHome')" @nav="$emit('nav')"/>
+    <blogWrappers :lang="lang" @blog="$emit('goBlog')" :post="true" @goHome="$emit('goHome')" @nav="$emit('nav')"/>
     <div  class="pt-50 pl-82.5 pr-50 w-full flex flex-col slide min-h-screen">
       <div class="header pr-32.5 flex">
         <div class="tags w-66 flex flex-col flex-shrink-0">
@@ -103,7 +103,7 @@ import blogWrappers from "./blogWrappers";
 export default {
   name: "post",
   emits:['goHome', 'goBlog', 'nav'],
-  props:["id"],
+  props:["id", "lang"],
   components:{
     doubleSlider,
     blogWrappers

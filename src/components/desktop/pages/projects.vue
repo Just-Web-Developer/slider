@@ -1,10 +1,10 @@
 <template>
   <div class="projects" @wheel.stop="slideHandler($event)">
-    <projectsWrappers :slide="slide" @nextSlide="nextSlideHandler()" @nav="$emit('nav')" @goHome="$emit('goHome')"/>
+    <projectsWrappers :lang="lang" :slide="slide" @nextSlide="nextSlideHandler()" @nav="$emit('nav')" @goHome="$emit('goHome')"/>
 
-    <projectsSlide1 />
-    <projectsSlide2 @project="$emit('project', $event)" :currentSlide="currentSlide" />
-    <projectsSlide3 @contact="$emit('contact')"/>
+    <projectsSlide1 :lang="lang" />
+    <projectsSlide2 :lang="lang" @project="$emit('project', $event)" :currentSlide="currentSlide" />
+    <projectsSlide3 :lang="lang" @contact="$emit('contact')"/>
   </div>
 
 </template>
@@ -18,8 +18,8 @@ import projectsSlide3 from "../projects/projectsSlide3";
 
 
 export default {
-  name: "Agency",
-  props:['slide'],
+  name: "Projects",
+  props:['slide', 'lang'],
   components:{
     projectsWrappers,
     projectsSlide1,

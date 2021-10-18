@@ -121,7 +121,7 @@
 <script>
 export default {
   name: "slide3",
-  props: ["clientSlide"],
+  props: ["clientSlide", 'lang'],
   emits:['contact'],
   computed:{
     text(){

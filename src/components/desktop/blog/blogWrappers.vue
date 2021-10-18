@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  name: "agencyWrappers",
+  name: "blogWrappers",
   emits: ["goHome", "blog", "nextSlide"],
   props:{
     slide:{
@@ -38,6 +38,9 @@ export default {
     post:{
       type: Boolean,
       default: false,
+    },
+    lang:{
+      type:String
     }
   },
   computed:{

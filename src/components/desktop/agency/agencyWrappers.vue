@@ -32,7 +32,7 @@
 export default {
   name: "agencyWrappers",
   emits: ['goHome', 'nextSlide'],
-  props: ['slide'],
+  props: ['slide', 'lang'],
   computed:{
     text(){
       return require("@/assets/text/fixWrappers/ru.json")

@@ -100,6 +100,7 @@
 <script>
 export default {
   name: "agencySlide4",
+  props:['lang'],
   computed:{
     text(){
       return require("@/assets/text/agency/slide4/ru.json")

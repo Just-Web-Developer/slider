@@ -40,6 +40,7 @@
 export default {
   name: "slide7",
   emits:['contact'],
+  props:['lang'],
   computed:{
     text(){
       return require("@/assets/text/reuseable/last/ru.json")

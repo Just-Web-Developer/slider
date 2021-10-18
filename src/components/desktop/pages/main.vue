@@ -1,5 +1,5 @@
 <template>
-  <slide1 />
+  <slide1 :lang="lang" />
   <div class="gradient">
     <div
       style="
@@ -35,7 +35,7 @@
         "
     ></div>
   </div>
-  <slide2 />
+  <slide2 :lang="lang" />
   <div class="gradient" :class="'grad-slide-'+windows.main.slide" id="grad-3-4"
        style="
         z-index: -10;
@@ -48,7 +48,7 @@
         background: radial-gradient(50% 50% at 50% 50%,rgba(255, 46, 83, 0.3) 0%,rgba(255, 46, 83, 0) 100%);
       "
   ></div>
-  <slide3 :clientSlide="windows.main.slide3.clientSlide" @contact="$emit('contact')"  />
+  <slide3 :lang="lang" :clientSlide="windows.main.slide3.clientSlide" @contact="$emit('contact')"  />
   <transition name="gradient">
     <div v-if="windows.main.slide === 3" class="gradient blue-grad-3"
          style="
@@ -59,8 +59,8 @@
       "
     ></div>
   </transition>
-  <slide4 @project="$emit('project', $event)" />
-  <slide5 />
+  <slide4 :lang="lang" @project="$emit('project', $event)" />
+  <slide5 :lang="lang" />
   <div class="gradient blue-grad-5" :class="windows.main.slide > 5 ? 'unactive' : ''"
        style="z-index: -10; position: absolute;
           width: 1122px;
@@ -68,14 +68,14 @@
           top: calc(400vh + 190px);
           background: radial-gradient(50% 50% at 50% 50%, rgba(0, 133, 255, 0.2) 0%, rgba(0, 133, 255, 0) 100%);">
   </div>
-  <slide6 />
+  <slide6 :lang="lang" />
   <div class="gradient" style="z-index: -10;position: absolute;
         width: 1122px;
         height: 1122px;
         left: 1330px;
         top: calc(500vh + 335px) ;
         background: radial-gradient(50% 50% at 50% 50%, rgba(0, 133, 255, 0.2) 0%, rgba(0, 133, 255, 0) 100%);"></div>
-  <slide7 @contact="$emit('contact')" />
+  <slide7 :lang="lang" @contact="$emit('contact')" />
 </template>
 
 <script>
@@ -89,7 +89,7 @@ import slide7 from "@/slides/desktop/slide7";
 
 export default {
   name: "Main",
-  props:['windows'],
+  props:['windows', 'lang'],
   emits:['contact', 'project'],
   components:{
     slide1,

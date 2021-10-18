@@ -52,7 +52,8 @@ export default {
     text(){
       return require("@/assets/text/main/slide1/ru.json")
     }
-  }
+  },
+  props:['lang']
 };
 </script>
 

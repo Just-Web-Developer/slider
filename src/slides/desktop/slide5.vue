@@ -50,6 +50,7 @@ export default {
       maxHover:false
     }
   },
+  props:['lang'],
   computed:{
     text(){
       return require("@/assets/text/main/slide5/ru.json")
