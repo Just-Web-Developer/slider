@@ -9,19 +9,19 @@
         v-for="(item, index) in text.tags"
         :key="item[0]"
         :class="{ active: activeTopic === item[0], 'mr-7.5': index < text.tags.length - 1}"
-        @click="activeTopic = item[0]"
+        @click="setTopic(item[0])"
         class="posts-topic cursor-pointer font-semibold text-xxsm uppercase py-4 px-8 rounded-full border"
       >
         {{ item[1] }}
       </p>
     </div>
     <div class="posts flex flex-col">
-      <postPreview v-for="item in text.previews" v-show="item.tagCodes.includes(activeTopic) || activeTopic === 'all'" :key="item" :text="item"/>
+      <postPreview v-for="(item, index) in active" v-show="index < max" :key="item" :text="item"/>
     </div>
     <div class="footer flex flex-col w-full mb-60">
       <div class="flex flex-col">
-        <div class="become-client ml-41.5p ">
-          <div class="connect-content flex justify-start items-center cursor-pointer w-max" @click="$emit('contact')">
+        <div class="become-client ml-41.5p " v-if="left > 0" @click="expandMax()">
+          <div class="connect-content flex justify-start items-center cursor-pointer w-max"  >
             <div class="plus w-12.5 h-12.5 rounded-full mr-5 relative">
               <div
                 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-2px"
@@ -30,7 +30,7 @@
                 class="absolute top-1/2 left-1/2 transform rotate-90 -translate-x-1/2 -translate-y-1/2 w-4 h-2px"
               ></div>
             </div>
-            <p class="uppercase font-semibold text-xxsm">{{ text.show[0] }}5{{ text.show[1] }}{{text.previews.length}}{{ text.show[2] }}</p>
+            <p class="uppercase font-semibold text-xxsm" >{{ text.show[0] }}{{ add }}{{ text.show[1] }}{{left}}{{ text.show[2] }}</p>
           </div>
 
           <div class="connect-grad relative" style="z-index: -1">
@@ -39,6 +39,7 @@
             <div id="grad-3"></div>
           </div>
         </div>
+        <p class="uppercase font-semibold text-xxsm mx-auto" v-if="active.length === 0" >{{text.noPosts}}</p>
       </div>
       <div class="flex justify-between mt-37">
         <p class="text-xxs font-medium" style="letter-spacing: 2px; color: rgba(110, 117, 141, 1)">
@@ -59,16 +60,47 @@ export default {
   props:['lang'],
   data(){
     return{
-      activeTopic:"all"
+      activeTopic:"all",
+      addDefault: 5,
+      max:5
     }
   },
   components:{
     postPreview
   },
-  computed:{
-    text(){
-      return Object.assign(require("@/assets/text/blog/page/ru.json"), require("@/assets/text/blog/previews/ru.json"))
+  methods:{
+    expandMax(){
+      let result = this.addDefault
+      if (this.max + this.addDefault > this.active.length){
+        result = this.active.length - this.max
+      }
+      this.max+=result
+    },
+    setTopic(item){
+      this.activeTopic = item
+      this.max = this.addDefault
     }
+  },
+  computed:{
+    add(){
+      let result = this.addDefault
+      if (this.max + this.addDefault > this.active.length){
+        result = this.active.length - this.max
+      }
+      return result
+    },
+    left(){
+      return this.active.length - this.max
+    },
+    text(){
+      return require("@/assets/text/blog/page/ru.json")
+    },
+    active(){
+      return this.text.previews.filter(item=>item.tagCodes.includes(this.activeTopic) || this.activeTopic === 'all')
+    }
+  },
+  mounted() {
+    console.log(this.active.length);
   }
 };
 </script>
