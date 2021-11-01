@@ -4,7 +4,7 @@
     <div  class="pt-50 pl-82.5 pr-50 w-full flex flex-col slide min-h-screen">
       <div class="header pr-32.5 flex">
         <div class="tags w-66 flex flex-col flex-shrink-0">
-          <p class="posts-topic mb-2 cursor-pointer font-semibold text-xxsm uppercase w-max py-2 px-4 rounded-full border mr-4">
+          <p class="posts-topic mb-2 cursor-pointer font-semibold fz-13 uppercase w-max py-2 px-4 rounded-full border mr-4">
             новости
           </p>
         </div>
@@ -12,15 +12,15 @@
         <div class="flex flex-col">
           <div class="flex">
             <div class="title">
-              <h2 class="font-light text-4.5xl" style="color: #FF2E53">{{ text.title }}</h2>
+              <h2 class="font-light fz-45" style="color: #FF2E53">{{ text.title }}</h2>
             </div>
             <div class="share w-66 flex-shrink-0 flex justify-end">
               <img src="@/assets/images/share.svg" class="w-12 h-12"  alt="">
             </div>
           </div>
           <div class="header-text pr-32.5 mt-12  mr-66">
-            <p class="text-xxl text-white mb-12 font-medium">{{ text.text[0] }}</p>
-            <p class="date font-medium text-xxs" style="letter-spacing: 0.3rem; color: #6E758D">
+            <p class="fz-201 text-white mb-12 font-medium">{{ text.text[0] }}</p>
+            <p class="date font-medium fz-10" style="letter-spacing: 0.3rem; color: #6E758D">
               {{ text.date }}
             </p>
           </div>
@@ -28,24 +28,24 @@
       </div>
       <img class="flex pr-32.5 my-25" :src="require('@/assets/images/blog/' + id + '/first.png')" alt="">
       <div class="first-body pr-32.5 mx-66 mb-25">
-        <h2 class="text-3.55xl mb-12" style="color: #FF2E53">{{ text.subtitles[0] }}</h2>
-        <p class="text-lg text-white mb-12 font-medium">{{ text.text[1] }}<br></p>
-        <p class="text-lg text-white mb-12 font-medium">
+        <h2 class="fz-301 mb-12" style="color: #FF2E53">{{ text.subtitles[0] }}</h2>
+        <p class="fz-18 text-white mb-12 font-medium">{{ text.text[1] }}<br></p>
+        <p class="fz-18 text-white mb-12 font-medium">
           {{ text.text[2] }}<br></p>
-        <p class="text-lg text-white mb-12 font-medium">{{ text.text[3] }}</p>
+        <p class="fz-18 text-white mb-12 font-medium">{{ text.text[3] }}</p>
       </div>
 
       <doubleSlider :text="text" :id="id" :src="'blog'" class="mb-25"/>
 
       <div class="second-body pr-32.5 mx-66 mb-25">
-        <h2 class="text-3.55xl mb-12" style="color: #FF2E53">{{ text.subtitles[1] }}</h2>
-        <p class="text-lg text-white mb-12 font-medium">{{ text.text[4].title }}<br></p>
-        <ul class="text-lg text-white mb-12 font-medium list-disc pl-10">
+        <h2 class="fz-301 mb-12" style="color: #FF2E53">{{ text.subtitles[1] }}</h2>
+        <p class="fz-18 text-white mb-12 font-medium">{{ text.text[4].title }}<br></p>
+        <ul class="fz-18 text-white mb-12 font-medium list-disc pl-10">
           <li v-for="item in text.text[4].points" :key="item">{{ item }}</li>
           <br>
         </ul>
-        <p class="text-lg text-white mb-12 font-medium">{{ text.text[5].title }}</p>
-        <ol class="text-lg text-white mb-12 font-medium list-decimal pl-5">
+        <p class="fz-18 text-white mb-12 font-medium">{{ text.text[5].title }}</p>
+        <ol class="fz-18 text-white mb-12 font-medium list-decimal pl-5">
           <li v-for="item in text.text[5].points" :key="item">{{ item }}</li>
         </ol>
         <p>{{ text.text[6][0] }}
@@ -56,7 +56,7 @@
 
       <div class="image pr-32.5 flex">
         <div class="signature w-66 justify-end mt-auto">
-          <p class="w-55 font-medium text-base mr-10" style="color: #6e758d">
+          <p class="w-55 font-medium fz-16 mr-10" style="color: #6e758d">
             {{ text.imgSource[0] }}
             <br>
             {{ text.imgSource[1] }}
@@ -66,8 +66,8 @@
       </div>
 
       <div class="third-body pr-32.5 mx-66 mt-25">
-        <h2 class="text-3.55xl mb-12" style="color: #FF2E53">{{ text.subtitles[2] }}</h2>
-        <ul class="text-lg text-white mb-12 font-medium pl-5 list-disc">
+        <h2 class="fz-301 mb-12" style="color: #FF2E53">{{ text.subtitles[2] }}</h2>
+        <ul class="fz-18 text-white mb-12 font-medium pl-5 list-disc">
           <li :class="{'mb-6': index < text.text[7].length - 1}" v-for="(item, index) in text.text[7]" :key="item">{{ item }}</li>
         </ul>
       </div>
@@ -77,18 +77,18 @@
           <path d="M1 6L7 12L13 6" stroke-linejoin="round"/>
           <path d="M6.99998 0V12" stroke-linejoin="round"/>
         </svg>
-        <p class="text-xxs font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">{{ all.back }}</p>
+        <p class="fz-10 font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">{{ all.back }}</p>
       </a>
 
-      <div class="next cursor-pointer w-315 relative " v-if="text.nextTitle">
+      <div class="next cursor-pointer w-315 relative " v-if="text.nextTitle" @click="$emit('nextPost')">
         <!-- Background start -->
         <div class="absolute w-full h-full shadow z-10"></div>
         <img class="w-full" :src="require('@/assets/images/blog/' + id + '/next.png')" alt="">
         <div class="line absolute bottom-0 h-2"></div>
         <!-- Background end -->
         <div class="content absolute z-20 bottom-23 left-10">
-          <p class="next-post-title text-xxsm uppercase font-semibold mb-6">{{ all.next }}</p>
-          <h3 class="w-110 text-3.55xl">{{ text.nextTitle }}</h3>
+          <p class="next-post-title fz-13 uppercase font-semibold mb-6">{{ all.next }}</p>
+          <h3 class="w-110 fz-301">{{ text.nextTitle }}</h3>
         </div>
       </div>
     </div>
@@ -102,7 +102,7 @@ import blogWrappers from "./blogWrappers";
 
 export default {
   name: "post",
-  emits:['goHome', 'goBlog', 'nav'],
+  emits:['goHome', 'goBlog', 'nav', 'nextPost'],
   props:["id", "lang"],
   components:{
     doubleSlider,

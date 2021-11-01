@@ -21,9 +21,9 @@
         </div>
       </div>
       <div class="numbers flex justify-end unselectable">
-        <p class="current mr-2 text-3.55xl" style="line-height: 1;">{{mainSlide + 1}}</p>
+        <p class="current mr-2 fz-301" style="line-height: 1;">{{mainSlide + 1}}</p>
         <div class="all flex flex-col">
-          <p class="text-xxs mb-1" style="line-height: 1.6;">{{max}}</p>
+          <p class="fz-10 mb-1" style="line-height: 1.6;">{{max}}</p>
           <div class="w-4 h-px" style="background:rgba(151, 163, 203, 0.6);;"></div>
         </div>
       </div>

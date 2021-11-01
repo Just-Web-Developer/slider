@@ -4,8 +4,8 @@
     <div class="menu cursor-pointer w-12.5" :class="{'unactive': !menu}" @click="$emit('openMenu')">
       <div class="menu-content">
         <transition name="menu-label" mode="out-in">
-          <p v-if="!menu" class="uppercase font-medium text-xs mb-3">{{ text.menu }}</p>
-          <p v-else class="uppercase font-medium text-xs mb-3">{{ text.close }}</p>
+          <p v-if="!menu" class="uppercase font-medium fz-12 mb-3">{{ text.menu }}</p>
+          <p v-else class="uppercase font-medium fz-12 mb-3">{{ text.close }}</p>
         </transition>
 
         <div class="h-5 relative w-full">
@@ -30,7 +30,7 @@
     <div class="max-frai ml-52.5 relative z-70" :class="{'cursor-pointer' : menu}" @click="$emit('setNavRoute', 'main')">
       <img src="@/assets/images/max-frai.svg" class="w-full" alt="" />
       <p
-        class="uppercase inter font-bold mt-4 text-xxs"
+        class="uppercase inter font-bold mt-4 fz-10"
         style="color: #ff2e53; letter-spacing: 1rem; line-height: 1"
       >
         {{ text.AGENCY }}
@@ -40,14 +40,14 @@
       <div class="h-8px w-px" style="background: #ff2e53"></div>
     </div>
     <div class="ml-65 agency  relative z-70">
-      <p class="font-medium text-base" @mouseover="agencyGradsOn" @mouseleave="agencyGradsOff">
+      <p class="font-medium fz-16" @mouseover="agencyGradsOn" @mouseleave="agencyGradsOff">
         {{ text.agency[0] }} <br />
         {{ text.agency[1] }}
       </p>
     </div>
     <div @click="$emit('contact')" class="connect ml-auto cursor-pointer relative z-70">
       <div class="connect-content flex justify-end items-center  ">
-        <p class="uppercase font-semibold text-xsm mr-4">{{ text.contact }}</p>
+        <p class="uppercase font-semibold fz-15 mr-4">{{ text.contact }}</p>
         <div class="plus w-12.5 h-12.5 rounded-full relative">
           <div
             class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-2px"
@@ -97,17 +97,17 @@
       >
         <div class="numbers flex mr-2 relative w-5 ">
           <transition name="numbers" v-for="item in 6" :key="item" >
-            <p v-if="state === item" class="text-3xl absolute" style="line-height: 0.78; background:transparent;">{{item}}</p>
+            <p v-if="state === item" class="fz-30 absolute" style="line-height: 0.78; background:transparent;">{{item}}</p>
           </transition>
-            <p class="text-3xl absolute first7 left-0 " :class="state !== 7 ? 'inactive' : '' " style=" background:transparent;">7</p>
+            <p class="fz-30 absolute first7 left-0 " :class="state !== 7 ? 'inactive' : '' " style=" background:transparent;">7</p>
           <transition name="second7">
-            <p v-if="state === 7" class="text-3xl absolute left-0 " style="line-height: 0.78; background:transparent;">7</p>
+            <p v-if="state === 7" class="fz-30 absolute left-0 " style="line-height: 0.78; background:transparent;">7</p>
           </transition>
 
         </div>
         <div class="flex flex-col">
           <div>
-            <p class="number text-xxs third7" :class="state !== 7 ? 'inactive' : ''">7</p>
+            <p class="number fz-10 third7" :class="state !== 7 ? 'inactive' : ''">7</p>
           </div>
           <div
             class="h-px w-15px mt-1"
@@ -122,7 +122,7 @@
       <path d="M1 6L7 12L13 6" stroke-linejoin="round"/>
       <path d="M6.99998 0V12" stroke-linejoin="round"/>
     </svg>
-    <p class="text-xxs font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">{{ state !== 7 ? text.scroll : text.back }}</p>
+    <p class="fz-10 font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">{{ state !== 7 ? text.scroll : text.back }}</p>
   </div>
 </template>
 

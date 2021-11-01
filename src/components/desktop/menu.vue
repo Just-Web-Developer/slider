@@ -3,22 +3,22 @@
       <div  class=" screen pt-55  h-screen w-screen fixed" :style="'top:0'">
         <div class="langs pl-82.5 flex">
           <div class="lang cursor-pointer mr-20" :class="{'active': lang === 'ru'}" @click="chooseLang('ru')">
-            <p class="uppercase text-xxsm font-semibold">русский</p>
+            <p class="uppercase fz-13 font-semibold">русский</p>
             <div class="decorator mt-4.5 h-2px"></div>
           </div>
           <div class="lang cursor-pointer mr-20" :class="{'active': lang === 'ua'}" @click="chooseLang('ua')">
-            <p class="uppercase text-xxsm font-semibold">українська</p>
+            <p class="uppercase fz-13 font-semibold">українська</p>
             <div class="decorator mt-4.5 h-2px"></div>
           </div>
           <div class="lang cursor-pointer" :class="{'active': lang === 'en'}" @click="chooseLang('en')">
-            <p class="uppercase text-xxsm font-semibold">english</p>
+            <p class="uppercase fz-13 font-semibold">english</p>
             <div class="decorator mt-4.5 h-2px"></div>
           </div>
         </div>
         <nav class="mt-12.5">
           <div  class="nav-item flex items-center relative pl-82.5 pt-7.5 pb-8.75 bg-red-600">
             <div class="nav-background absolute top-0 right-0 bottom-0 left-0"></div>
-            <h3 @click="chooseNav('agency')" class="relative z-10 font-medium text-xl uppercase cursor-pointer">{{ text.agency }}</h3>
+            <h3 @click="chooseNav('agency')" class="relative z-10 font-medium fz-20 uppercase cursor-pointer">{{ text.agency }}</h3>
             <div class="plus w-5 h-5 relative ml-90">
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90"></div>
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -26,7 +26,7 @@
           </div>
           <div  class="nav-item flex items-center relative pl-82.5 pt-7.5 pb-8.75 bg-red-600">
             <div class="nav-background absolute top-0 right-0 bottom-0 left-0"></div>
-            <h3 @click="chooseNav('projects')" class="relative z-10 font-medium text-xl uppercase cursor-pointer">{{ text.projects }}</h3>
+            <h3 @click="chooseNav('projects')" class="relative z-10 font-medium fz-20 uppercase cursor-pointer">{{ text.projects }}</h3>
             <div class="plus w-5 h-5 relative ml-90">
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90"></div>
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -34,7 +34,7 @@
           </div>
           <div  class="nav-item flex items-center relative pl-82.5 pt-7.5 pb-8.75 bg-red-600">
             <div class="nav-background absolute top-0 right-0 bottom-0 left-0"></div>
-            <h3 @click="chooseNav('blog')" class="relative z-10 font-medium text-xl uppercase cursor-pointer">{{ text.blog }}</h3>
+            <h3 @click="chooseNav('blog')" class="relative z-10 font-medium fz-20 uppercase cursor-pointer">{{ text.blog }}</h3>
             <div class="plus w-5 h-5 relative ml-90">
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90"></div>
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -42,7 +42,7 @@
           </div>
           <div  class="nav-item flex items-center relative pl-82.5 pt-7.5 pb-8.75 bg-red-600">
             <div class="nav-background absolute top-0 right-0 bottom-0 left-0"></div>
-            <h3 @click="chooseNav('contacts')" class="relative z-10 font-medium text-xl uppercase cursor-pointer">{{ text.contacts }}</h3>
+            <h3 @click="chooseNav('contacts')" class="relative z-10 font-medium fz-20 uppercase cursor-pointer">{{ text.contacts }}</h3>
             <div class="plus w-5 h-5 relative ml-90">
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90"></div>
               <div class="absolute w-4 h-2px bg-white left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>

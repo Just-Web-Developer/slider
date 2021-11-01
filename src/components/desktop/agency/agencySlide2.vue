@@ -1,8 +1,8 @@
 <template>
   <div class="pt-50 px-82.5 flex slide">
-    <h4 class="text-3.55xl whitespace-nowrap" style="color:rgba(110, 117, 141, 1) ">{{ text.maxTextTitle }}</h4>
+    <h4 class="fz-301 whitespace-nowrap" style="color:rgba(110, 117, 141, 1) ">{{ text.maxTextTitle }}</h4>
     <div class="right-side ml-78">
-      <p class="font-medium text-xxl mb-25" >{{ text.maxText }} </p>
+      <p class="font-medium fz-201 mb-25" >{{ text.maxText }} </p>
       <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
       <div class="content my-12.5 flex">
         <picture class="mr-22.5">
@@ -13,8 +13,8 @@
           </svg>
         </picture>
         <div class="flex flex-col w-3/4">
-          <h5 class="text-3.55xl mb-7.5" style="color: #FF2E53">{{ text.needDigital }} </h5>
-          <p class="text-xxl">{{ text.myTask }}</p>
+          <h5 class="fz-301 mb-7.5" style="color: #FF2E53">{{ text.needDigital }} </h5>
+          <p class="fz-201">{{ text.myTask }}</p>
         </div>
 
 

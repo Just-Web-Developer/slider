@@ -8,10 +8,10 @@
       src="@/assets/videos/projects.mp4" alt=""></video>
     <div class="content mt-40 flex flex-col w-184.75">
       <div class="header flex justify-between">
-        <p class="text-1xxl" style="color: rgba(50, 55, 73, 1)">/ {{ text.projects }}</p>
+        <p class="fz-202" style="color: rgba(50, 55, 73, 1)">/ {{ text.projects }}</p>
         <img class="h-10 w-10" src="@/assets/images/box.svg" alt="">
       </div>
-      <p class="mt-25 text-justify text-xxl font-medium" style="text-indent: 15rem">{{ text.bigExp }}</p>
+      <p class="mt-25 text-justify fz-201 font-medium" style="text-indent: 15rem">{{ text.bigExp }}</p>
     </div>
   </div>
 </template>

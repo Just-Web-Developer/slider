@@ -7,7 +7,7 @@
             <transition name="slide">
               <p
                 v-if="index === currentSlide"
-                class="uppercase text-xxs font-medium"
+                class="uppercase fz-10 font-medium"
                 style="color: rgba(151, 163, 203, 0.6)"
               >
                 0{{ currentSlide + 1 }}
@@ -18,10 +18,10 @@
         <div class="relative w-130 h-112.5 flex hover">
           <transition-group name="text">
             <div class="text absolute" v-for="(item, index) in text.works" v-show="index === currentSlide" :key="item.name + index">
-              <h4 class="company-name text-3.5xl font-normal mb-5" style="color:rgba(255, 46, 83, 1);">
+              <h4 class="company-name fz-32 font-normal mb-5" style="color:rgba(255, 46, 83, 1);">
                 {{ item.name }}
               </h4>
-              <p class="company-description font-medium text-base">
+              <p class="company-description font-medium fz-16">
                 {{ item.description }}
               </p>
             </div>

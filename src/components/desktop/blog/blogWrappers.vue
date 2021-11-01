@@ -5,7 +5,7 @@
         <path d="M1 6L7 12L13 6" stroke="#323749" stroke-linejoin="round"/>
         <path d="M6.99998 0V12" stroke="#323749" stroke-linejoin="round"/>
       </svg>
-      <p class="uppercase font-medium text-xxs" style="letter-spacing: 0.1rem; color:rgba(110, 117, 141, 1) ">{{post ? text.blog :text.home }}</p>
+      <p class="uppercase font-medium fz-10" style="letter-spacing: 0.1rem; color:rgba(110, 117, 141, 1) ">{{post ? text.blog :text.home }}</p>
     </div>
     <div class="h-px w-5 absolute" style="top: 25.3731%; background:rgba(151, 163, 203, 0.3);"></div>
     <div class="h-px w-5 absolute" style="top: 64.9253%; background:rgba(151, 163, 203, 0.3);"></div>
@@ -23,7 +23,7 @@
       <path d="M1 6L7 12L13 6" stroke-linejoin="round"/>
       <path d="M6.99998 0V12" stroke-linejoin="round"/>
     </svg>
-    <p class="text-xxs font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">{{ text.back }}</p>
+    <p class="fz-10 font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">{{ text.back }}</p>
   </a>
 </template>
 

@@ -3,13 +3,13 @@
     <div class="relative flex" style="height: max-content">
       <div class="about w-48.3p">
         <p
-          class="uppercase text-xxs font-medium mb-22"
+          class="uppercase fz-10 font-medium mb-22"
           style="color: rgba(110, 117, 141, 1); letter-spacing: 2px"
         >
           {{ text.miniTitle }}
         </p>
         <p
-          class="text-xl font-medium main text-justify"
+          class="fz-20 font-medium main text-justify"
           style="line-height: 2.25rem"
         >
           {{text.mainText}}
@@ -32,7 +32,7 @@
         style="border-color: rgba(151, 163, 203, 0.3); height: auto"
       >
         <p
-          class="uppercase text-xxs ml-2"
+          class="uppercase fz-10 ml-2"
           style="letter-spacing: 2px; color: rgba(255, 46, 83, 1)"
         >
           {{text.ready}}
@@ -68,7 +68,7 @@
                     alt=""
                   />
                   <p
-                    class="text-base font-medium ml-5"
+                    class="fz-16 font-medium ml-5"
                     style="line-height: 1.5rem"
                   >
                     {{ stackSlide.text }}

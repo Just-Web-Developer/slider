@@ -5,7 +5,7 @@
     </div>
     <div class="blog-right flex flex-col">
       <p
-        class=" uppercase text-xxs font-medium mb-15 ml-21.25"
+        class=" uppercase fz-10 font-medium mb-15 ml-21.25"
         style="color: rgba(110, 117, 141, 1); letter-spacing: 2px">
         {{ text.blogName }}
       </p>
@@ -19,15 +19,15 @@
         }" >
           <div class="relative">
             <transition name="text">
-              <p v-if="index !== hoverIndex" class="w-55 text-base absolute top-0 left-0 mb-6 h-38 font-medium unactive ">
+              <p v-if="index !== hoverIndex" class="w-55 fz-16 absolute top-0 left-0 mb-6 h-38 font-medium unactive ">
                 {{item.text}}
               </p>
             </transition>
-            <p class="mb-6 h-38 opacity-0" :class="{'w-full font-normal text-white text-lg': index === hoverIndex && hover, 'w-55 text-base font-medium unactive': index !== hoverIndex }" style="">
+            <p class="mb-6 h-38 opacity-0" :class="{'w-full font-normal text-white fz-18': index === hoverIndex && hover, 'w-55 fz-16 font-medium unactive': index !== hoverIndex }" style="">
               {{item.text}}
             </p>
             <transition name="text">
-              <p v-if="index === hoverIndex && hover" class="absolute left-0 top-0 w-76.25 font-normal text-white text-lg">{{item.text}}</p>
+              <p v-if="index === hoverIndex && hover" class="absolute left-0 top-0 w-76.25 font-normal text-white fz-18">{{item.text}}</p>
             </transition>
           </div>
 
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="mt-10.5 ml-auto flex items-center all-news cursor-pointer">
-        <p class="text-right font-medium text-sm uppercase mr-4">{{ text.all }}</p>
+        <p class="text-right font-medium fz-14 uppercase mr-4">{{ text.all }}</p>
         <img src="@/assets/images/cross.svg" class="w-14 h-14  p-4 rounded-full border-2 " alt="">
       </div>
     </div>

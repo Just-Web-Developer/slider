@@ -4,7 +4,7 @@
       <div class="max-frai">
         <img src="@/assets/images/max-frai.svg" class="w-full" alt="" />
         <p
-          class="uppercase inter font-bold mt-4 text-xxs"
+          class="uppercase inter font-bold mt-4 fz-10"
           style="color: #ff2e53; letter-spacing: 1rem"
         >
           {{ text.AGENCY }}
@@ -15,7 +15,7 @@
       </div>
       <div class="ml-65 agency">
         <p
-          class="font-medium text-base"
+          class="font-medium fz-16"
           @mouseover="agencyGradsOn"
           @mouseleave="agencyGradsOff"
         >
@@ -27,7 +27,7 @@
         class="close ml-auto flex flex-col items-center cursor-pointer"
         @click="$emit('closeContacts')"
       >
-        <p class="text-xxs uppercase" style="letter-spacing: 0.3rem">{{ text.close }}</p>
+        <p class="fz-10 uppercase" style="letter-spacing: 0.3rem">{{ text.close }}</p>
         <div class="close w-5 h-5 relative mt-4">
           <div
             class="w-5 h-0.5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45"
@@ -43,7 +43,7 @@
     <div class="mt-22.5">
       <div class="flex">
         <div class="flex flex-col">
-          <h4 class="uppercase mb-6 text-xxl font-medium">
+          <h4 class="uppercase mb-6 fz-201 font-medium">
             {{ text.clicks }}
           </h4>
           <div
@@ -51,7 +51,7 @@
             v-for="item in services"
             :key="item.id"
           >
-            <p class="cursor-default font-semibold text-xxsm uppercase">
+            <p class="cursor-default font-semibold fz-13 uppercase">
               {{ item }}
             </p>
             <div
@@ -70,7 +70,7 @@
         <div class="flex flex-col mt-0.25 ml-57">
           <div>
             <div class="field flex flex-col mb-8">
-              <label for="name" class="text-xxsm font-semibold uppercase mb-2.5"
+              <label for="name" class="fz-13 font-semibold uppercase mb-2.5"
                 >ИМЯ</label
               >
               <input v-model="name" id="name" type="text" class="w-185 h-15 pl-4" :class="{'error': activeErrors.indexOf(0) !== -1}" />
@@ -79,7 +79,7 @@
             <div class="field flex flex-col mb-8">
               <label
                 for="number"
-                class="text-xxsm font-semibold uppercase mb-2.5"
+                class="fz-13 font-semibold uppercase mb-2.5"
                 >ВАШ ТЕЛЕФОН</label
               >
               <input
@@ -95,7 +95,7 @@
             <div class="field flex flex-col mb-8">
               <label
                 for="email"
-                class="text-xxsm font-semibold uppercase mb-2.5"
+                class="fz-13 font-semibold uppercase mb-2.5"
 
                 >EMAIL</label
               >
@@ -109,7 +109,7 @@
               />
             </div>
 
-            <p class="text-lg" style="color: rgb(110, 117, 141)">
+            <p class="fz-18" style="color: rgb(110, 117, 141)">
               Удобный формат общения
             </p>
 
@@ -117,28 +117,28 @@
               <p
                 @click="toggleFormat('phone')"
                 :class="{ active: activeFormats.indexOf('phone') !== -1 }"
-                class="connection-format cursor-pointer font-semibold text-xxsm uppercase py-4 px-8 rounded-full border"
+                class="connection-format cursor-pointer font-semibold fz-13 uppercase py-4 px-8 rounded-full border"
               >
                 ЗВОНОК
               </p>
               <p
                 @click="toggleFormat('email')"
                 :class="{ active: activeFormats.indexOf('email') !== -1 }"
-                class="connection-format cursor-pointer font-semibold text-xxsm uppercase py-4 px-8 rounded-full border"
+                class="connection-format cursor-pointer font-semibold fz-13 uppercase py-4 px-8 rounded-full border"
               >
                 EMAIL
               </p>
               <p
                 @click="toggleFormat('telegram')"
                 :class="{ active: activeFormats.indexOf('telegram') !== -1 }"
-                class="connection-format cursor-pointer font-semibold text-xxsm uppercase py-4 px-8 rounded-full border"
+                class="connection-format cursor-pointer font-semibold fz-13 uppercase py-4 px-8 rounded-full border"
               >
                 Telegram
               </p>
               <p
                 @click="toggleFormat('whatsapp')"
                 :class="{ active: activeFormats.indexOf('whatsapp') !== -1 }"
-                class="connection-format cursor-pointer font-semibold text-xxsm uppercase py-4 px-8 rounded-full border"
+                class="connection-format cursor-pointer font-semibold fz-13 uppercase py-4 px-8 rounded-full border"
               >
                 WHATSAPP
               </p>
@@ -146,7 +146,7 @@
 
 
             <div class="mt-6 relative" style="z-index: 2;">
-              <p class="mb-2 text-xs" style="color: rgba(255, 46, 83, 1)" v-for="error in activeErrors" :key="error.id">{{text.errors[error]}}</p>
+              <p class="mb-2 fz-12" style="color: rgba(255, 46, 83, 1)" v-for="error in activeErrors" :key="error.id">{{text.errors[error]}}</p>
             </div>
             <button
               @click="sendForm()"
@@ -165,7 +165,7 @@
                     class="absolute top-1/2 left-1/2 transform rotate-90 -translate-x-1/2 -translate-y-1/2 w-4 h-2px"
                   ></div>
                 </div>
-                <p class="uppercase font-semibold text-xxsm">отправить</p>
+                <p class="uppercase font-semibold fz-13">отправить</p>
               </div>
               <div class="connect-grad relative" style="z-index: 1">
                 <div id="grad-1"></div>

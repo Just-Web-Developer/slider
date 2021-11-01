@@ -9,7 +9,7 @@
     <div class="news flex mt-18.75 ml-66 cursor-pointer w-max">
       <div>
         <p
-          class="font-medium uppercase text-xxs"
+          class="font-medium uppercase fz-10"
           style="letter-spacing: 0.3em; color: #ff2e53"
         >
           {{text.news.hot}}
@@ -30,7 +30,7 @@
         </svg>
       </div>
       <div class="ml-47 right">
-        <p class="font-medium text-xsm relative -top-2">
+        <p class="font-medium fz-15 relative -top-2">
           {{text.news.text[0]}} <br />
           {{text.news.text[1]}} <br />
           {{text.news.text[2]}} <br />

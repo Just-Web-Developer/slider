@@ -3,13 +3,13 @@
   <div id="project" class="pt-50 pl-82.5 pr-50 w-full flex flex-col slide min-h-screen">
     <div class="header pr-32.5 flex">
       <div class="left flex flex-col w-130.7 flex-shrink-0 justify-between items-start">
-        <h2 class="font-light text-4.5xl" style="color: #FF2E53">{{ text.titleM }}</h2>
+        <h2 class="font-light fz-45" style="color: #FF2E53">{{ text.titleM }}</h2>
         <a href="#project" class=" w-max to-top transform transition cursor-pointer" >
           <svg width="14"  height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 6L7 12L13 6" stroke-linejoin="round"/>
             <path d="M6.99998 0V12" stroke-linejoin="round"/>
           </svg>
-          <p class="text-xxs font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">scroll</p>
+          <p class="fz-10 font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">scroll</p>
         </a>
       </div>
       <div class="right flex flex-col">
@@ -17,31 +17,31 @@
           <div class="top-left flex flex-col w-120 mr-10">
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
             <div class="content my-10">
-              <p class="uppercase font-medium text-xs mb-5" style="color:#6E758D;">{{ text.taskTitle }}</p>
-              <p class="text-base font-medium w-87.5">{{ text.title }}</p>
+              <p class="uppercase font-medium fz-12 mb-5" style="color:#6E758D;">{{ text.taskTitle }}</p>
+              <p class="fz-16 font-medium w-87.5">{{ text.title }}</p>
             </div>
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
           </div>
           <div class="top-right flex flex-col w-55">
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
             <div class="content mt-5 mb-10">
-              <p class="uppercase font-medium text-xs mb-5 w-38" style="color:#6E758D;">{{ text.realizationTimeTitle }}</p>
-              <p class="text-5.5xl">{{ text.realizationTime }}</p>
+              <p class="uppercase font-medium fz-12 mb-5 w-38" style="color:#6E758D;">{{ text.realizationTimeTitle }}</p>
+              <p class="fz-50">{{ text.realizationTime }}</p>
             </div>
             <div class="line w-full mt-auto h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
           </div>
         </div>
-        <p class="mt-37.5 text-xxl font-medium">{{ text.text[0] }}</p>
+        <p class="mt-37.5 fz-201 font-medium">{{ text.text[0] }}</p>
       </div>
 
     </div>
     <img :src="require('@/assets/images/projects/' + id + '/first.png')" alt="" class="first-image pr-32.5 mt-50">
 
-    <p class="prolog pr-32.5 mt-50 ml-130.7 font-medium text-xxl">{{ text.text[1] }}</p>
+    <p class="prolog pr-32.5 mt-50 ml-130.7 font-medium fz-201">{{ text.text[1] }}</p>
 
     <div class="problems pr-32.5 flex mt-37.5">
       <div class="left flex flex-col w-130.7 flex-shrink-0 justify-between items-start">
-        <h2 class="font-light text-3.55xl w-87.5" style="color: #FF2E53">{{ text.problemsTitle }}</h2>
+        <h2 class="font-light fz-301 w-87.5" style="color: #FF2E53">{{ text.problemsTitle }}</h2>
 
       </div>
       <div class="right flex flex-col">
@@ -49,26 +49,26 @@
           <div class="top-left flex flex-col w-87.5 mr-10">
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
             <div class="content my-7.5">
-              <h6 class="mb-7.5 uppercase font-medium text-xs mb-5" style="color:#6E758D;letter-spacing: 0.3rem">01</h6>
-              <p class="text-base font-medium w-80">{{ text.problems[0] }}</p>
+              <h6 class="mb-7.5 uppercase font-medium fz-12 mb-5" style="color:#6E758D;letter-spacing: 0.3rem">01</h6>
+              <p class="fz-16 font-medium w-80">{{ text.problems[0] }}</p>
             </div>
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
             <div class="content my-7.5">
-              <h6 class="mb-7.5 uppercase font-medium text-xs mb-5" style="color:#6E758D;letter-spacing: 0.3rem">03</h6>
-              <p class="text-base font-medium w-80">{{ text.problems[2] }}</p>
+              <h6 class="mb-7.5 uppercase font-medium fz-12 mb-5" style="color:#6E758D;letter-spacing: 0.3rem">03</h6>
+              <p class="fz-16 font-medium w-80">{{ text.problems[2] }}</p>
             </div>
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
           </div>
           <div class="top-right flex flex-col w-87.5">
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
             <div class="content my-7.5">
-              <h6 class="mb-7.5 uppercase font-medium text-xs mb-5" style="color:#6E758D;letter-spacing: 0.3rem">02</h6>
-              <p class="text-base font-medium w-80 h-12">{{ text.problems[1] }}</p>
+              <h6 class="mb-7.5 uppercase font-medium fz-12 mb-5" style="color:#6E758D;letter-spacing: 0.3rem">02</h6>
+              <p class="fz-16 font-medium w-80 h-12">{{ text.problems[1] }}</p>
             </div>
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
             <div class="content my-7.5">
-              <h6 class="mb-7.5 uppercase font-medium text-xs mb-5" style="color:#6E758D;letter-spacing: 0.3rem">04</h6>
-              <p class="text-base font-medium w-80">{{ text.problems[3] }}</p>
+              <h6 class="mb-7.5 uppercase font-medium fz-12 mb-5" style="color:#6E758D;letter-spacing: 0.3rem">04</h6>
+              <p class="fz-16 font-medium w-80">{{ text.problems[3] }}</p>
             </div>
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
           </div>
@@ -81,7 +81,7 @@
 
     <div class="result pr-32.5 flex mt-37.5">
       <div class="left flex flex-col w-130.7 flex-shrink-0 justify-between items-start">
-        <h2 class="font-light text-3.55xl w-87.5" style="color: #FF2E53">{{ text.resultTitle}}</h2>
+        <h2 class="font-light fz-301 w-87.5" style="color: #FF2E53">{{ text.resultTitle}}</h2>
 
       </div>
       <div class="right flex flex-col">
@@ -89,18 +89,18 @@
           <div class="top-left flex flex-col w-87.5 mr-10">
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
             <div class="content my-7.5">
-              <h6 class="mb-7.5 uppercase font-medium text-xs" style="color:#6E758D;letter-spacing: 0.3rem">01</h6>
-              <p class="text-base font-medium w-80 h-18.75">{{ text.result[0] }}</p>
+              <h6 class="mb-7.5 uppercase font-medium fz-12" style="color:#6E758D;letter-spacing: 0.3rem">01</h6>
+              <p class="fz-16 font-medium w-80 h-18.75">{{ text.result[0] }}</p>
             </div>
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
             <div class="content my-7.5">
-              <h6 class="mb-7.5 uppercase font-medium text-xs" style="color:#6E758D;letter-spacing: 0.3rem">03</h6>
-              <p class="text-base font-medium w-80 h-25">{{ text.result[2] }}</p>
+              <h6 class="mb-7.5 uppercase font-medium fz-12" style="color:#6E758D;letter-spacing: 0.3rem">03</h6>
+              <p class="fz-16 font-medium w-80 h-25">{{ text.result[2] }}</p>
             </div>
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
             <div class="content my-7.5">
-              <h6 class="mb-7.5 uppercase font-medium text-xs" style="color:#6E758D;letter-spacing: 0.3rem">05</h6>
-              <p class="text-base font-medium w-80 h-25">{{ text.result[4] }}</p>
+              <h6 class="mb-7.5 uppercase font-medium fz-12" style="color:#6E758D;letter-spacing: 0.3rem">05</h6>
+              <p class="fz-16 font-medium w-80 h-25">{{ text.result[4] }}</p>
             </div>
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
           </div>
@@ -109,18 +109,18 @@
           <div class="top-right flex flex-col w-87.5">
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
             <div class="content my-7.5">
-              <h6 class="mb-7.5 uppercase font-medium text-xs" style="color:#6E758D;letter-spacing: 0.3rem">02</h6>
-              <p class="text-base font-medium w-80 h-18.75">{{ text.result[1] }}</p>
+              <h6 class="mb-7.5 uppercase font-medium fz-12" style="color:#6E758D;letter-spacing: 0.3rem">02</h6>
+              <p class="fz-16 font-medium w-80 h-18.75">{{ text.result[1] }}</p>
             </div>
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
             <div class="content my-7.5">
-              <h6 class="mb-7.5 uppercase font-medium text-xs" style="color:#6E758D;letter-spacing: 0.3rem">04</h6>
-              <p class="text-base font-medium w-80 h-25">{{ text.result[3] }}</p>
+              <h6 class="mb-7.5 uppercase font-medium fz-12" style="color:#6E758D;letter-spacing: 0.3rem">04</h6>
+              <p class="fz-16 font-medium w-80 h-25">{{ text.result[3] }}</p>
             </div>
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
             <div class="content my-7.5">
-              <h6 class="mb-7.5 uppercase font-medium text-xs" style="color:#6E758D;letter-spacing: 0.3rem">06</h6>
-              <p class="text-base font-medium w-80 h-25">{{ text.result[5] }}</p>
+              <h6 class="mb-7.5 uppercase font-medium fz-12" style="color:#6E758D;letter-spacing: 0.3rem">06</h6>
+              <p class="fz-16 font-medium w-80 h-25">{{ text.result[5] }}</p>
             </div>
             <div class="line w-full h-px" style="background:rgba(151, 163, 203, 0.3);"></div>
           </div>
@@ -134,7 +134,7 @@
         <path d="M1 6L7 12L13 6" stroke-linejoin="round"/>
         <path d="M6.99998 0V12" stroke-linejoin="round"/>
       </svg>
-      <p class="text-xxs font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">back to top</p>
+      <p class="fz-10 font-medium uppercase mt-2.5" style="letter-spacing: 0.3em">back to top</p>
     </div>
     <div class="next w-315 cursor-pointer relative" v-if="text.nextTitle && text.nextImage">
       <!-- Background start -->
@@ -143,8 +143,8 @@
       <div class="line absolute bottom-0 h-2"></div>
       <!-- Background end -->
       <div class="content absolute z-20 bottom-23 left-10">
-        <p class="next-post-title text-xxsm uppercase font-semibold mb-6">{{ text.next }}</p>
-        <h3 class="w-110 text-3.55xl">{{text.nextTitle}}</h3>
+        <p class="next-post-title fz-13 uppercase font-semibold mb-6">{{ text.next }}</p>
+        <h3 class="w-110 fz-301">{{text.nextTitle}}</h3>
       </div>
     </div>
   </div>

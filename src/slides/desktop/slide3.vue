@@ -5,12 +5,12 @@
       style="height: fit-content"
     >
       <p
-        class="uppercase text-xxs font-medium"
+        class="uppercase fz-10 font-medium"
         style="letter-spacing: 2px; color: rgba(110, 117, 141, 1)"
       >
         {{text.ourClients}}
       </p>
-      <p class="mt-12 text-base" style="line-height: 1.5rem">
+      <p class="mt-12 fz-16" style="line-height: 1.5rem">
         {{text.trust}}
       </p>
       <h2
@@ -20,7 +20,7 @@
         {{ text.realizedCount }}
       </h2>
       <p
-        class="mt-2.5 font-medium uppercase text-xxs"
+        class="mt-2.5 font-medium uppercase fz-10"
         style="line-height: 200%; color: rgba(192, 197, 216, 1)"
       >
         {{ text.realizedText[0] }} <br />
@@ -68,7 +68,7 @@
             </div>
             <div class="w-1/2 flex flex-col ">
               <p
-                class="ml-37.5 mt-50p font-medium text-base w-45p"
+                class="ml-37.5 mt-50p font-medium fz-16 w-45p"
                 style="line-height: 1.5rem; color: #c0c5d8"
               >
                 {{ text.ready }}
@@ -83,7 +83,7 @@
                       class="absolute top-1/2 left-1/2 transform rotate-90 -translate-x-1/2 -translate-y-1/2 w-4 h-2px"
                     ></div>
                   </div>
-                  <p class="uppercase font-semibold text-xxsm">{{ text.become }}</p>
+                  <p class="uppercase font-semibold fz-13">{{ text.become }}</p>
                 </div>
 
                 <div class="connect-grad relative" style="z-index: -1">

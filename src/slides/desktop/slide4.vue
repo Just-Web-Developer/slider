@@ -2,7 +2,7 @@
   <div id="slide-4" class="slide ml-83 pt-50 h-screen relative flex h-125">
     <div class="works-left mt-1 w-48p flex flex-col">
       <p
-        class="ml-auto text-center mb-15 uppercase text-xxs font-medium"
+        class="ml-auto text-center mb-15 uppercase fz-10 font-medium"
         style="color: rgba(110, 117, 141, 1); letter-spacing: 2px"
       >
         {{ text.projects }}
@@ -12,7 +12,7 @@
           <transition :name="slideDirection + '-count'">
             <p
               v-if="index === currentSlide"
-              class="uppercase text-xxs font-medium"
+              class="uppercase fz-10 font-medium"
               style="color: rgba(151, 163, 203, 0.6)"
             >
               0{{ currentSlide + 1 }}
@@ -39,16 +39,16 @@
     </div>
     <div class="works-right ml-40 mt-18 w-87.5 h-125 flex flex-col">
       <div class="work-description cursor-pointer relative mb-6" v-for="(item, index) in text.works" @click="changeSlide(index)"  :class="{'active': index === currentSlide}" :key="item+index">
-        <h4 class="company-name text-base text-right " :class="{
-          'text-3.5xl font-normal mb-5': index === currentSlide,
+        <h4 class="company-name fz-16 text-right " :class="{
+          'fz-32 font-normal mb-5': index === currentSlide,
           'font-medium': index !== currentSlide
         }">{{item.name}}</h4>
         <transition name="text">
-          <p v-if="index === currentSlide" class="company-description text-right font-medium text-base">{{item.description}}</p>
+          <p v-if="index === currentSlide" class="company-description text-right font-medium fz-16">{{item.description}}</p>
         </transition>
       </div>
       <div class="mt-auto ml-auto flex items-center projects cursor-pointer">
-        <p class="text-right font-medium text-sm uppercase mr-4">все проекты</p>
+        <p class="text-right font-medium fz-14 uppercase mr-4">все проекты</p>
         <img src="@/assets/images/cross.svg" class="w-14 h-14  p-4 rounded-full border-2 " alt="">
       </div>
 

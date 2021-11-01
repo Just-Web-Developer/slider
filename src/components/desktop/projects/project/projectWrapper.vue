@@ -5,7 +5,7 @@
         <path d="M1 6L7 12L13 6" stroke="#323749" stroke-linejoin="round"/>
         <path d="M6.99998 0V12" stroke="#323749" stroke-linejoin="round"/>
       </svg>
-      <p class="uppercase font-medium text-xxs" style="letter-spacing: 0.1rem; color:rgba(110, 117, 141, 1) ">PROJECTS</p>
+      <p class="uppercase font-medium fz-10" style="letter-spacing: 0.1rem; color:rgba(110, 117, 141, 1) ">PROJECTS</p>
     </div>
     <div class="h-px w-5 absolute" style="top: 25.00%; background:rgba(151, 163, 203, 0.3);"></div>
     <div class="h-px w-5 absolute" style="top: 62.5%; background:rgba(151, 163, 203, 0.3);"></div>
