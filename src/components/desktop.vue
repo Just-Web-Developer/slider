@@ -178,7 +178,6 @@ export default {
   height: 100vh;
 }
 .body, .main {
-  font-family: "Montserrat", sans-serif;
   color: white;
   position: relative;
   transition: all linear .8s;

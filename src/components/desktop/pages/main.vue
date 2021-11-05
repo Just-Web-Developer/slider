@@ -79,13 +79,13 @@
 </template>
 
 <script>
-import slide1 from "@/slides/desktop/slide1";
-import slide2 from "@/slides/desktop/slide2";
-import slide3 from "@/slides/desktop/slide3";
-import slide4 from "@/slides/desktop/slide4";
-import slide5 from "@/slides/desktop/slide5";
-import slide6 from "@/slides/desktop/slide6";
-import slide7 from "@/slides/desktop/slide7";
+import slide1 from "@/components/desktop/main/slide1";
+import slide2 from "@/components/desktop/main/slide2";
+import slide3 from "@/components/desktop/main/slide3";
+import slide4 from "@/components/desktop/main/slide4";
+import slide5 from "@/components/desktop/main/slide5";
+import slide6 from "@/components/desktop/main/slide6";
+import slide7 from "@/components/desktop/main/slide7";
 
 export default {
   name: "Main",

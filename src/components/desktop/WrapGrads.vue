@@ -23,23 +23,23 @@ export default {
 
   .purple {
     position: absolute;
-    width: 460px;
-    height: 460px;
-    left: 575px;
-    top: -281.65px;
+    width: 28.75rem;
+    height: 28.75rem;
+    left: 35.9375rem;
+    top: -17.603125rem;
     z-index: 2;
     background: linear-gradient(321.88deg, rgba(7, 25, 61, 0) 12.53%, rgba(242, 41, 89, 0.4) 43.45%, rgba(255, 0, 0, 0.4) 60.5%);
-    filter: blur(60px);
+    filter: blur(3.75rem);
     transform: rotate(-22.14deg);
   }
   .blue {
     position: absolute;
-    width: 460px;
-    height: 460px;
-    left: 714.74px;
-    top: -208.31px;
+    width: 28.75rem;
+    height: 28.75rem;
+    left: 44.67125rem;
+    top: -13.019375rem;
     background: linear-gradient(344.88deg, rgba(7, 25, 61, 0) 12.53%, rgba(0, 133, 255, 0.4) 43.45%, rgba(255, 0, 0, 0.4) 60.5%);
-    filter: blur(60px);
+    filter: blur(3.75rem);
     transform: rotate(-22.14deg);
   }
   .blue, .purple{
@@ -51,16 +51,16 @@ export default {
   left: 15%;
   top: -10%;
   .purple{
-    width: 655.02px;
-    height: 655.02px;
-    left: 318px;
-    top: -314.16px;
+    width: 40.93875rem;
+    height: 40.93875rem;
+    left: 19.875rem;
+    top: -19.635rem;
   }
   .blue{
-    width: 655.02px;
-    height: 655.02px;
-    left: 692.98px;
-    top: -209.73px;
+    width: 40.93875rem;
+    height: 40.93875rem;
+    left: 43.31125rem;
+    top: -13.108125rem;
   }
 }
 .agency.hover{
