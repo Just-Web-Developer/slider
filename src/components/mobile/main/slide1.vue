@@ -31,30 +31,155 @@
       </p>
     </div>
 
-    <div class="services grid grid-cols-1 grid-rows-5 gap-2.5">
-      <div class="service flex items-center justify-between px-7.5 py-3.75 mx-4.5">
-        <img class="w-12.5 h-12.5" src="@/assets/images/slide_1/service_icons/loader.svg"  alt="">
-        <p class="fz-18 font-medium uppercase">Создаём</p>
+    <div class="services flex flex-col">
+      <div class="service flex flex-col px-7.5 mx-4.5 mb-2.5" @click="adds[0] = !adds[0]">
+        <div class="flex items-center justify-between py-3.75 ">
+          <img class="w-12.5 h-12.5" src="@/assets/images/slide_1/service_icons/loader.svg"  alt="">
+          <p class="fz-18 font-medium uppercase">Создаём</p>
+        </div>
+        <div class="dop overflow-hidden  grid grid-rows-3 grid-cols-1 gap-1.25" :class="{'h-31.25 pt-2.5 pb-7.5': adds[0], 'h-0 p-0': !adds[0] }">
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Сайты</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Приложения</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Креативы</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="service flex items-center justify-between px-7.5 py-3.75 mx-4.5">
-        <img class="w-12.5 h-12.5" src="@/assets/images/slide_1/service_icons/globe.svg"  alt="">
-        <p class="fz-18 font-medium uppercase">ВЕДЁМ</p>
+      <div class="service flex flex-col px-7.5 mx-4.5 mb-2.5" @click="adds[0] = !adds[0]">
+        <div class="flex items-center justify-between py-3.75 ">
+          <img class="w-12.5 h-12.5" src="@/assets/images/slide_1/service_icons/globe.svg"  alt="">
+          <p class="fz-18 font-medium uppercase">ВЕДЁМ</p>
+        </div>
+        <div class="dop overflow-hidden  grid grid-rows-3 grid-cols-1 gap-1.25" :class="{'h-31.25 pt-2.5 pb-7.5': adds[0], 'h-0 p-0': !adds[0] }">
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Сайты</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Приложения</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Креативы</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="service flex items-center justify-between px-7.5 py-3.75 mx-4.5">
-        <img class="w-12.5 h-12.5" src="@/assets/images/slide_1/service_icons/radio.svg"  alt="">
-        <p class="fz-18 font-medium uppercase">ПРОДВИГАЕМ</p>
+      <div class="service flex flex-col px-7.5 mx-4.5 mb-2.5" @click="adds[1] = !adds[1]">
+        <div class="flex items-center justify-between py-3.75 ">
+          <img class="w-12.5 h-12.5" src="@/assets/images/slide_1/service_icons/radio.svg"  alt="">
+          <p class="fz-18 font-medium uppercase">ПРОДВИГАЕМ</p>
+        </div>
+        <div class="dop overflow-hidden  grid grid-rows-3 grid-cols-1 gap-1.25" :class="{'h-31.25 pt-2.5 pb-7.5': adds[1], 'h-0 p-0': !adds[1] }">
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Сайты</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Приложения</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Креативы</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="service flex items-center justify-between px-7.5 py-3.75 mx-4.5">
-        <img class="w-12.5 h-12.5" src="@/assets/images/slide_1/service_icons/pen-tool.svg"  alt="">
-        <p class="fz-18 font-medium uppercase">ПИШЕМ</p>
+      <div class="service flex flex-col px-7.5 mx-4.5 mb-2.5" @click="adds[0] = !adds[0]">
+        <div class="flex items-center justify-between py-3.75 ">
+          <img class="w-12.5 h-12.5" src="@/assets/images/slide_1/service_icons/pen-tool.svg"  alt="">
+          <p class="fz-18 font-medium uppercase">ПИШЕМ</p>
+        </div>
+        <div class="dop overflow-hidden  grid grid-rows-3 grid-cols-1 gap-1.25" :class="{'h-31.25 pt-2.5 pb-7.5': adds[0], 'h-0 p-0': !adds[0] }">
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Сайты</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Приложения</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Креативы</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="service flex items-center justify-between px-7.5 py-3.75 mx-4.5">
-        <img class="w-12.5 h-12.5" src="@/assets/images/slide_1/service_icons/smile.svg"  alt="">
-        <p class="fz-18 font-medium uppercase">ПОМОГАЕМ</p>
+      <div class="service flex flex-col px-7.5 mx-4.5 mb-2.5" @click="adds[0] = !adds[0]">
+        <div class="flex items-center justify-between py-3.75 ">
+          <img class="w-12.5 h-12.5" src="@/assets/images/slide_1/service_icons/smile.svg"  alt="">
+          <p class="fz-18 font-medium uppercase">ПОМОГАЕМ</p>
+        </div>
+        <div class="dop overflow-hidden  grid grid-rows-3 grid-cols-1 gap-1.25" :class="{'h-31.25 pt-2.5 pb-7.5': adds[0], 'h-0 p-0': !adds[0] }">
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Сайты</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Приложения</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+          <div class="flex items-center ml-auto justify-end">
+            <p class="mr-5">Креативы</p>
+            <div class="w-5 h-5 relative">
+              <div class="w-px h-4 absolute top-0.5 left-1/2 transform -translate-x-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+              <div class="h-px w-4 absolute left-0.5 top-1/2 transform -translate-y-1/2" style="background:rgba(110, 117, 141, 1);"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!--    First section END-->
@@ -71,12 +196,20 @@ import firstAnimation from "../../desktop/slide1/firstAnimation";
 
 export default {
   name: "slide1",
-  components:{firstAnimation}
+  components:{firstAnimation},
+  data(){
+    return{
+      adds:[false,false,false,false,false]
+    }
+  }
 };
 </script>
 
-<style>
+<style scoped>
   .service{
     background: rgba(110, 117, 141, 0.1);
+  }
+  .dop{
+    transition: all 0.35s ease-out;
   }
 </style>
