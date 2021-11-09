@@ -90,3 +90,11 @@
 /*    font-size: 6rem;*/
 /*    line-height: 1;*/
 /*}*/
+
+
+.color-gray{
+    color: rgba(110, 117, 141, 1);
+}
+.color-accent{
+    color: rgba(255, 46, 83, 1);
+}
