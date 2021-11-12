@@ -157,8 +157,8 @@
           <img class="w-12.5 h-12.5" src="@/assets/images/slide_1/service_icons/smile.svg"  alt="">
           <p class="fz-18 uppercase" style="line-height: 1.666rem">ПОМОГАЕМ</p>
         </div>
-        <div class="dop overflow-hidden  grid grid-rows-3 grid-cols-1 gap-1.25" :class="{'h-31.25 pt-2.5 pb-7.5': adds[4], 'h-0 p-0': !adds[4] }">
-          <div class="flex items-center ml-auto justify-end items-end">
+        <div class="dop overflow-hidden flex" :class="{'h-31.25 pt-2.5 pb-7.5': adds[4], 'h-0 p-0': !adds[4] }">
+          <div class="flex items-center ml-auto w-55p text-right mt-auto justify-end items-end">
             <p  style="line-height: 1.5625;">Решать задачи любой сложности</p>
           </div>
         </div>
