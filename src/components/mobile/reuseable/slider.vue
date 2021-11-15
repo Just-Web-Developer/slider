@@ -128,23 +128,24 @@ export default {
       })
     },
     aiming(){
-      let duration = 100 // duration of aiming in milliseconds
+      let duration = 1000 // duration of aiming in milliseconds
+      let fps = 30
       let initial = this.touch.sum
       if (this.touch.sum >= this.choosedPoint){
         let interval = setInterval(()=>{
-          this.touch.sum -= Math.abs(this.choosedPoint - initial) / duration
+          this.touch.sum -= Math.abs(this.choosedPoint - initial) / (fps * (duration / 1000))
           if (Math.abs(this.touch.sum - this.choosedPoint) < (window.innerWidth / 200)){
             clearInterval(interval)
           }
-        }, 1)
+        }, 1000 / fps)
       }
       else if(this.touch.sum < this.choosedPoint){
         let interval = setInterval(()=>{
-          this.touch.sum += Math.abs(this.choosedPoint - initial) / duration
+          this.touch.sum += Math.abs(this.choosedPoint - initial) / (fps * (duration / 1000))
           if (Math.abs(this.touch.sum - this.choosedPoint) < (window.innerWidth / 200)){
             clearInterval(interval)
           }
-        }, 1)
+        }, 1000 / fps)
       }
     }
   },
