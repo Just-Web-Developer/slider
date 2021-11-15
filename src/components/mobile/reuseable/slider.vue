@@ -1,9 +1,4 @@
 <template>
-  <p class="text-red-700">{{touch.start}}</p>
-  <p class="text-yellow-600">{{touch.current}}</p>
-  <p class="text-green-600">{{touch.end}}</p>
-  <p class="text-coral-700">{{touch.sum}}</p>
-  <p class="text-blue-700">{{choosedPoint}}</p>
   <div id="mobile-slider" class="slider ml-4.5 flex w-max max-w-none left-0 relative min-h-42.5 mb-40" :style="'left:' + swipe + 'px' ">
     <div ref="slide" class="slider-slide mr-7.5 w-62.5 flex flex-col">
       <img src="@/assets/images/slide_2/stack/enter.svg"
