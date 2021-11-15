@@ -1,5 +1,5 @@
 <template>
-  <div id="mobile-slider" class="slider ml-4.5 flex w-max max-w-none left-0 relative min-h-42.5 mb-40" :style="'left:' + swipe + 'px' ">
+  <div id="mobile-slider" class="slider ml-4.5 mt-50vh flex w-max max-w-none left-0 relative min-h-42.5 mb-40" :style="'left:' + swipe + 'px' ">
     <div ref="slide" class="slider-slide mr-7.5 w-62.5 flex flex-col">
       <img src="@/assets/images/slide_2/stack/enter.svg"
            class="h-19 w-19 p-4.5 rounded-full mb-5"
@@ -159,7 +159,7 @@ export default {
 
     let slides = document.querySelectorAll(".slider-slide");
     let slideStyles = window.getComputedStyle(slides[0])
-    this.slideSize = parseFloat(slideStyles.width) + parseFloat(slideStyles.marginRight)
+    this.slideSize = parseFloat(slideStyles.width) + parseFloat(slideStyles.marginRight) + parseFloat(slideStyles.marginLeft)
     for (let p = 0; p < slides.length; p++) {
       this.controlPoints.unshift(this.slideSize * p * -1)
     }
