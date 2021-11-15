@@ -77,7 +77,7 @@ export default {
     finished(data){
       this.swiping=false
       this.touch.end = data
-      this.setControl()
+
     },
     setSwipe(){
       if (this.swiping){
@@ -96,6 +96,7 @@ export default {
       this.touch.sum += this.touch.end - this.touch.start
       if (this.touch.start !== 0 || this.touch.current !== 0 || this.touch.end !== 0){
         this.swiped = true
+        this.setControl()
       }
       this.touch.start = this.touch.current = this.touch.end = 0
 
@@ -128,7 +129,7 @@ export default {
       })
     },
     aiming(){
-      let duration = 1000 // duration of aiming in milliseconds
+      let duration = 300 // duration of aiming in milliseconds
       let fps = 30
       let initial = this.touch.sum
       if (this.touch.sum >= this.choosedPoint){
